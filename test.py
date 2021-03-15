@@ -18,5 +18,7 @@ print("test 1 N=30030 ; k=61")
 print("sans erreur :" ,ln,lr)
 lr_error=lr
 lr_error[0]=0
-print("brute force 0 erreur",brute_force_hamming(ln,lr,1))
-print("brute force 1 erreur",brute_force_hamming(ln,lr_error,1))
+print("test",reste_chinois1(ln,lr))
+print(détection_1_erreur(ln,lr))
+##print("brute force 0 erreur",brute_force_hamming(ln,lr,1))
+##print("brute force 1 erreur",brute_force_hamming(ln,lr_error,1))

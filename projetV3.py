@@ -3,6 +3,8 @@
 from fractions import gcd
 import random
 
+
+
 def xeuklid(a,b):
     # calcul de l'inverse modulo b du nombre a
     xs0, xs1, ys0, ys1, s, d = 1, 0, 0, 1, 1, b
@@ -69,52 +71,40 @@ def create_error(nb_error,l_modulo,l_reste):
 
 
 
-def reste_chinois1 (A , N): ##algo de reconstitution
-    if len(A)!=len(N):
-        return 0
-    b=0
-    for i in range(len(A)):
-        a=1
-        ni=N[i]
-        for j in range(len(N)):
+def reste_chinois1 (l_reste , l_modulo): ##algo de reconstitution
+    if len(l_reste)!=len(l_modulo):
+        return -1
+    somme=0
+    ni=0
+    for i in range(len(l_reste)):
+        ei=1 ## produit de tout les nk, ni exclu
+        ni=l_modulo[i]
+        for j in range(len(l_modulo)):
             if j!=i :
-                a=a*N[j]
-        k= xeuklid(a,ni)
-        b=b+k*a*A[i]
-    return b%(a*ni)
+                ei=ei*l_modulo[j]
+        ei_inv= xeuklid(ei,ni)
+        somme=somme+ei_inv*ei*l_reste[i]
+    return somme%(ei*ni)
     
-def erreur1 (A,N): 
-    if len(A)!=len(N):
-        return 0
-    L=[]
-    for i in range(len(A)):
-        A1=[]
-        N1=[]
-        for j in range(len(A)):
-            if i!=j:
-                A1=A1+[A[j]]
-                N1=N1+[N[j]]
-        l=reste_chinois1(A1,N1)
-        L=L+[l]
-    return L
+
 (a,b)=([2, 3, 5, 7, 11, 13],[1, 1, 1, 5, 6, 9])
 (c,d)=([2, 3, 5, 7, 11, 13],[0, 1, 1, 5, 6, 9])
 (e,f)=([2, 3, 5, 7, 11, 13],[1, 1, 1, 7, 6, 9])
 
-def erreur2(A,N):
-    if len(A)!=len(N):
-        return 0
+def détection_1_erreur(l_reste,l_modulo):
+    if len(l_reste)!=len(l_modulo):
+        return -1
     L1=[]
-    for i in range(len(A)):
+    for i in range(len(l_reste)):
         L=[]
-        for j in range(len(A)):
-            A1=[]
-            N1=[]
-            for k in range(len(A)):
+        for j in range(len(l_reste)):
+            l_restei=[] ## l_reste sans le i-ème élément
+            l_moduloi=[] ##l_modulo sans ke i-ème élément
+            for k in range(len(l_reste)):
                 if k!=i and k!=j:
-                    A1=A1+[A[k]]
-                    N1=N1+[N[k]]
-            l=reste_chinois1(A1,N1)
+                    l_restei=l_restei+[l_reste[k]]
+                    l_moduloi=l_moduloi+[l_modulo[k]]
+            l=reste_chinois1(l_restei,l_moduloi)
             L=L+[l]
         L1=L1+[L]
     return L1
@@ -149,4 +139,38 @@ def brute_force_hamming(l_modulo,l_reste,nb_erreur):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""def erreur1 (l_,N): 
+    if len(A)!=len(N):
+        return -1
+    L=[]
+    for i in range(len(A)):
+        A1=[]
+        N1=[]
+        for j in range(len(A)):
+            if i!=j:
+                A1=A1+[A[j]]
+                N1=N1+[N[j]]
+        l=reste_chinois1(A1,N1)
+        L=L+[l]
+    return L"""
 
