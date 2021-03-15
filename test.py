@@ -11,3 +11,12 @@ L_modulo_6=[2,3,5,7,11,13,17,19,23,29,31]       ##20056049010
 L_modulo_7=[2,3,5,7,11,13,17,19,23,29,31,37]    ##742073813500
 
  
+## test 1
+
+(ln,lr) = generateur_de_cas_liste(L_modulo_1,61)
+print("test 1 N=30030 ; k=61")
+print("sans erreur :" ,ln,lr)
+lr_error=lr
+lr_error[0]=0
+print("brute force 0 erreur",brute_force_hamming(ln,lr,1))
+print("brute force 1 erreur",brute_force_hamming(ln,lr_error,1))

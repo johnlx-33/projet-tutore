@@ -1,7 +1,7 @@
 ##projet Tutoré
 
-##from fractions import gcd
-##import random
+from fractions import gcd
+import random
 
 def xeuklid(a,b):
     # calcul de l'inverse modulo b du nombre a
@@ -49,20 +49,27 @@ def generateur_de_cas(n,k):
     l_modulo = liste_nb_fact_premier(n)
     l_reste = []
     for i in range(len(l_modulo)):
-        l_reste = l_reste + [k%l_modulo[i]]
-    
-    return (ln,lk)
+        tmp = k % l_modulo[i]
+        l_reste = l_reste + [tmp]
+    return (l_modulo,l_reste)
 
-def create_error(nb_error,ln,lk):
+def generateur_de_cas_liste(l_modulo,k):
+    l_reste =[]
+    for i in range(len(l_modulo)):
+        l_reste = l_reste + [k%l_modulo[i]]
+    return (l_modulo,l_reste)
+
+
+def create_error(nb_error,l_modulo,l_reste):
     ## renvoie lk avec au plus nb_error
     for i in range(nb_error):
-        j=random.randint(0, len(lk)-1)
-        lk[j]= (lk[j]+random.randint(0, len(ln)-1))%ln[j]
-    return(ln,lk)
+        j=random.randint(0, len(l_reste)-1)
+        l_reste[j]= (l_reste[j]+random.randint(0, len(l_modulo)-1))%l_modulo[j]
+    return(l_modulo,l_reste)
 
 
 
-def reste_chinois1 (A, N): ##algo de reconstitution
+def reste_chinois1 (A , N): ##algo de reconstitution
     if len(A)!=len(N):
         return 0
     b=0
@@ -112,5 +119,34 @@ def erreur2(A,N):
         L1=L1+[L]
     return L1
         
+def dist_Hamming(l_reste1,l_reste2):
+    n=min(len(l_reste1),len(l_reste2))
+    m=max(len(l_reste1),len(l_reste2))
+    cpt=m-n
+    for i in range(n):
+        if l_reste1[i] != l_reste2[i]:
+            cpt=cpt+1
+    return cpt
+
+## teste tout les cas de 0 a la borne 
+def brute_force_hamming(l_modulo,l_reste,nb_erreur):
+    n=len(l_reste)
+    cpt=0
+    N=1
+    borne=0
+    for i in range(n):
+        N=N*l_modulo[i]
+        borne=borne + (l_modulo[i]-1)
+    borne=N//borne
+    L_force=generateur_de_cas(N,cpt)
+    while cpt<=borne :
+        if( dist_Hamming(L_force,l_reste)==nb_erreur):
+            return (l_modulo,L_force,cpt)
+        cpt=cpt+1
+        L_force=generateur_de_cas(N,cpt)
+
+    return -1
+
+
 
 
