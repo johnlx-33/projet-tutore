@@ -24,8 +24,6 @@ def entree_entiers(a,vrai):
         vrai=0
     return entree,vrai
 
-def algo_reste_chinois(reste,module):
-    return
 
 def liste_nb_fact_premier(n):
     ##int(n) renvoie la liste des facteurs premier composant n
@@ -135,12 +133,12 @@ def brute_force_hamming(l_modulo,l_reste,nb_erreur):
         N=N*l_modulo[i]
         borne=borne + (l_modulo[i]-1)
     borne=N//borne
-    L_force=generateur_de_cas(N,cpt)
+    (a,L_force)=generateur_de_cas(N,cpt)
     while cpt<=borne :
-        if( dist_Hamming(L_force,l_reste)==nb_erreur):
+        if( dist_Hamming(L_force,l_reste)<=nb_erreur):
             return (l_modulo,L_force,cpt)
         cpt=cpt+1
-        L_force=generateur_de_cas(N,cpt)
+        (a,L_force)=generateur_de_cas(N,cpt)
 
     return -1
 
