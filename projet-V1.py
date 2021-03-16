@@ -135,12 +135,12 @@ def brute_force_hamming(l_modulo,l_reste,nb_erreur):
         N=N*l_modulo[i]
         borne=borne + (l_modulo[i]-1)
     borne=N//borne
-    L_force=generateur_de_cas(N,cpt)
+    (a,L_force)=generateur_de_cas(N,cpt)
     while cpt<=borne :
-        if( dist_Hamming(L_force,l_reste)==nb_erreur):
+        if( dist_Hamming(L_force,l_reste)<=nb_erreur):
             return (l_modulo,L_force,cpt)
         cpt=cpt+1
-        L_force=generateur_de_cas(N,cpt)
+        (a,L_force)=generateur_de_cas(N,cpt)
 
     return -1
 
@@ -148,6 +148,22 @@ def brute_force_hamming(l_modulo,l_reste,nb_erreur):
 
 
 
-(a,b)=([2, 3, 5, 7, 11, 13] ,[1, 1, 1, 5, 6, 9])
-(c,d)=([2, 3, 5, 7, 11, 13], [0, 1, 1, 5, 6, 9])
-(e,f)=([2, 3, 5, 7, 11, 13], [1, 1, 1, 7, 6, 9])
+(a,b)=([2, 3, 5, 7, 11, 13] ,[1, 1, 1, 5, 6, 9])##a=30030 ,b=61
+(a,c)=([2, 3, 5, 7, 11, 13], [0, 1, 1, 5, 6, 9])
+(a,d)=([2, 3, 5, 7, 11, 13], [1, 1, 1, 7, 6, 9])
+(a,e)=([2, 3, 5, 7, 11, 13], [1, 2, 1, 7, 6, 9])
+(a,f)=([2, 3, 5, 7, 11, 13], [0, 0, 1, 5, 6, 9])
+(N1,T1)=generateur_de_cas(30030,858)
+T2=[0, 0, 3, 4, 0, 1]
+T3=[0, 0, 3, 4, 1, 1]
+print(brute_force_hamming(a,b,0))
+print(brute_force_hamming(a,c,2))
+print(brute_force_hamming(a,d,2))
+print(brute_force_hamming(a,e,2))
+print(brute_force_hamming(a,f,2))
+print(brute_force_hamming(a,f,1))
+print(reste_chinois1(f,a))
+print(N1,T1)
+print(brute_force_hamming(a,T2,1))
+print(brute_force_hamming(a,T3,2))
+print(reste_chinois1(T3,a))  ##T3=4148
