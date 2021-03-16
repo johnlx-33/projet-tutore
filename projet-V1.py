@@ -144,8 +144,13 @@ def brute_force_hamming(l_modulo,l_reste,nb_erreur):
 
     return -1
 
-
-
+def calcule_borne(l):
+    b=0
+    c=1
+    for i in range(len(l)):
+       b=b+l[i]-1
+       c=c*l[i]
+    return c//b
 
 
 (a,b)=([2, 3, 5, 7, 11, 13] ,[1, 1, 1, 5, 6, 9])##a=30030 ,b=61
@@ -161,9 +166,17 @@ print(brute_force_hamming(a,c,2))
 print(brute_force_hamming(a,d,2))
 print(brute_force_hamming(a,e,2))
 print(brute_force_hamming(a,f,2))
-print(brute_force_hamming(a,f,1))
 print(reste_chinois1(f,a))
 print(N1,T1)
 print(brute_force_hamming(a,T2,1))
 print(brute_force_hamming(a,T3,2))
 print(reste_chinois1(T3,a))  ##T3=4148
+
+
+print(calcule_borne([2,3,5,7,11,13] ))
+print(calcule_borne([2,3,5,7,11,13,17] ))
+print(calcule_borne([2,3,5,7,11,13,17,19] ))
+print(calcule_borne([2,3,5,7,11,13,17,19,23] ))
+print(calcule_borne([2,3,5,7,11,13,17,19,23,29] ))
+print(calcule_borne([2,3,5,7,11,13,17,19,23,29,31] ))
+print(calcule_borne([2,3,5,7,11,13,17,19,23,29,31,37] ))
