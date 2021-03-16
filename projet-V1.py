@@ -60,10 +60,6 @@ def create_error(nb_error,ln,lk):
         lk[j]= (lk[j]+random.randint(0, len(ln)-1))%ln[j]
     return(ln,lk)
 
-
-
-
-
 def reste_chinois1 (A, N): ##algo de reconstitution
     if len(A)!=len(N):
         return 0
@@ -101,26 +97,57 @@ def erreur1 (A,N):
         l=reste_chinois1(A1,N1)
         L=L+[l]
     return L
-(a,b)=([2, 3, 5, 7, 11, 13] ,[1, 1, 1, 5, 6, 9])
-(c,d)=([2, 3, 5, 7, 11, 13], [0, 1, 1, 5, 6, 9])
-(e,f)=([2, 3, 5, 7, 11, 13], [1, 1, 1, 7, 6, 9])
 
-def erreur2(A,N):
-    if len(A)!=len(N):
-        return 0
+def détection_1_erreur(l_reste,l_modulo):
+    if len(l_reste)!=len(l_modulo):
+        return -1
     L1=[]
-    for i in range(len(A)):
+    for i in range(len(l_reste)):
         L=[]
-        for j in range(len(A)):
-            A1=[]
-            N1=[]
-            for k in range(len(A)):
+        for j in range(len(l_reste)):
+            l_restei=[] ## l_reste sans le i-ème élément
+            l_moduloi=[] ##l_modulo sans ke i-ème élément
+            for k in range(len(l_reste)):
                 if k!=i and k!=j:
-                    A1=A1+[A[k]]
-                    N1=N1+[N[k]]
-            l=reste_chinois1(A1,N1)
+                    l_restei=l_restei+[l_reste[k]]
+                    l_moduloi=l_moduloi+[l_modulo[k]]
+            l=reste_chinois1(l_restei,l_moduloi)
             L=L+[l]
         L1=L1+[L]
     return L1
         
+def dist_Hamming(l_reste1,l_reste2):
+    n=min(len(l_reste1),len(l_reste2))
+    m=max(len(l_reste1),len(l_reste2))
+    cpt=m-n
+    for i in range(n):
+        if l_reste1[i] != l_reste2[i]:
+            cpt=cpt+1
+    return cpt
 
+## teste tout les cas de 0 a la borne 
+def brute_force_hamming(l_modulo,l_reste,nb_erreur):
+    n=len(l_reste)
+    cpt=0
+    N=1
+    borne=0
+    for i in range(n):
+        N=N*l_modulo[i]
+        borne=borne + (l_modulo[i]-1)
+    borne=N//borne
+    L_force=generateur_de_cas(N,cpt)
+    while cpt<=borne :
+        if( dist_Hamming(L_force,l_reste)==nb_erreur):
+            return (l_modulo,L_force,cpt)
+        cpt=cpt+1
+        L_force=generateur_de_cas(N,cpt)
+
+    return -1
+
+
+
+
+
+(a,b)=([2, 3, 5, 7, 11, 13] ,[1, 1, 1, 5, 6, 9])
+(c,d)=([2, 3, 5, 7, 11, 13], [0, 1, 1, 5, 6, 9])
+(e,f)=([2, 3, 5, 7, 11, 13], [1, 1, 1, 7, 6, 9])
