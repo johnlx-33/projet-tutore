@@ -125,10 +125,10 @@ def détection_1_erreur(l_reste,l_modulo):
 def dist_Hamming(l_reste1,l_reste2):
     n=min(len(l_reste1),len(l_reste2))
     m=max(len(l_reste1),len(l_reste2))
-    cpt=n
+    cpt=0
     for i in range(n):
-        if (l_reste1[i]) == (l_reste2[i]):
-            cpt=cpt-1
+        if (l_reste1[i]) != (l_reste2[i]):
+            cpt=cpt+1
     return cpt
 
 ## teste tout les cas de 0 a la borne 
@@ -156,13 +156,17 @@ def brute_force_hamming_choix_borne(l_modulo,l_reste,nb_erreur,borne):
     n=len(l_reste)
     cpt=0
     N=1
+    for i in range(n):
+        N=N*l_modulo[i]
     (a,L_force)=generateur_de_cas(N,cpt)
     l_candidat=[]
     while cpt<=borne :
-        if( (dist_Hamming(L_force,l_reste))<=nb_erreur):
+        if (dist_Hamming(L_force,l_reste))<=nb_erreur:
             l_candidat=l_candidat+[cpt]
+            
         cpt=cpt+1
         (a,L_force)=generateur_de_cas(N,cpt)
+        
 
     return l_candidat
 
@@ -190,31 +194,53 @@ def liste_borne(borne):
     for i in range(borne):
         print(cpt,l)
         cpt=cpt+1
-        (a,l)=generateur_de_cas(510510,cpt)
+        (a,l)=generateur_de_cas(30030,cpt)
 
 
-
-
-
+def dist_min(borne,N):
+    cpt=0
+    (a,l)=generateur_de_cas(N,cpt)
+    d_min=len(l)
+    while cpt<=borne :
+        for i in range(borne):
+            (a,b)=generateur_de_cas(N,i)
+            if(dist_Hamming(l,b)<d_min and dist_Hamming(l,b)!=0):
+                d_min=dist_Hamming(l,b)
+        cpt=cpt+1
+    return d_min
+def test_borne(N,borne):
+    cpt=0
+    fail=0
+    (a,b)=generateur_de_cas(N,cpt)
+    while cpt<=borne:
+        if(len(brute_force_hamming_choix_borne(a,b,2,borne))==1):
+            print(brute_force_hamming_choix_borne(a,b,2,borne),cpt)
+            fail=fail+1
+        cpt=cpt+1
+        (a,b)=generateur_de_cas(N,cpt)
+    return fail
+            
         
-liste_borne(858)
-loop()
+
+print(test_borne(30030,858))
+
 (a,b)=([2, 3, 5, 7, 11, 13] ,[1, 1, 1, 5, 6, 9])##a=30030 ,b=61
 (a,c)=([2, 3, 5, 7, 11, 13], [0, 1, 1, 5, 6, 9])
-(a,d)=([2, 3, 5, 7, 11, 13], [1, 1, 1, 7, 6, 9])
+(a,d)=([2, 3, 5, 7, 11, 13], [1, 1, 1, 6, 6, 9])
 (a,e)=([2, 3, 5, 7, 11, 13], [1, 2, 1, 7, 6, 9])
 (a,f)=([2, 3, 5, 7, 11, 13], [0, 0, 1, 5, 6, 9])
-print(dist_Hamming(c,b))
+g=[1,1,1,1,1,1]
 (N1,T1)=generateur_de_cas(30030,858)
 T2=[0, 0, 3, 4, 0, 1]
 T3=[0, 0, 3, 4, 1, 1]
 
-"""
+
 print(brute_force_hamming_choix_borne(a,b,0,210))
 print(brute_force_hamming_choix_borne(a,c,1,210))
 print(brute_force_hamming_choix_borne(a,d,2,210))
 print(brute_force_hamming_choix_borne(a,e,2,210))
-print(brute_force_hamming_choix_borne(a,f,2,210))
+print(brute_force_hamming_choix_borne(a,g,4,210))
+"""
 print(reste_chinois1(f,a))
 print(N1,T1)
 print(brute_force_hamming(a,T2,1))
