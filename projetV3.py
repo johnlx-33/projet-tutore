@@ -129,15 +129,29 @@ def brute_force_hamming(l_modulo,l_reste,nb_erreur):
         borne=borne + (l_modulo[i]-1)
     borne=N//borne
     L_force=generateur_de_cas(N,cpt)
+    l_candidat=[]
     while cpt<=borne :
         if( dist_Hamming(L_force,l_reste)==nb_erreur):
-            return (l_modulo,L_force,cpt)
+            l_candidat=l_candidat+[cpt]
         cpt=cpt+1
         L_force=generateur_de_cas(N,cpt)
 
-    return -1
+    return l_candidat
 
 
+def brute_force_hamming_choix_borne(l_modulo,l_reste,nb_erreur,borne):
+    n=len(l_reste)
+    cpt=0
+    N=1
+    L_force=generateur_de_cas(N,cpt)
+    l_candidat=[]
+    while cpt<=borne :
+        if( dist_Hamming(L_force,l_reste)==nb_erreur):
+            l_candidat=l_candidat+[cpt]
+        cpt=cpt+1
+        L_force=generateur_de_cas(N,cpt)
+
+    return l_candidat
 
 
 
