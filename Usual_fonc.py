@@ -76,11 +76,27 @@ def check_list(ln,lr):
 def fraction_reduite(k,n):
     q1=int(k)
     e1=k%1
+    if q1==k:
+        return [q1]
     l_q=[q1]
     for i in range(1,n):
         l_q=l_q+[int(1/e1)]
         e1=1/e1-int(1/e1)
     return l_q
     
-    
+def list_int_reduite(l):
+    h_2=0
+    h_1=1
+    k_1=0
+    k_2=1
+    hp=0
+    kp=0
+    for i in range(len(l)):
+        hp=l[i]*h_1+h_2
+        kp=l[i]*k_1+k_2
+        h_2=h_1
+        h_1=hp
+        k_2=k_1
+        k_1=kp
+    return(hp,kp)
     
