@@ -3,8 +3,7 @@
 
 from fractions import gcd
 import random
-from Encode_fonc import *
-from Decode_fonc import *
+
 
 def xeuklid(a,b):
     # calcul de l'inverse modulo b du nombre a
@@ -60,3 +59,28 @@ def calcule_borne(l):
        b=b+l[i]-1
        c=c*l[i]
     return c//b
+
+
+def check_list(ln,lr):
+    lr_out=[]
+    ln_out=[]
+    
+    for i in range(len(lr)):
+        if ln[i]<=lr[i] :
+            print("erreur à l'indice" ,i)
+        else :
+            lr_out=lr_out+[lr[i]]
+            ln_out=ln_out+[ln[i]]
+
+
+def fraction_reduite(k,n):
+    q1=int(k)
+    e1=k%1
+    l_q=[q1]
+    for i in range(1,n):
+        l_q=l_q+[int(1/e1)]
+        e1=1/e1-int(1/e1)
+    return l_q
+    
+    
+    
