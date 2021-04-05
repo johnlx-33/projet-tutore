@@ -42,9 +42,9 @@ print(l_h)
 
 ##1 erreur
 
-lr_1a=[1, 2, 1, 5, 6, 9, 10]
-lr_2a=[4, 1, 1, 5, 6, 9, 10]
-lr_3a=[1, 1, 2, 5, 6, 9, 10]
+lr_1a=[1, 2, 1, 5, 6, 9, 10] ## pos 1
+lr_2a=[4, 1, 1, 5, 6, 9, 10] ## pos 0
+lr_3a=[1, 1, 2, 5, 6, 9, 10] ## pos 2
 lr_4a=[1, 1, 1, 5, 6, 9, 16]
 
 ## 2 erreur
@@ -59,7 +59,11 @@ lr_1f=[0, 1, 0, 1, 3, 4, 1]
 lr_1h=[0, 1, 0, 1, 3, 4, 2]
 lr_2h=[0, 1, 1, 1, 3, 4, 1]
 
+
+
 ## test avec N=510510
+
+"""
 print("lr_1a",détection_1_erreur(lr_1a,aa))
 print("lr_2a",détection_1_erreur(lr_2a,aa))
 print("lr_3a",détection_1_erreur(lr_3a,aa))
@@ -75,7 +79,11 @@ print(reste_chinois1 (lr_1d, aa))
 
 print(brute_force_hamming_choix_borne(aa,lr_1h,2,2310))
 print(brute_force_hamming_choix_borne(aa,lr_2h,2,2310))
+"""
 
+print(decode_fraction_continu(lr_1a,aa))
+print(decode_fraction_continu(lr_2a,aa))
+print(decode_fraction_continu(lr_3a,aa))
 
 
 

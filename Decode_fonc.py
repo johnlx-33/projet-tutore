@@ -10,25 +10,17 @@ from Usual_fonc import *
 
 def reste_chinois1 (A, N): ##algo de reconstitution
     if len(A)!=len(N):
-        return 0
+        return -1
     b=0
     c=1
-    AI=[]
-    NI=[]
-    for i in range(len(N)): ## on enlève les 0
-        if A[i]==0:
-            c=c*N[i]
-        else:
-            AI=AI+[A[i]]
-            NI=NI+[N[i]]
-    for i in range(len(AI)):
+    for i in range(len(A)):
         a=1
-        ni=NI[i]
-        for j in range(len(NI)):
+        ni=N[i]
+        for j in range(len(N)):
             if j!=i :
-                a=a*NI[j]
+                a=a*N[j]
         k= xeuklid(a,ni)
-        b=b+k*a*AI[i]
+        b=b+k*a*A[i]
     return b%(a*ni)
 
 def détection_1_erreur(l_reste,l_modulo):
@@ -86,3 +78,28 @@ def brute_force_hamming_choix_borne(l_modulo,l_reste,nb_erreur,borne):
         
 
     return l_candidat
+
+def decode_fraction_continu(lr,ln) :
+    k=reste_chinois1(lr,ln)
+    p=1
+    n=1
+    boul=0
+    l_e=[]
+    for i in range(len(ln)):
+        n=n*ln[i]
+    while p<100 :
+        l_am=fraction_reduite(k,p)
+        (a,b)=list_int_reduite(l_am)
+        l_b=liste_nb_fact_premier(b)
+        for i in range(len(l_b)):
+            for j in range(len(ln)):
+                if(l_b[i]==ln[j]):
+                    boul=boul+1
+                    l_e=l_e+[l_b[i]]
+        p=p+1
+      
+    return l_e
+
+
+
+    
