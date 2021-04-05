@@ -6,8 +6,8 @@
 \usepackage{graphicx}
 
 \begin{document}
-\title {Reconstituer avec le théorème chinois en présence d’erreurs}
-\author{Mr LAVOIX John, Mr RANDRIAMALALA Toky, Mr GRANERO Fabien }
+\title{Reconstituer avec le théorème chinois en présence d’erreurs}
+\author{Mr LAVOIX John, Mr GRANERO Fabien }
 \date{5 mai 2021}
 
 
@@ -22,9 +22,13 @@
 \tableofcontents
 
 \newpage
-\begin{abstract}
-    remerciement
-\end{abstract}
+\begin{flushleft}
+    Nous tenons tout d'abord à remercier Mr CASTAGNOS Guillaume d'avoir était le professeur principale de cette matière et,
+en ayant bien expliqué le fonctionnement pour partir sur de bonne base. Nous remercions par la suite Mm ZEMOR Eric pour nous 
+avoir suivit, aider et tutoré durant ce semestre.
+\newline 
+nous remercions également nos familles et nos proches, pour leurs aide et leur soutiens.
+\end{flushleft}
 
 \newpage
 \section{théorème des restes}
@@ -39,8 +43,26 @@ $ x\equiv a2 \: (mod \: n2)$
 $ xk \equiv ak \:(mod\: nk)$
 \newline
 Nous pouvons démontrer ce théorème de la façon suivante:
+\newline
+\newline
+Pour illustrer ce théorème, nous allons donner un exemple, mais pas n'importe quelle exemple, celui dont Sun ZI a proposé une solution:
+\newline
+soient des objets, prenons des bonbons, si on les repartis pour 3 enfants, il en reste 2, si on les répartis
+pour les 3 enfants et leurs parents, il en reste (soit 5 personnes), il en reste 3. enfin si on partage ces bonbons avec également les 2 cousins,
+(soit 7 personnes) il en reste 2. On a donc :
+\newline 
+$ x\equiv 2 \: (mod \;  3)$ 
+\newline
+$ x\equiv 3 \: (mod \: 5)$
+\newline
+$ xk \equiv 2 \:(mod\: 7$
+\newline
+La question que l'on se pose à présent est combien y a t'il de bonbons?
+\newline
+grace au théorème des restes chinois, on peut trouver la réponse.
 
 \subsection{notre algoritme}
+Pour faire l'algoritme du théorème des restes chinois, il nous a fallu faire d'autres algoritmes
 
 \newpage
 \section{grand 2}
