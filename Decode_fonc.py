@@ -1,7 +1,7 @@
 ##projet tutoré
 ##fonction de decodage
 
-from fractions import gcd
+"from fractions import gcd"
 import random
 from Encode_fonc import *
 from Usual_fonc import *

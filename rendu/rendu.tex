@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[francais]{babel}
 \usepackage{graphicx}
+\usepackage[linesnumbered, french]{algorithm2e}
 
 \begin{document}
 \title{Reconstituer avec le théorème chinois en présence d’erreurs}
@@ -62,7 +63,54 @@ La question que l'on se pose à présent est combien y a t'il de bonbons?
 grace au théorème des restes chinois, on peut trouver la réponse.
 
 \subsection{notre algoritme}
-Pour faire l'algoritme du théorème des restes chinois, il nous a fallu faire d'autres algoritmes
+Pour faire l'algoritme du théorème des restes chinois, il nous a fallu faire d'autres algoritmes. Mais dans un premier temps, voici notre algoritme
+\newline
+\begin{algorithm}
+    $ b \leftarrow 0$ \;
+    $ c \leftarrow 1$ \;
+    $ AI \leftarrow [ \:]$ \;
+    $ NI \leftarrow [ \:]$ \;
+    \For{i in range(len(N))}
+    {   
+        \eIf{A[i]==0}
+        {c=c\times N[i]}
+        {
+            AI=AI+[AI[i]] \newline
+            NI=NI+[NI[i]]
+        }
+    }
+    \For{i in rangelenAI}
+    {
+        $a \leftarrow 1 $ \;
+        $ni \leftarrow NI[i]$ \;
+        \For{j in range(len(NI))}
+        {
+            \If{j \neq i}
+                { a=a*NI[j]}
+        $k \leftarrow xeuclid(a,ni) $ \;
+        $b \leftarrow b+k\times a\times AI[i] $ \; 
+        }
+    }
+\Return{b\div (a\times ni)}
+\end{algorithm}
+
+\begin{algorithm}
+    $xs0 \leftarrow 1 $ \;
+    $xs1 \leftarrow 0 $ \;
+    $ys0 \leftarrow 0 $ \;
+    $ys1 \leftarrow 1 $ \;
+    $s \leftarrow 1 $ \;
+    $d \leftarrow b $ \;
+    \While{ b\neq 0}{
+        $ (q,r) \leftarrow divmod(a,b) $ \;
+        $ (a,b) \leftarrow (b,r) $ \;
+        $ (x,y) \leftarrow (xs1,ys1)$ \;
+        $ (rs1,ys1) \leftarrow (q\times s1 + xs0 , q\times ys1 + ys0) $ \;
+        $ (xs0,ys0) \leftarrow (x,y)$ \;
+        $ s \leftarrow -s$ \;
+    }
+    \Return{s\times xs0 + ((1-s)\div 2)\times d}
+\end{algorithm}
 
 \newpage
 \section{grand 2}

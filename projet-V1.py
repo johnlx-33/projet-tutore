@@ -238,7 +238,7 @@ print(brute_force_hamming_choix_borne(a,c,1,210))
 print(brute_force_hamming_choix_borne(a,d,2,210))
 print(brute_force_hamming_choix_borne(a,e,2,210))
 print(brute_force_hamming_choix_borne(a,g,4,210))
-"""
+
 print(reste_chinois1(f,a))
 print(N1,T1)
 print(brute_force_hamming(a,T2,1))
@@ -261,7 +261,7 @@ N5=[2,3,5,7,11,13,17,19,23,29]
 N6=[2,3,5,7,11,13,17,19,23,29,31]
 N7=[2,3,5,7,11,13,17,19,23,29,31,37]
 
-
+"""
 (a,T1)=generateur_de_cas_liste(N4,61)
 (a,T2)=generateur_de_cas_liste(N4,610)
 (a,T3)=generateur_de_cas_liste(N4,2451570)
