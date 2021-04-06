@@ -85,5 +85,5 @@ print(decode_fraction_continu(lr_1a,aa))
 print(decode_fraction_continu(lr_2a,aa))
 print(decode_fraction_continu(lr_3a,aa))
 
-
+print(reste_chinois1 ([0, 0, 3, 4, 0, 0, 8], aa))
 

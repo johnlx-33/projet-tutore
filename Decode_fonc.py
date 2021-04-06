@@ -79,23 +79,27 @@ def brute_force_hamming_choix_borne(l_modulo,l_reste,nb_erreur,borne):
 
     return l_candidat
 
-def decode_fraction_continu(lr,ln) :
-    k=reste_chinois1(lr,ln)
+def decode_fraction_continu(r,ln) :
+    k=reste_chinois1(r,ln)
     p=1
     n=1
     boul=0
     l_e=[]
     for i in range(len(ln)):
         n=n*ln[i]
-    while p<100 :
+    k=k/n
+    while p<20 :
         l_am=fraction_reduite(k,p)
+        print(k,p)
         (a,b)=list_int_reduite(l_am)
         l_b=liste_nb_fact_premier(b)
-        for i in range(len(l_b)):
-            for j in range(len(ln)):
-                if(l_b[i]==ln[j]):
-                    boul=boul+1
-                    l_e=l_e+[l_b[i]]
+        print("a=",a , "b=" ,b,"l_b=",l_b)
+        if(a==1):
+            for i in range(len(l_b)):
+                for j in range(len(ln)):
+                    if(l_b[i]==ln[j]):
+                        boul=boul+1
+                        l_e=l_e+[l_b[i]]
         p=p+1
       
     return l_e
