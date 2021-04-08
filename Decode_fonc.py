@@ -1,7 +1,7 @@
 ##projet tutoré
 ##fonction de decodage
 
-"from fractions import gcd"
+from fractions import gcd
 import random
 from Encode_fonc import *
 from Usual_fonc import *
@@ -88,21 +88,16 @@ def decode_fraction_continu(r,ln) :
     for i in range(len(ln)):
         n=n*ln[i]
     k=k/n
-    while p<20 :
+    print("k=",k)
+    while p<=7 :
         l_am=fraction_reduite(k,p)
-        print(k,p)
         (a,b)=list_int_reduite(l_am)
+        print("k- frac=",k-(a/b))
         l_b=liste_nb_fact_premier(b)
         print("a=",a , "b=" ,b,"l_b=",l_b)
-        if(a==1):
-            for i in range(len(l_b)):
-                for j in range(len(ln)):
-                    if(l_b[i]==ln[j]):
-                        boul=boul+1
-                        l_e=l_e+[l_b[i]]
         p=p+1
       
-    return l_e
+    return l_b
 
 
 
