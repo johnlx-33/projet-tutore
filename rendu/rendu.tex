@@ -15,7 +15,11 @@
 
 \begin{abstract}
 
-//passage a reécrire (car copier coller) 
+    Ce devoir est une synthèse de nos travaux depuis plusieurs mois sur la reconstitution du théorème des restes chinois. 
+Grace au soutiens de notre professeur MR ZEMOR, nous avons appris a reconstruire le théorème des restes chinois en présence d'erreur;
+Dans un premier temps, nous avons pris conaissance de ce théorème, puis dans un segond temps, nous l'avons corrigé grace à plusieurs méthode, 
+tel que du brut force ou une méthode de fractions continues.
+
 \end{abstract}
 
 \newpage
@@ -32,6 +36,7 @@ nous remercions également nos familles et nos proches, pour leurs aide et leur 
 \end{flushleft}
 
 \newpage
+
 \section{théorème des restes}
 \subsection{théorème des restes chinois et son histoire}
 Le théorème des restes chinois viens à la base d’un livre mathématique chinois de Qin JUSHIO publié en 1247. Cependant, on avait déjà découvert ce théorème au part avant dans un livre de Sun ZI au 3° siècle. Le théorème consiste en:
@@ -62,6 +67,8 @@ La question que l'on se pose à présent est combien y a t'il de bonbons?
 \newline
 grace au théorème des restes chinois, on peut trouver la réponse.
 
+\newpage
+
 \subsection{notre algoritme}
 Pour faire l'algoritme du théorème des restes chinois, il nous a fallu faire d'autres algoritmes. Mais dans un premier temps, voici notre algoritme
 \newline
@@ -72,10 +79,11 @@ Pour faire l'algoritme du théorème des restes chinois, il nous a fallu faire d
     $ NI \leftarrow [ \:]$ \;
     \For{i in range(len(N))}
     {   
-        \eIf{A[i]==0}
+        \If{A[i]==0}
         {c=c\times N[i]}
+        \Else
         {
-            AI=AI+[AI[i]] \newline
+            AI=AI+[AI[i]] 
             NI=NI+[NI[i]]
         }
     }
@@ -111,6 +119,8 @@ Pour faire l'algoritme du théorème des restes chinois, il nous a fallu faire d
     }
     \Return{s\times xs0 + ((1-s)\div 2)\times d}
 \end{algorithm}
+
+
 
 \newpage
 \section{grand 2}
