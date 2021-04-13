@@ -70,8 +70,45 @@ grace au théorème des restes chinois, on peut trouver la réponse.
 \newpage
 
 \subsection{notre algoritme}
-Pour faire l'algoritme du théorème des restes chinois, il nous a fallu faire d'autres algoritmes. Mais dans un premier temps, voici notre algoritme
+L'algotitme du théorème des restes chinois étant un peu lourd, nous allons montrer et expliquer qu'une partie, l'algo en entier sera en annexe.
+On a ici :
+-PI la liste des nombres premiers
+-XI la liste des modulos
+- on a posé a prend la valeur 1 car a sera après le produit des éléments de XI 
+
+
+\begin{algorithm}
+    \For{i in range(len(PI))}
+    {
+        $a \leftarrow 1 $ \;
+        $pi \leftarrow PI[i]$ \;
+        \For{j in range(len(PI))}
+        {
+            \If{j \neq i}
+                { a=a*PI[j]}
+        $k \leftarrow xeuclid(a,pi) $ \;
+        $b \leftarrow b+k\times a\times XI[i] $ \; 
+        }
+    }
+\end{algorithm}
+
 \newline
+
+
+
+\newpage
+\section{Brute force}
+\subsection{Notre premier algo version naïve }
+
+
+
+\subsection{brute force de hamming}
+
+
+\newpage
+\section{Les fractions continues}
+
+
 \begin{algorithm}
     $ b \leftarrow 0$ \;
     $ c \leftarrow 1$ \;
@@ -87,7 +124,7 @@ Pour faire l'algoritme du théorème des restes chinois, il nous a fallu faire d
             NI=NI+[NI[i]]
         }
     }
-    \For{i in rangelenAI}
+    \For{}
     {
         $a \leftarrow 1 $ \;
         $ni \leftarrow NI[i]$ \;
@@ -119,19 +156,5 @@ Pour faire l'algoritme du théorème des restes chinois, il nous a fallu faire d
     }
     \Return{s\times xs0 + ((1-s)\div 2)\times d}
 \end{algorithm}
-
-
-
-\newpage
-\section{Brute force}
-\subsection{Notre premier algo version naïve }
-
-
-
-\subsection{brute force de hamming}
-
-
-\newpage
-\section{Les fractions continues}
 
 \end{document}
