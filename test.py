@@ -42,17 +42,30 @@ print(l_h)
 
 ##1 erreur
 
-lr_1a=[1, 2, 1, 5, 6, 9, 10] ## pos 1
-lr_2a=[4, 1, 1, 5, 6, 9, 10] ## pos 0
+lr_1a=[0, 1, 1, 5, 6, 9, 10] ## pos 0
+lr_2a=[1, 2, 1, 5, 6, 9, 10] ## pos 1
 lr_3a=[1, 1, 2, 5, 6, 9, 10] ## pos 2
-lr_4a=[1, 1, 1, 5, 6, 9, 16]
-
+lr_4a=[1, 1, 1, 4, 6, 9, 10] ## pos 3
+lr_7a=[1, 1, 1, 5, 2, 9, 10] ## pos 4
 ## 2 erreur
-lr_5a=[1, 1, 1, 5, 1, 9, 16]
+lr_5a=[1, 1, 1, 5, 1, 9, 16] ## pos 4 et 6 (mod 11 / 17)
+lr_6a=[0, 1, 4, 5, 6, 9, 10] ## pos 0 et 2 (mod 2 / 5)
+
+## 1 erreur 
+lr_1b=[0, 1, 0, 1, 5, 12, 0] ## pos 6 (mod 17)
+lr_2b=[0, 1, 0, 1, 5, 9, 15] ## pos 5 (mod 13)
+lr_3b=[0, 1, 0, 4, 5, 12, 15]## pos 3 (mod 7)
 
 
-lr_1b=[0, 1, 0, 1, 5, 12, 15]
-lr_1c=[1, 1, 2, 1, 8, 1, 3]
+## 1 erreur
+lr_1c=[0, 1, 2, 1, 8, 1, 3] ## pos 0 mod 2
+lr_2c=[1, 2, 2, 1, 8, 1, 3] ## pos 1 mod 3
+
+lr_3c=[1, 1, 4, 1, 8, 1, 3] ## pos 2 mod 5
+lr_4c=[1, 1, 2, 6, 8, 1, 3] ## pos 3 mod 7
+lr_5c=[1, 1, 2, 1, 3, 1, 3] ## pos 4 mod 11
+
+
 lr_1d=[0, 0, 3, 4, 0, 0, 8]
 lr_1e=[0, 1, 0, 1, 3, 4, 1]
 lr_1f=[0, 1, 0, 1, 3, 4, 1]
@@ -80,10 +93,38 @@ print(reste_chinois1 (lr_1d, aa))
 print(brute_force_hamming_choix_borne(aa,lr_1h,2,2310))
 print(brute_force_hamming_choix_borne(aa,lr_2h,2,2310))
 """
+print("test sur 61 <->[1, 1, 1, 5, 6, 9, 10] ")
+print("n-uplet corespondant <-> [0, 1, 1, 5, 6, 9, 10] ")
+print(decode_fraction_continu(lr_1a,aa,1))
+print("n-uplet corespondant <-> [1, 2, 1, 5, 6, 9, 10] ")
+print(decode_fraction_continu(lr_2a,aa,1))
+print("n-uplet corespondant <-> [1, 1, 2, 5, 6, 9, 10] ")
+print(decode_fraction_continu(lr_3a,aa,1))
+print("n-uplet corespondant <-> [1, 1, 1, 4, 6, 9, 10] ")
+print(decode_fraction_continu(lr_4a,aa,1))
+print("n-uplet corespondant <-> [1, 1, 1, 5, 2, 9, 10] ")
+print(decode_fraction_continu(lr_7a,aa,1))
 
-print(decode_fraction_continu(lr_1a,aa))
-print(decode_fraction_continu(lr_2a,aa))
-print(decode_fraction_continu(lr_3a,aa))
 
+
+print("test 61 2 erreur")
+print(decode_fraction_continu(lr_5a,aa,2))
+print(decode_fraction_continu(lr_6a,aa,2))
+
+
+print("test sur 610")
+print(decode_fraction_continu(lr_1b,aa,1))
+print(decode_fraction_continu(lr_2b,aa,1))
+print(decode_fraction_continu(lr_3b,aa,1))
+
+print("test sur 547")
+
+print(decode_fraction_continu(lr_1c,aa,1))
+print(decode_fraction_continu(lr_2c,aa,1))
+print(decode_fraction_continu(lr_3c,aa,1))
+print(decode_fraction_continu(lr_4c,aa,1))
+print(decode_fraction_continu(lr_5c,aa,1))
+
+print("")
 print(reste_chinois1 ([0, 0, 3, 4, 0, 0, 8], aa))
 

@@ -99,4 +99,34 @@ def list_int_reduite(l):
         k_2=k_1
         k_1=kp
     return(hp,kp)
+
+def list_include(Big_list,sub_list):
+    cpt=0
+    for i in range(len(sub_list)):
+        for j in range(len(Big_list)):
+            if sub_list[i]== Big_list[j]:
+                 cpt=cpt+1
+    if cpt>= len(sub_list):
+        return True
+    return False
+
+def decompose_list(n,l_d):
+    k=n
+    l_decompo=[]
+    for i in range(len(l_d)):
+        if(k%l_d[i]==0):
+            l_decompo=l_decompo+[l_d[i]]
+            k=k/l_d[i]
+    if(k==1):
+        return l_decompo
+    return -1
+
+def max_borne_frac(ln,t): ## ln = liste des modulo / t= nombre d'erreur
+    borne=1
+    for i in range(len(ln)-1,len(ln)-t-1,-1):
+        borne=borne*ln[i]
+    return borne
+
+    
+
     
