@@ -6,13 +6,13 @@ from Usual_fonc import *
 from Decode_fonc import *
 
 ### Definition des N
-L_modulo_1=[2,3,5,7,11,13]                      ##30030         #borne  = 858
-L_modulo_2=[2,3,5,7,11,13,17]                   ##510510        #       = 10010
-L_modulo_3=[2,3,5,7,11,13,17,19]                ##9699690       #       = 140575
-L_modulo_4=[2,3,5,7,11,13,17,19,23]             ##223092870     #       = 2451570
-L_modulo_5=[2,3,5,7,11,13,17,19,23,29]          ##6469693230    #       = 54367170
-L_modulo_6=[2,3,5,7,11,13,17,19,23,29,31]       ##20056049010   #       = 1346043557
-L_modulo_7=[2,3,5,7,11,13,17,19,23,29,31,37]    ##742073813500  #       = 40112098026
+L_modulo_1=[2,3,5,7,11,13]                      ##30030         #borne  = 210
+L_modulo_2=[2,3,5,7,11,13,17]                   ##510510        #       = 2310
+L_modulo_3=[2,3,5,7,11,13,17,19]                ##9699690       #       = 30030
+L_modulo_4=[2,3,5,7,11,13,17,19,23]             ##223092870     #       = 510510
+L_modulo_5=[2,3,5,7,11,13,17,19,23,29]          ##6469693230    #       = 9699690 
+L_modulo_6=[2,3,5,7,11,13,17,19,23,29,31]       ##20056049010   #       = 223092870
+L_modulo_7=[2,3,5,7,11,13,17,19,23,29,31,37]    ##742073813500  #       = 6469693230
 
 a=61   ##[1, 1, 1, 5, 6, 9, 10]
 b=610  ##[0, 1, 0, 1, 5, 12, 15]
@@ -95,7 +95,9 @@ print(brute_force_hamming_choix_borne(aa,lr_2h,2,2310))
 """
 print("test sur 61 <->[1, 1, 1, 5, 6, 9, 10] ")
 print("n-uplet corespondant <-> [0, 1, 1, 5, 6, 9, 10] ")
-print(decode_fraction_continu(lr_1a,aa,1))
+tmp=decode_fraction_continu(lr_1a,aa,1)
+print(tmp)
+print(recontitution_fraction(tmp,lr_1a,aa))
 print("n-uplet corespondant <-> [1, 2, 1, 5, 6, 9, 10] ")
 print(decode_fraction_continu(lr_2a,aa,1))
 print("n-uplet corespondant <-> [1, 1, 2, 5, 6, 9, 10] ")
@@ -127,4 +129,6 @@ print(decode_fraction_continu(lr_5c,aa,1))
 
 print("")
 print(reste_chinois1 ([0, 0, 3, 4, 0, 0, 8], aa))
+print(355//113)
+print(fraction_reduite_V2(355,113,4))
 

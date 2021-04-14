@@ -52,7 +52,7 @@ def dist_Hamming(l_reste1,l_reste2):
     return cpt
 
 
-def calcule_borne(l):
+def calcule_borne(l): ## faux
     b=0
     c=1
     for i in range(len(l)):
@@ -64,7 +64,6 @@ def calcule_borne(l):
 def check_list(ln,lr):
     lr_out=[]
     ln_out=[]
-    
     for i in range(len(lr)):
         if ln[i]<=lr[i] :
             print("erreur à l'indice" ,i)
@@ -83,7 +82,26 @@ def fraction_reduite(k,n):
         l_q=l_q+[int(1/e1)]
         e1=1/e1-int(1/e1)
     return l_q
-    
+
+def fraction_reduite_V2(k,n,p):
+    a=k
+    b=n
+    q=1
+    r=1
+    l=[]
+    n=0
+    while n<p:
+        q=a//b
+        r=a%b
+        l=l+[q]
+        a=b
+        b=r
+        n=n+1
+        if r==0 :
+            print("ordre max reduite =" + str(n) )
+            return l
+    return l     
+  
 def list_int_reduite(l):
     h_2=0
     h_1=1

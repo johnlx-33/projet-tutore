@@ -13,6 +13,8 @@ def reste_chinois1 (A, N): ##algo de reconstitution
         return -1
     b=0
     c=1
+    a=1
+    ni=1
     for i in range(len(A)):
         a=1
         ni=N[i]
@@ -94,7 +96,8 @@ def brute_force_hamming_choix_borne(l_modulo,l_reste,nb_erreur,borne):
 
     return l_candidat
 
-def decode_fraction_continu(r,ln,nb_error) : # renvoie la liste de modulo supposé faux
+def decode_fraction_continu(r,ln,nb_error):
+    # renvoie la liste des listes de modulo supposé faux
     k=reste_chinois1(r,ln)
     print("k=",k)
     p=1
@@ -102,12 +105,11 @@ def decode_fraction_continu(r,ln,nb_error) : # renvoie la liste de modulo suppos
     l_e=[]
     for i in range(len(ln)):
         n=n*ln[i]
-    k=k/n
     ##print("k/n=",k)
     borne=max_borne_frac(ln,nb_error)
     b=0
     while b<=borne :
-        l_am=fraction_reduite(k,p)
+        l_am=fraction_reduite_V2(k,n,p)
         (a,b)=list_int_reduite(l_am)
         ##print("k-frac=",abs(k-(a/b)))
         ##print("a=",a , "b=" ,b,"l_b=",l_b)
@@ -118,6 +120,22 @@ def decode_fraction_continu(r,ln,nb_error) : # renvoie la liste de modulo suppos
             l_e= l_e +[l_b]
         p=p+1
     return l_e
+
+def recontitution_fraction(l_candidat,lr,ln):
+    tmp_ln=[]
+    tmp_lr=[]
+    l_rec=[]
+    for i in range(len(l_candidat)):
+        for j in range(len(l_candidat[i])):
+            for k in range(len(tmp_ln)):
+                if l_candidat[i][j]!= ln[k]:
+                   tmp_ln=tmp_ln+[ln[k]]
+                   tmp_lr=tmp_lr+[lr[k]]
+            l_rec=l_rec+[reste_chinois1 (tmp_lr,tmp_ln)]
+     
+    return l_rec
+
+
 
 
 
