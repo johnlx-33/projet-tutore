@@ -70,7 +70,21 @@ def check_list(ln,lr):
         else :
             lr_out=lr_out+[lr[i]]
             ln_out=ln_out+[ln[i]]
+            
+def liste_nb_premier(n):
+    l=[]
+    for i in range(2,n):
+        if is_prime(i) :
+            l=l+[i]
+    return l
 
+def is_prime(i):
+    j=2
+    while j*j<=i:
+        if i%j==0:
+           return False
+        j=j+1
+    return True
 
 def fraction_reduite(k,n):
     q1=int(k)
@@ -145,6 +159,16 @@ def max_borne_frac(ln,t): ## ln = liste des modulo / t= nombre d'erreur
         borne=borne*ln[i]
     return borne
 
-    
 
-    
+def l_candi_to_pos(l_candidat,ln):
+    l_candi_pos=[]
+    for i in range(len(l_candidat)):
+        tmp=[]
+        for j in range(len(l_candidat[i])):
+            for k in range(len(ln)):
+                if l_candidat[i][j]==ln[k]:
+                    tmp=tmp+[k]
+        l_candi_pos=l_candi_pos+[tmp]  
+
+    return l_candi_pos
+

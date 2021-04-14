@@ -127,7 +127,7 @@ def recontitution_fraction(l_candidat,lr,ln):
     l_rec=[]
     for i in range(len(l_candidat)):
         for j in range(len(l_candidat[i])):
-            for k in range(len(tmp_ln)):
+            for k in range(len(ln)):
                 if l_candidat[i][j]!= ln[k]:
                    tmp_ln=tmp_ln+[ln[k]]
                    tmp_lr=tmp_lr+[lr[k]]
