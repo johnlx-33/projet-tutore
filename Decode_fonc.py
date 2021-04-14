@@ -131,8 +131,9 @@ def recontitution_fraction(l_candidat,lr,ln):
                 if l_candidat[i][j]!= ln[k]:
                    tmp_ln=tmp_ln+[ln[k]]
                    tmp_lr=tmp_lr+[lr[k]]
-            l_rec=l_rec+[reste_chinois1 (tmp_lr,tmp_ln)]
-     
+        l_rec=l_rec+[reste_chinois1 (tmp_lr,tmp_ln)]
+        tmp_lr=[]
+        tmp_ln=[]     
     return l_rec
 
 
