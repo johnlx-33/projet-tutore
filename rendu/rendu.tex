@@ -46,7 +46,7 @@ $ x\equiv a1 \: (mod \;  n1)$
 \newline
 $ x\equiv a2 \: (mod \: n2)$
 \newline
-$ xk \equiv ak \:(mod\: nk)$
+$ x_k \equiv ak \:(mod\: nk)$
 \newline
 Nous pouvons démontrer ce théorème de la façon suivante:
 \newline
@@ -57,11 +57,11 @@ soient des objets, prenons des bonbons, si on les repartis pour 3 enfants, il en
 pour les 3 enfants et leurs parents, il en reste (soit 5 personnes), il en reste 3. enfin si on partage ces bonbons avec également les 2 cousins,
 (soit 7 personnes) il en reste 2. On a donc :
 \newline 
-$ x\equiv 2 \: (mod \;  3)$ 
+$ x\equiv 2 \: (mod \:  3)$ 
 \newline
 $ x\equiv 3 \: (mod \: 5)$
 \newline
-$ xk \equiv 2 \:(mod\: 7$
+$ x_k \equiv 2 \:(mod\: 7)$
 \newline
 La question que l'on se pose à présent est combien y a t'il de bonbons?
 \newline
@@ -70,36 +70,63 @@ grace au théorème des restes chinois, on peut trouver la réponse.
 \newpage
 
 \subsection{notre algoritme}
-L'algotitme du théorème des restes chinois étant un peu lourd, nous allons montrer et expliquer qu'une partie, l'algo en entier sera en annexe.
+L'algotitme du théorème des restes chinois étant un peu lourd, 
+nous allons montrer l'algoritme comme suivant avant de voir plus en détailles les algos en python.
 On a ici :
--PI la liste des nombres premiers
--XI la liste des modulos
+\newline
+Soit $n_i$ le i-ème termes de la liste des modulos, et on note \newline
+$ N_i=\frac{n}{n_i}=n_1 n_2 ... n_i-1 n_i+1 ... n_k $   \newline
+on a donc $N_i$ et $n_i$  qui sont premier entre eux. \newline
+Il faut alors faire l'algoritme d'euclide étendu sur $N_i$ et $n_i$, se qui nous donne: 
+$1= N_i u_i + n_i v_i$ 
+où 
+$u_i, v_i \in  \mathbb{Z} $
+\newline
+On pose donc $e_i = u_i N_i$ avec $ e_i \equiv 1 \; (mod \; n_i)$ et $ e_i\equiv 0 \; (mod \; e_j)$ avec $ i\neq j$ \newline
+On trouve donc une solution qui est $x=\sum_{i = 1}^{k}{a_i e_i}  $
+\newline
+Dans un premier temps, il a fallu faire l'algorithmes d'Euclide étendu, qui prend en paramètres a et b, deux entiers,
+et qui renvois l'inverse de a modulo b.
+\newline
+
+-PI la liste des nombres premier \newline
+-XI la liste des modulos \newline
 - on a posé a prend la valeur 1 car a sera après le produit des éléments de XI 
 
-
-\begin{algorithm}
-    \For{i in range(len(PI))}
-    {
-        $a \leftarrow 1 $ \;
-        $pi \leftarrow PI[i]$ \;
-        \For{j in range(len(PI))}
-        {
-            \If{j \neq i}
-                { a=a*PI[j]}
-        $k \leftarrow xeuclid(a,pi) $ \;
-        $b \leftarrow b+k\times a\times XI[i] $ \; 
-        }
-    }
-\end{algorithm}
-
-\newline
 
 
 
 \newpage
 \section{Brute force}
 \subsection{Notre premier algo version naïve }
-
+Tout d'abord, nous avons fait une fonction qui nous montre si il y a une erreur ou pas dans nos listes, car avant de vouloir trouver les erreurs, il faut savoir si il y en a une.
+Nous avons donc fait un petit algorithme qui enlèves, chacun leurs tours, un élément des listes; c'est à dire qu'on retire le premier élément des 2 listes, puis on retire que le deuxième élément, puis le troisième et ainsi de suite. Nous appliquons alors le théorème des restes chinois a chaque itération, et on mets le résultats dans une liste auxiliaire. Si il n'y a pas d'erreur,
+lorsqu'on retourne cette liste auxiliaire, on devrais avoir la même valeur partout, si les valeurs de la liste sont différentes, nous avons une erreur. \newline
+Voici un petit exemple pour bien comprendre cette fonction.\newline
+c'est écris différaments
+\newline
+Soit $P=[p_1 , p_2, ... , p_k]$ et $N=[n_1, n_2, ..., n_k]$ \newline
+On note $P_i = [p_1,..., p_i-1, p_i+1, p_k]$ et $N_i=[n_1,..., n_i-1, n_i+1, ... , n_k]$ \newline
+On note $x_i$ le résultat théorème des restes chinois appliqué à $P_i$ et $N_i$ \newline
+Puis on retourne 
+$L=[x_1, ..., x_k]$ \newline
+Si 
+$x_1=x_2=...=x_l$ 
+alors il n'y a pas d'erreur.
+\newline
+on pose P=[2,3,5,7,11,13,17] et N=[1, 1, 1, 5, 6, 9, 10] \newline
+si on applique le théorèmes des restes chinois à ces 2 listes, on trouve 510510. Pour vérifier qu'il ny ai pas d'erreur, on applique le théorème à
+P1=[3,5,7,11,13,17] et N1=[1, 1, 5, 6, 9, 10], puis à P2=[2,5,7,11,13,17] et N2=[1, 1, 5, 6, 9, 10] jusqu'à P7=[2,3,5,7,11,13] et N7=[1, 1, 1, 5, 6, 9]\newline
+Comme il n'y a pas d'erreur, la fonction va retourner [61, 61, 61, 61, 61, 61, 61] \newline
+à présent, nous mettons une erreur dans les listes, on a P=[2,3,5,7,11,13,17] et N=[1,1,1,5,8,10]. En appliquant la fonction, il sera retourner une liste [...], où l'on remarque bien que chaque élément est différrent, donc nous avons au plus une erreur.
+Dans cette fonction, on parcours n fois la liste de n élément donc nous somme en $O(n^2)$. Mais on fait n fois l'algo des restes chinois donc on est en $O()$
+\newline 
+\newline
+Pour créer notre première fonction de correction, nous nous sommes inspirées de la fonction ci dessus. On sait dit que si on enlevé 2 élément des listes, nous pourrions trouver l'erreur. On s'explique;
+On a vu que si on enlevais 1 éléments des listes, le théorème des restes chinois marchait encore, et si on enlève 2 éléments, il marche encore. Donc, en enlevant le premier élément et tout les autres chacun leurs
+tours, et en appliquantle théorème à chaque fois, on retourne une liste. Puis, on réitére en enlevant le deuxième élément, et les autres chacun leurs tours, en re-appliquant les restes chinois à chaque fois, en mettant les résultats dans
+une nouvelle liste. Ainsi de suite jusqu'au dernier élément. Cette fonction retourne une liste de liste. Donc la liste où se trouve le même nombre partout, c'est que l'erreur est à la meme position.
+faisont plutôt exemple.
 
 
 \subsection{brute force de hamming}
@@ -109,35 +136,6 @@ On a ici :
 \section{Les fractions continues}
 
 
-\begin{algorithm}
-    $ b \leftarrow 0$ \;
-    $ c \leftarrow 1$ \;
-    $ AI \leftarrow [ \:]$ \;
-    $ NI \leftarrow [ \:]$ \;
-    \For{i in range(len(N))}
-    {   
-        \If{A[i]==0}
-        {c=c\times N[i]}
-        \Else
-        {
-            AI=AI+[AI[i]] 
-            NI=NI+[NI[i]]
-        }
-    }
-    \For{}
-    {
-        $a \leftarrow 1 $ \;
-        $ni \leftarrow NI[i]$ \;
-        \For{j in range(len(NI))}
-        {
-            \If{j \neq i}
-                { a=a*NI[j]}
-        $k \leftarrow xeuclid(a,ni) $ \;
-        $b \leftarrow b+k\times a\times AI[i] $ \; 
-        }
-    }
-\Return{b\div (a\times ni)}
-\end{algorithm}
 
 \begin{algorithm}
     $xs0 \leftarrow 1 $ \;

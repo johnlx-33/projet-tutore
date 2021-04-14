@@ -1,6 +1,5 @@
 ##projet Tutoré
 
-from fractions import gcd
 import random
 
 def xeuklid(a,b):

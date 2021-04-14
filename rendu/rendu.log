@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.5.10)  13 APR 2021 22:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.5.10)  14 APR 2021 23:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -205,206 +205,103 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--69
  []
 
 [4]
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:93: Missing $ inserted.
-<inserted text> 
-                $
-l.93 \end
-         {algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:93: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.93 \end
-         {algorithm}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:93: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.93 \end
-         {algorithm}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:93: Missing $ inserted.
-<inserted text> 
-                $
-l.93 \end
-         {algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:93: Missing } inserted.
-<inserted text> 
-                }
-l.93 \end{algorithm}
-                    
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:83: Undefined control sequence.
+l.83 $u_i, v_i \in  \mathbb
+                           {Z} $
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) detected at line 93
-[][]
+Underfull \hbox (badness 10000) in paragraph at lines 73--91
+
  []
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:93: Missing } inserted.
+[5]
+Overfull \hbox (21.7941pt too wide) in paragraph at lines 102--130
+\T1/cmr/m/n/10.95 Pour vé-ri-fier qu'il ny ai pas d'er-reur, on ap-plique le théo-rème à P1=[3,5,7,11,13,17]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--130
+
+ []
+
+[6] [7]
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:155: Missing $ inserted.
 <inserted text> 
-                }
-l.93 \end{algorithm}
-                    
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+                $
+l.155     \Return
+                 {s\times xs0 + ((1-s)\div 2)\times d}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:155: Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.155     \Return
+                 {s\times xs0 + ((1-s)\div 2)\times d}
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:95: LaTeX Error: There's no line here to end.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:155: Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.155     \Return
+                 {s\times xs0 + ((1-s)\div 2)\times d}
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:155: Missing $ inserted.
+<inserted text> 
+                $
+l.155     \Return
+                 {s\times xs0 + ((1-s)\div 2)\times d}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:155: Missing $ inserted.
+<inserted text> 
+                $
+l.155 ...turn{s\times xs0 + ((1-s)\div 2)\times d}
                                                   
-l.95 \newline
-             
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[5] [6]
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:127: Missing $ inserted.
-<inserted text> 
-                $
-l.127     \For
-              {}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:127: Extra }, or forgotten $.
-\algocf@Vsline ...}\vtop {\algocf@addskiptotal #1}
-                                                  }}\algocf@pop {\skiprule }...
-l.127     \For
-              {}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:127: Extra }, or forgotten $.
-\algocf@Vsline ...\vtop {\algocf@addskiptotal #1}}
-                                                  }\algocf@pop {\skiprule }\...
-l.127     \For
-              {}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:127: Extra }, or forgotten $.
-\algocf@Vsline ...vtop {\algocf@addskiptotal #1}}}
-                                                  \algocf@pop {\skiprule }\a...
-l.127     \For
-              {}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:127: Missing $ inserted.
-<inserted text> 
-                $
-l.127     \For
-              {}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:139: Missing $ inserted.
-<inserted text> 
-                $
-l.139 \Return
-             {b\div (a\times ni)}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:139: Extra }, or forgotten $.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:155: Extra }, or forgotten $.
 <recently read> \egroup 
                         
-l.139 \Return
-             {b\div (a\times ni)}
+l.155 ...turn{s\times xs0 + ((1-s)\div 2)\times d}
+                                                  
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:139: Extra }, or forgotten $.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:155: Extra }, or forgotten $.
 <recently read> \egroup 
                         
-l.139 \Return
-             {b\div (a\times ni)}
+l.155 ...turn{s\times xs0 + ((1-s)\div 2)\times d}
+                                                  
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:139: Missing $ inserted.
-<inserted text> 
-                $
-l.139 \Return
-             {b\div (a\times ni)}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:139: Missing $ inserted.
-<inserted text> 
-                $
-l.139 \Return{b\div (a\times ni)}
-                                 
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:139: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.139 \Return{b\div (a\times ni)}
-                                 
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:139: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.139 \Return{b\div (a\times ni)}
-                                 
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:140: Extra }, or forgotten $.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:156: Extra }, or forgotten $.
 \@algocf@finish ->\@algoinsideskip \egroup 
                                            \hfill \egroup \ifthenelse {\bool...
-l.140 \end{algorithm}
+l.156 \end{algorithm}
                      
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -412,10 +309,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:140: Extra }, or forgotten $.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:156: Extra }, or forgotten $.
 \@algocf@finish ...ideskip \egroup \hfill \egroup 
                                                   \ifthenelse {\boolean {alg...
-l.140 \end{algorithm}
+l.156 \end{algorithm}
                      
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -423,10 +320,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:140: Extra }, or forgotten $.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:156: Extra }, or forgotten $.
 \@algocf@finish ... {\skipalgocfslide }}{}\egroup 
                                                   \end {lrbox}\algocf@maketh...
-l.140 \end{algorithm}
+l.156 \end{algorithm}
                      
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -434,10 +331,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:140: Missing $ inserted.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:156: Missing $ inserted.
 <inserted text> 
                 $
-l.140 \end{algorithm}
+l.156 \end{algorithm}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -445,10 +342,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:140: Missing } inserted.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:156: Missing } inserted.
 <inserted text> 
                 }
-l.140 \end{algorithm}
+l.156 \end{algorithm}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -456,10 +353,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:140: Missing } inserted.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:156: Missing } inserted.
 <inserted text> 
                 }
-l.140 \end{algorithm}
+l.156 \end{algorithm}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -467,10 +364,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:140: Missing } inserted.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:156: Missing } inserted.
 <inserted text> 
                 }
-l.140 \end{algorithm}
+l.156 \end{algorithm}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -478,10 +375,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:140: Missing } inserted.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:156: Missing } inserted.
 <inserted text> 
                 }
-l.140 \end{algorithm}
+l.156 \end{algorithm}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -489,10 +386,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:140: Missing } inserted.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:156: Missing } inserted.
 <inserted text> 
                 }
-l.140 \end{algorithm}
+l.156 \end{algorithm}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -500,43 +397,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:140: Missing } inserted.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:156: Missing } inserted.
 <inserted text> 
                 }
-l.140 \end{algorithm}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:140: Missing } inserted.
-<inserted text> 
-                }
-l.140 \end{algorithm}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:140: Missing } inserted.
-<inserted text> 
-                }
-l.140 \end{algorithm}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:140: Missing } inserted.
-<inserted text> 
-                }
-l.140 \end{algorithm}
+l.156 \end{algorithm}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -545,14 +409,14 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) detected at line 140
+Underfull \hbox (badness 10000) detected at line 156
 [][]
  []
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:140: Missing } inserted.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:156: Missing } inserted.
 <inserted text> 
                 }
-l.140 \end{algorithm}
+l.156 \end{algorithm}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -560,214 +424,20 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:157: Missing $ inserted.
-<inserted text> 
-                $
-l.157     \Return
-                 {s\times xs0 + ((1-s)\div 2)\times d}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:157: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.157     \Return
-                 {s\times xs0 + ((1-s)\div 2)\times d}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:157: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.157     \Return
-                 {s\times xs0 + ((1-s)\div 2)\times d}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:157: Missing $ inserted.
-<inserted text> 
-                $
-l.157     \Return
-                 {s\times xs0 + ((1-s)\div 2)\times d}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:157: Missing $ inserted.
-<inserted text> 
-                $
-l.157 ...turn{s\times xs0 + ((1-s)\div 2)\times d}
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:157: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.157 ...turn{s\times xs0 + ((1-s)\div 2)\times d}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:157: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.157 ...turn{s\times xs0 + ((1-s)\div 2)\times d}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:158: Extra }, or forgotten $.
-\@algocf@finish ->\@algoinsideskip \egroup 
-                                           \hfill \egroup \ifthenelse {\bool...
-l.158 \end{algorithm}
-                     
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:158: Extra }, or forgotten $.
-\@algocf@finish ...ideskip \egroup \hfill \egroup 
-                                                  \ifthenelse {\boolean {alg...
-l.158 \end{algorithm}
-                     
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:158: Extra }, or forgotten $.
-\@algocf@finish ... {\skipalgocfslide }}{}\egroup 
-                                                  \end {lrbox}\algocf@maketh...
-l.158 \end{algorithm}
-                     
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:158: Missing $ inserted.
-<inserted text> 
-                $
-l.158 \end{algorithm}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:158: Missing } inserted.
-<inserted text> 
-                }
-l.158 \end{algorithm}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:158: Missing } inserted.
-<inserted text> 
-                }
-l.158 \end{algorithm}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:158: Missing } inserted.
-<inserted text> 
-                }
-l.158 \end{algorithm}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:158: Missing } inserted.
-<inserted text> 
-                }
-l.158 \end{algorithm}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:158: Missing } inserted.
-<inserted text> 
-                }
-l.158 \end{algorithm}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:158: Missing } inserted.
-<inserted text> 
-                }
-l.158 \end{algorithm}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Underfull \hbox (badness 10000) detected at line 158
-[][]
- []
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:158: Missing } inserted.
-<inserted text> 
-                }
-l.158 \end{algorithm}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[7] [8] (/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.aux) ) 
+[8] (/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.aux) ) 
 Here is how much of TeX's memory you used:
  3959 strings out of 480608
  59429 string characters out of 5903630
- 325569 words of memory out of 5000000
+ 324569 words of memory out of 5000000
  19833 multiletter control sequences out of 15000+600000
  543057 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,20n,35p,334b,640s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.pdf (8 pages, 184339 bytes).
+ 32i,11n,35p,474b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
+Output written on /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.pdf (8 pages, 213425 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
+ 95 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
