@@ -1,3 +1,5 @@
+
+
 ##projet tutoré
 ##fonction usuel
 
@@ -52,14 +54,11 @@ def dist_Hamming(l_reste1,l_reste2):
     return cpt
 
 
-def calcule_borne(l): ## faux
-    b=0
+def calcule_borne(l,nb_error): 
     c=1
-    for i in range(len(l)):
-       b=b+l[i]-1
+    for i in range(len(l)-2*nb_error):
        c=c*l[i]
-    return c//b
-
+    return c
 
 def check_list(ln,lr):
     lr_out=[]
@@ -171,4 +170,25 @@ def l_candi_to_pos(l_candidat,ln):
         l_candi_pos=l_candi_pos+[tmp]  
 
     return l_candi_pos
+
+
+def clear_error(ln,lr,pos):
+    ln_out=ln
+    lr_out=lr
+    for i in range(len(pos)):
+        del ln_out[pos[i]]
+        del lr_out[pos[i]]
+    return (ln_out,lr_out)
+
+
+
+
+
+
+
+
+
+
+
+
 

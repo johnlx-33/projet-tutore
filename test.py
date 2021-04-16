@@ -52,7 +52,8 @@ l=20000         ##
 m=165165        ##
 n=6468468       ## 
 o=86842888231   ##
-
+p=729680599249024150621323470  ##[0, 2, 0, 5, 7, 1, 16, 2, 22, 25, 26, 34, 18, 19, 30, 24, 24, 22, 52, 56, 4, 78, 54, 68, 82, 58, 39, 88, 54,
+                               ##11, 62, 73, 134, 126, 102, 142, 135, 92, 159, 48, 119, 33, 16, 77, 28, 29, 35, 89, 86, 163, 150]
 
 ## test avec N=510510
 (aa,l_a)=generateur_de_cas(510510,a)
@@ -72,8 +73,8 @@ o=86842888231   ##
 (bb,l_m)= generateur_de_cas_liste(L_modulo_25,m)
 (bb,l_n)= generateur_de_cas_liste(L_modulo_25,n)
 (bb,l_o)= generateur_de_cas_liste(L_modulo_25,o)
-
-
+(bb,l_p)= generateur_de_cas_liste(L_modulo_25,p)
+print(l_p)
 ## test 1
 """
 print(l_a)
@@ -140,8 +141,40 @@ lr_4i=[0, 2, 1, 2, 6, 8, 2, 3, 9, 2, 9, 5,12, 12, 18, 18, 44, 59, 42, 30, 36, 23
 lr_5i=[0, 2, 1, 2, 6, 8, 2, 3, 9, 2, 9, 5,12, 12, 18, 30, 44, 59, 42, 30, 36, 23, 20, 16, 53, 51, 56, 78, 95, 28, 47, 22, 68, 135, 83, 17, 133, 110, 156, 167, 113, 34, 175, 75, 25, 147, 94, 6, 191, 107, 220]
 
 
-## test avec N=510
+## lr_p1 15 erreur sur les 15 premiere pos
+lr_p1=[1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 24, 22, 52, 56, 4, 78, 54, 68, 82, 58, 39, 88, 54, 11, 62, 73, 134, 126, 102, 142, 135, 92, 159, 48, 119, 33, 16, 77, 28, 29, 35, 89, 86, 163, 150]
 
+## test avec N=510
+print("borne pour 1 erreur  "+ str(calcule_borne(bb,1)))
+print("")
+print("borne pour 2 erreur  "+ str(calcule_borne(bb,2)))
+print("")
+print("borne pour 3 erreur  "+ str(calcule_borne(bb,3)))
+print("")
+print("borne pour 4 erreur  "+ str(calcule_borne(bb,4)))
+print("")
+print("borne pour 5 erreur  "+ str(calcule_borne(bb,5)))
+print("")
+print("borne pour 6 erreur  "+ str(calcule_borne(bb,6)))
+print("")
+print("borne pour 7 erreur  "+ str(calcule_borne(bb,7)))
+print("")
+print("borne pour 8 erreur  "+ str(calcule_borne(bb,8)))
+print("")
+print("borne pour 9 erreur  "+ str(calcule_borne(bb,9)))
+print("")
+print("borne pour 10 erreur "+ str(calcule_borne(bb,10)))
+print("")
+print("borne pour 11 erreur "+ str(calcule_borne(bb,11)))
+print("")
+print("borne pour 12 erreur "+ str(calcule_borne(bb,12)))
+print("")
+print("borne pour 13 erreur "+ str(calcule_borne(bb,13)))
+print("")
+print("borne pour 14 erreur "+ str(calcule_borne(bb,14)))
+print("")
+print("borne pour 15 erreur "+ str(calcule_borne(bb,15)))
+print("")
 """
 print("lr_1a",détection_1_erreur(lr_1a,aa))
 print("lr_2a",détection_1_erreur(lr_2a,aa))
@@ -206,6 +239,11 @@ print("")
 print("n-uplet corespondant <->"+str(lr_6a))
 tmp=decode_fraction_continu(lr_6a,aa,2)
 print(tmp)
+"""
+list_pos=l_candi_to_pos(tmp,aa)
+for i in range(len(list_pos)):
+    print(clear_error(aa,lr_6a,list_pos[i]))
+"""
 print(recontitution_fraction(tmp,lr_6a,aa))
 
 print("")
@@ -301,4 +339,11 @@ print(tmp)
 
 
 print("")
+print("essaie 15 erreur avec 51 nb premier")
+print("")
+print("n-uplet corespondant <->"+str(lr_p1))
+tmp=decode_fraction_continu(lr_p1,bb,15)
+print(tmp)
 
+
+print("")
