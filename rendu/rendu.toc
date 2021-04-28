@@ -4,5 +4,7 @@
 \contentsline {subsection}{\numberline {1.2}notre algoritme}{5}%
 \contentsline {section}{\numberline {2}Brute force}{6}%
 \contentsline {subsection}{\numberline {2.1}Notre premier algo version naïve }{6}%
-\contentsline {subsection}{\numberline {2.2}brute force de hamming}{7}%
-\contentsline {section}{\numberline {3}Les fractions continues}{8}%
+\contentsline {subsection}{\numberline {2.2}brute force de hamming}{8}%
+\contentsline {section}{\numberline {3}Les fractions continues}{9}%
+\contentsline {subsection}{\numberline {3.1}algo}{9}%
+\contentsline {subsection}{\numberline {3.2}jesaispas }{10}%
