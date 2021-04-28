@@ -54,7 +54,8 @@ n=6468468       ##
 o=86842888231   ##
 p=729680599249024150621323470  ##[0, 2, 0, 5, 7, 1, 16, 2, 22, 25, 26, 34, 18, 19, 30, 24, 24, 22, 52, 56, 4, 78, 54, 68, 82, 58, 39, 88, 54,
                                ##11, 62, 73, 134, 126, 102, 142, 135, 92, 159, 48, 119, 33, 16, 77, 28, 29, 35, 89, 86, 163, 150]
-
+k=1000000000000000 ##10^16  ##[0, 1, 0, 6, 10, 12, 12, 8, 5, 19, 1, 1, 1, 16, 40, 47, 52, 50, 24, 37, 22, 21, 28, 69, 45, 91
+                    ##, 69, 39, 55, 101, 63, 71, 96, 76, 23, 59, 56, 61, 43, 170, 7, 160, 13, 137, 140, 210, 95, 76, 54, 54, 10]
 ## test avec N=510510
 (aa,l_a)=generateur_de_cas(510510,a)
 (aa,l_b)=generateur_de_cas(510510,b)
@@ -74,7 +75,7 @@ p=729680599249024150621323470  ##[0, 2, 0, 5, 7, 1, 16, 2, 22, 25, 26, 34, 18, 1
 (bb,l_n)= generateur_de_cas_liste(L_modulo_25,n)
 (bb,l_o)= generateur_de_cas_liste(L_modulo_25,o)
 (bb,l_p)= generateur_de_cas_liste(L_modulo_25,p)
-print(l_p)
+(bb,l_k)= generateur_de_cas_liste(L_modulo_25,k)
 ## test 1
 """
 print(l_a)
@@ -92,7 +93,9 @@ print(l_l)
 print(l_m)
 print(l_n)
 print(l_o)
+print(l_p)
 """
+print(l_k)
 ## liste erroné
 
 ##1 erreur
@@ -143,6 +146,45 @@ lr_5i=[0, 2, 1, 2, 6, 8, 2, 3, 9, 2, 9, 5,12, 12, 18, 30, 44, 59, 42, 30, 36, 23
 
 ## lr_p1 15 erreur sur les 15 premiere pos
 lr_p1=[1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 24, 22, 52, 56, 4, 78, 54, 68, 82, 58, 39, 88, 54, 11, 62, 73, 134, 126, 102, 142, 135, 92, 159, 48, 119, 33, 16, 77, 28, 29, 35, 89, 86, 163, 150]
+
+## lr_p2 15 erreur sur le 15 derniere pos
+lr_p2= [0, 2, 0, 5, 7, 1, 16, 2, 22, 25, 26, 34, 18, 19, 30, 24, 24, 22, 52, 56, 4, 78, 54, 68, 82, 58, 39, 88, 54,11, 62, 73, 134, 126, 102, 142, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0]
+
+## lr_p3 5 erreur sur les premiere pos
+
+lr_p3= [1,0,1, 0, 0, 1, 16, 2, 22, 25, 26, 34, 18, 19, 30, 24, 24, 22, 52, 56, 4, 78, 54, 68, 82, 58, 39, 88, 54,11, 62, 73, 134, 126, 102, 142, 135, 92, 159, 48, 119, 33, 16, 77, 28, 29, 35, 89, 86, 163, 150]
+
+## lr_p4 5 erreur sur les derniere pos
+
+lr_p4= [0, 2, 0, 5, 7, 1, 16, 2, 22, 25, 26, 34, 18, 19, 30, 24, 24, 22, 52, 56, 4, 78, 54, 68, 82, 58, 39, 88, 54, 11, 62, 73, 134, 126, 102, 142, 135, 92, 159, 48, 119, 33, 16, 77, 28, 29, 0, 0, 0, 0, 0]
+
+
+## lr_p5 6 erreur sur les premiere pos
+lr_p5=[1, 0, 1, 0, 0, 0, 16, 2, 22, 25, 26, 34, 18, 19, 30, 24, 24, 22, 52, 56, 4, 78, 54, 68, 82, 58, 39, 88, 54,11, 62, 73, 134, 126, 102, 142, 135, 92, 159, 48, 119, 33, 16, 77, 28, 29, 35, 89, 86, 163, 150]
+
+## lr_p6 6 erreur sur les derniere pos
+lr_p6=[0, 2, 0, 5, 7, 1, 16, 2, 22, 25, 26, 34, 18, 19, 30, 24, 24, 22, 52, 56, 4, 78, 54, 68, 82, 58, 39, 88, 54,11, 62, 73, 134, 126, 102, 142, 135, 92, 159, 48, 119, 33, 16, 77, 28, 0, 0, 0, 0, 0, 0]
+
+## lr_p7 7 erreur sur les premiere pos
+lr_p7=[1, 0, 1, 0, 0, 0, 0, 2, 22, 25, 26, 34, 18, 19, 30, 24, 24, 22, 52, 56, 4, 78, 54, 68, 82, 58, 39, 88, 54,11, 62, 73, 134, 126, 102, 142, 135, 92, 159, 48, 119, 33, 16, 77, 28, 29, 35, 89, 86, 163, 150]
+
+## lr_p8 7 erreur sur les derniere pos
+lr_p8=[0, 2, 0, 5, 7, 1, 16, 2, 22, 25, 26, 34, 18, 19, 30, 24, 24, 22, 52, 56, 4, 78, 54, 68, 82, 58, 39, 88, 54,11, 62, 73, 134, 126, 102, 142, 135, 92, 159, 48, 119, 33, 16, 77,0, 0, 0, 0, 0, 0, 0]
+
+## lr_p9 8 erreur sur les premiere pos
+lr_p9=[1, 0, 1, 0, 0, 0, 0, 0, 22, 25, 26, 34, 18, 19, 30, 24, 24, 22, 52, 56, 4, 78, 54, 68, 82, 58, 39, 88, 54,11, 62, 73, 134, 126, 102, 142, 135, 92, 159, 48, 119, 33, 16, 77, 28, 29, 35, 89, 86, 163, 150]
+
+## lr_p8 8 erreur sur les derniere pos
+lr_p10=[0, 2, 0, 5, 7, 1, 16, 2, 22, 25, 26, 34, 18, 19, 30, 24, 24, 22, 52, 56, 4, 78, 54, 68, 82, 58, 39, 88, 54,11, 62, 73, 134, 126, 102, 142, 135, 92, 159, 48, 119, 33, 16, 0,0, 0, 0, 0, 0, 0, 0]
+
+
+## lr_k1 15 erreur sur les premiere pos
+
+lr_k1=  [1, 0, 1, 0, 0, 0, 0, 0, 0, 0,0, 0,0, 0,0, 47, 52, 50, 24, 37, 22, 21, 28, 69, 45, 91, 69, 39, 55, 101, 63, 71, 96, 76, 23, 59, 56, 61, 43, 170, 7, 160, 13, 137, 140, 210, 95, 76, 54, 54, 10]
+
+## lr_k2 15 erreur sur les derniere pos
+
+lr_k2=  [0, 1, 0, 6, 10, 12, 12, 8, 5, 19, 1, 1, 1, 16, 40, 47, 52, 50, 24, 37, 22, 21, 28, 69, 45, 91, 69, 39, 55, 101, 63, 71, 96, 76, 23, 59, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 ## test avec N=510
 print("borne pour 1 erreur  "+ str(calcule_borne(bb,1)))
@@ -337,13 +379,94 @@ print("n-uplet corespondant <->"+str(lr_5i))
 tmp=decode_fraction_continu(lr_5i,bb,5)
 print(tmp)
 
+print("")
+print("essaie 5 erreur avec 51 nb premier")
+print("")
+print("n-uplet corespondant <->"+str(lr_p3))
+tmp=decode_fraction_continu(lr_p3,bb,15)
+print(tmp)
 
 print("")
-print("essaie 15 erreur avec 51 nb premier")
+print("essaie 5 erreur avec 51 nb premier")
+print("")
+print("n-uplet corespondant <->"+str(lr_p4))
+tmp=decode_fraction_continu(lr_p4,bb,15)
+print(tmp)
+
+print("")
+print("essaie 6 erreur avec 51 nb premier")
+print("")
+print("n-uplet corespondant <->"+str(lr_p5))
+tmp=decode_fraction_continu(lr_p5,bb,15)
+print(tmp)
+
+print("")
+print("essaie 6 erreur avec 51 nb premier")
+print("")
+print("n-uplet corespondant <->"+str(lr_p6))
+tmp=decode_fraction_continu(lr_p6,bb,15)
+print(tmp)
+
+
+print("")
+print("essaie 7 erreur avec 51 nb premier")
+print("")
+print("n-uplet corespondant <->"+str(lr_p7))
+tmp=decode_fraction_continu(lr_p7,bb,15)
+print(tmp)
+
+print("")
+print("essaie 7 erreur avec 51 nb premier")
+print("")
+print("n-uplet corespondant <->"+str(lr_p8))
+tmp=decode_fraction_continu(lr_p8,bb,15)
+print(tmp)
+
+print("")
+print("essaie 8 erreur avec 51 nb premier")
+print("")
+print("n-uplet corespondant <->"+str(lr_p9))
+tmp=decode_fraction_continu(lr_p9,bb,8)
+print(tmp)
+
+print("")
+print("essaie 8 erreur avec 51 nb premier")
+print("")
+print("n-uplet corespondant <->"+str(lr_p10))
+tmp=decode_fraction_continu(lr_p10,bb,8)
+print(tmp)
+
+
+
+print("")
+print("essaie 15 erreur premiere pos avec 51 nb premier")
 print("")
 print("n-uplet corespondant <->"+str(lr_p1))
 tmp=decode_fraction_continu(lr_p1,bb,15)
 print(tmp)
 
+print("")
+print("essaie 15 erreur derniere pos avec 51 nb premier")
+print("")
+print("n-uplet corespondant <->"+str(lr_p2))
+tmp=decode_fraction_continu(lr_p2,bb,15)
+print(tmp)
+
 
 print("")
+print("essaie 15 erreur derniere pos avec 51 nb premier 10^16")
+print("")
+print("n-uplet corespondant <->"+str(lr_k1))
+tmp=decode_fraction_continu(lr_k1,bb,16)
+print(tmp)
+
+
+print("")
+print("essaie 15 erreur derniere pos avec 51 nb premier 10^16")
+print("")
+print("n-uplet corespondant <->"+str(lr_k2))
+tmp=decode_fraction_continu(lr_k2,bb,16)
+print(tmp)
+
+print("")
+

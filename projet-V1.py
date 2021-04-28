@@ -102,6 +102,7 @@ def erreur1 (A,N):
                 N1=N1+[N[j]]
         l=reste_chinois1(A1,N1)
         L=L+[l]
+        print(A1 ,N1)
     return L
 
 def détection_1_erreur(l_reste,l_modulo):
@@ -329,4 +330,4 @@ print("T14e1",brute_force_hamming(N7,T14e1,1))
 print("T15e1",brute_force_hamming(N7,T15e1,1))
 print("T16e1",brute_force_hamming(N7,T16e1,1))
 """
-
+print(erreur1 ([1,1,1,5,8,10],[2,3,5,7,11,13]))
