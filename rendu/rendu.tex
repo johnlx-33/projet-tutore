@@ -19,6 +19,10 @@
 Grace au soutiens de notre professeur MR ZEMOR, nous avons appris a reconstruire le théorème des restes chinois en présence d'erreur;
 Dans un premier temps, nous avons pris conaissance de ce théorème, puis dans un segond temps, nous l'avons corrigé grace à plusieurs méthode, 
 tel que du brut force ou une méthode de fractions continues.
+\newline 
+Avant de commencer, il faut établir des bases. Dans un premier temps quand nous parlons de borne, nous parlons du fait qu'après cette borne la recherche d'erreur ne marche plus.
+dans un segond temps, les notations. Dans le théorème des restes chinois, nous travaillons avec des listes de nombres que l'on note P la liste des nombres premiers, et N la liste des restes modulo les $P_i$.
+
 
 \end{abstract}
 
@@ -40,15 +44,29 @@ nous remercions également nos familles et nos proches, pour leurs aide et leur 
 \section{théorème des restes}
 \subsection{théorème des restes chinois et son histoire}
 Le théorème des restes chinois viens à la base d’un livre mathématique chinois de Qin JUSHIO publié en 1247. Cependant, on avait déjà découvert ce théorème au part avant dans un livre de Sun ZI au 3° siècle. Le théorème consiste en:
-On pose n1,...,nk des entiers premiers 2 à 2. Pour tout a1,...,ak, il existe un entier x tel que :
+On pose p1,...,pk des entiers premiers 2 à 2. Pour tout n1,...,nk, il existe un entier x tel que :
 \newline
-$ x\equiv a1 \: (mod \;  n1)$ 
+$ x\equiv n_1 \: (mod \;  p_1)$ 
 \newline
-$ x\equiv a2 \: (mod \: n2)$
+$ x\equiv n_2 \: (mod \: p_2)$
 \newline
-$ x \equiv ak \:(mod\: nk)$
+$ x \equiv n_k \:(mod\: p_k)$
 \newline
-Nous pouvons démontrer ce théorème de la façon suivante:
+\newline
+\newline
+Nous allons dans un premier temps démontrer l'unicité de ce théorème.
+\newline
+d'abord, voici l'existance d'une solution: \newline
+On a $\forall k \in [1;y]  $, $x\equiv n_k (mod \: p_k)$ \newline
+$\forall k \in [1;y] $, on note $P_k=\frac{P}{p_k} $ où $P=p_1 \times  ... \times p_y$ \newline
+On voit assez simplement que $P_k$ et $p_k$ sont premier entre eux car tout les entiers $p_i$ sont premier entre eux 2 à 2. Et donc $P_k$ est inversible modulo 
+$p_k$, car en faisant le théorème d'euclide, on va trouver $u,v\in \mathbb{Z}$ tel que $P_k\times u + p_k \times v = d$ avec d le PGCD. Or $P_k$ et $p_k$ sont premier entre eux donc $d=1$ et on trouve facilement l'inverse de $P_k$ modulo $p_k$. \newline
+On note alors $u_k$ le nombre tel que $u_k\times P_k + v_k\times p_k= 1$, soit $u_k\times P_k\equiv 1(p_k)$. \newline
+Soit $x=\sum_{k = 1}^{y} u_k\times P_k\times n_k$. On pose $i\in [1;y]$ et $k\neq i$ alors $P_i\equiv 0(mode \: p_k)$ car $P_i=p_1\times ... \times p_k \times ...\times p_y$. \newline
+On a donc $x\equiv u_i P_i a_i(mod \: p_i)$, mais on sait que $u_i P_i\equiv 1 (mod \: p_i)$ d'où $x\equiv a_i (mod \: p_i)$. Sachant que c'est vrai pour tout i, on a x solution du système. \newline
+\newline
+On a x une solution du système, posons y une autre solution du système. On a alors $x-y\equiv 0( mod p_k)$, soit $p_k$ divise $x-y$. Sachant que les $p_k$ sont premier 2 à 2 entre eux, on a donc $x-y\equiv 0(mod \: P)$, soit P divise x-y, ou encore que $x\equiv y (mod \: P)$, d'où l'unicité modulo P.
+\newline
 \newline
 \newline
 Pour illustrer ce théorème, nous allons donner un exemple, mais pas n'importe quelle exemple, celui dont Sun ZI a proposé une solution:
@@ -72,7 +90,7 @@ Avant de répondre à ce problème, il faut d'abord voir l'algorithme.
 
 \subsection{notre algoritme}
 L'algotitme du théorème des restes chinois étant un peu lourd, 
-nous allons montrer l'algoritme comme suivant avant de voir plus en détailles les algos en python.
+nous allons montrer l'algoritme comme suivant, mais vous pouvez le voir plus en détailles en python dans l'annexe.
 On a ici :
 \newline
 Soit $n_i$ le i-ème termes de la liste des modulos, et on note \newline
@@ -84,7 +102,8 @@ où
 $u_i, v_i \in  \mathbb{Z} $
 \newline
 On pose donc $e_i = u_i N_i$ avec $ e_i \equiv 1 \; (mod \; n_i)$ et $ e_i\equiv 0 \; (mod \; e_j)$ avec $ i\neq j$ \newline
-On trouve donc une solution qui est $x=\sum_{i = 1}^{k}{a_i e_i}  $
+On trouve donc une solution qui est $x=\sum_{i = 1}^{k}{p_i e_i} $.\newline
+\newline
 \newline
 Nous pouvons à présent répondre à l'exemple précédent. Nous avions: \newline
 $ x\equiv 2 \: (mod \:  3)$ 
@@ -99,13 +118,34 @@ Idem sur $N_2$ et $n_2$ qui donne $21\times 1 - 5\times 4=1$, et donc $e_2=21$ \
 Enfin, on a $15\times 1- 7\times 2 = 1 $ avec $e_3=15$ \newline
 Le résultat final est donc $x=2\times 35 + 3\times 21 + 2\times 15 =233$. Nous avons, comme dit précédement plusieurs résultat, qui sont les entiers congrus à 233 modulo 105
 \newline
-Dans un premier temps, il a fallu faire l'algorithmes d'Euclide étendu, qui prend en paramètres a et b, deux entiers,
-et qui renvois l'inverse de a modulo b.
 \newline
+Comme vous pouvez le voir, nous avons utilisé l'algoritme d'Euclide étendu, qui prend en paramètres a et b, deux entiers,
+et qui renvois d le PGCD de a et b, un couple $(u,v)\epsilon\mathbb{Z} $ tel que $d=au+bv$.
+\newline
+Pour notre utilisation, nous avons un peu modifié cette algorithm, car pour utiliser le théorème des restes chinois, les nombres sont premiers entre eux,
+donc $d=1$. De plus, il nous fait gagner une étape car il nous renvois l'inverse de a modulo b.
+\begin{algorithm}
+    $x_0 \leftarrow 1 $ \;
+    $x_1 \leftarrow 0 $ \;
+    $y_0 \leftarrow 0 $ \;
+    $y_1 \leftarrow 1 $ \;
+    $s \leftarrow 1 $ \;
+    $d \leftarrow b $ \;
+    \While{ b\neq 0}{
+        $ (q,r) \leftarrow divmod(a,b) $  /* q est le quotient et r le reste de la division euclidienne de a par b */ \;
+        $ (a,b) \leftarrow (b,r) $ \;
+        $ (x,y) \leftarrow (x_1,y_1)$ \;
+        $ (r_1,y_1) \leftarrow (q\times s1 + x_0 , q\times y_1 + y_0) $ \;
+        $ (x_0,y_0) \leftarrow (x,y)$ \;
+        $ s \leftarrow -s$ \;
+    }
+    \Return{$s\times x_0 + ((1-s)\div 2)\times d$}
+\end{algorithm}
 
 
 
 \newpage
+
 \section{Brute force}
 Il existe plusieur algoritmes de brut force qui permette de résoudre les erreurs tel que essayer tout les cas possibles. Mais cette algoritme est trop lourd a écrire. Nous avons donc fait des algoritmes moins lourd.
 Nous vous présentons 2 algorithmes dans cette section.
@@ -126,10 +166,10 @@ alors il n'y a pas d'erreur.
 Voici un petit exemple pour bien comprendre cette fonction.\newline
 on pose P=[2,3,5,7,11,13,17] et N=[1, 1, 1, 5, 6, 9, 10] \newline
 si on applique le théorèmes des restes chinois à ces 2 listes, on trouve 510510. Pour vérifier qu'il ny ai pas d'erreur, on applique le théorème à
-P1=[3,5,7,11,13,17] et N1=[1, 1, 5, 6, 9, 10], puis à P2=[2,5,7,11,13,17] et N2=[1, 1, 5, 6, 9, 10] jusqu'à P7=[2,3,5,7,11,13] et N7=[1, 1, 1, 5, 6, 9]\newline
+P1=[3,5,7,11,13,17] et N1=[1, 1, 5, 6, 9, 10], puis à P2=[2,5,7,11,13] et N2=[1, 1, 5, 6, 9, 10] jusqu'à P7=[2,3,5,7,11,13] et N7=[1, 1, 1, 5, 6, 9]\newline
 Comme il n'y a pas d'erreur, la fonction va retourner [61, 61, 61, 61, 61, 61, 61] \newline
-à présent, nous mettons une erreur dans les listes, on a P=[2,3,5,7,11,13,17] et N=[1,1,1,5,8,10]. En appliquant la fonction, il sera retourner une liste [...], où l'on remarque bien que chaque élément est différrent, donc nous avons au plus une erreur.
-Dans cette fonction, on parcours n fois la liste de n élément donc nous somme en $O(n^2)$. Mais on fait n fois l'algo des restes chinois donc on est en $O()$
+à présent, nous mettons une erreur dans les listes, on a P=[2,3,5,7,11,13] et N=[1,1,1,5,8,10]. En appliquant la fonction, il sera retourner une liste [9721, 9721, 3715, 1141, 1531, 4811], où l'on remarque bien que chaque élément est différrent, donc nous avons au plus une erreur.
+Dans cette fonction, on parcours n fois la liste de n élément donc nous somme en $O(n^2)$. Mais on fait n fois l'algo des restes chinois donc on est en $O(n^2)$. Cette algorithme est donc en $O(n^4)$
 \newline 
 \newline
 Pour créer notre première fonction de correction, nous nous sommes inspirées de la fonction ci dessus. On sait dit que si on enlevé 2 élément des listes, nous pourrions trouver l'erreur. On s'explique;
@@ -148,7 +188,7 @@ Cette fonction est très performante comme vous avez pu le voir sur les exemples
 on peut facilement changer la fonction pour trouver n erreur juste en rajoutant des boucles FOR. Deuxièmement, nous avons un problème de borne. Pour trouver la borne,
 il suffit de multiplier par les 2 derniers nombre premier de la liste. \newline
 Par exemple pour le nombre 30030, la borne est 11x13 soit 210.\newline
-Enfin, nous avons un problème de .. soit $O(n^2)$ et a chaque fois on fait le théorème des restes chinois.
+Enfin, nous avons un problème de complexité soit $O(n^3)$ et a chaque fois on fait le théorème des restes chinois qui est en $O(n^2)$.
 
 \newpage
 \subsection{brute force de hamming}
@@ -158,27 +198,7 @@ Enfin, nous avons un problème de .. soit $O(n^2)$ et a chaque fois on fait le t
 \section{Les fractions continues} 
 \subsection{algo}
 \newpage
-\subsection{jesaispas
-}
+\subsection{jesaispas}
 
-
-
-\begin{algorithm}
-    $xs0 \leftarrow 1 $ \;
-    $xs1 \leftarrow 0 $ \;
-    $ys0 \leftarrow 0 $ \;
-    $ys1 \leftarrow 1 $ \;
-    $s \leftarrow 1 $ \;
-    $d \leftarrow b $ \;
-    \While{ b\neq 0}{
-        $ (q,r) \leftarrow divmod(a,b) $ \;
-        $ (a,b) \leftarrow (b,r) $ \;
-        $ (x,y) \leftarrow (xs1,ys1)$ \;
-        $ (rs1,ys1) \leftarrow (q\times s1 + xs0 , q\times ys1 + ys0) $ \;
-        $ (xs0,ys0) \leftarrow (x,y)$ \;
-        $ s \leftarrow -s$ \;
-    }
-    \Return{s\times xs0 + ((1-s)\div 2)\times d}
-\end{algorithm}
 
 \end{document}
