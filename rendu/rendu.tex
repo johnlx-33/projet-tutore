@@ -187,8 +187,8 @@ On a retourné une liste de liste. Si la k-ième sous-liste retourne toujours le
 Cette fonction est très performante comme vous avez pu le voir sur les exemples, cependant il y a quelque défaut. Premièrement, cette fonction ne marche que avec une erreur,
 on peut facilement changer la fonction pour trouver n erreur juste en rajoutant des boucles FOR. Deuxièmement, nous avons un problème de borne. Pour trouver la borne,
 il suffit de multiplier par les 2 derniers nombre premier de la liste. \newline
-Par exemple pour le nombre 30030, la borne est 11x13 soit 210.\newline
-Enfin, nous avons un problème de complexité soit $O(n^3)$ et a chaque fois on fait le théorème des restes chinois qui est en $O(n^2)$.
+Par exemple pour le nombre 30030, la borne est 30030/(11x13) soit 210.\newline
+Enfin, nous avons un problème de complexité soit $O(n^3)$ et a chaque fois on fait le théorème des restes chinois qui est en $O(n^2)$  l'ensemble des entiers des la zone d'encodage.
 
 \newpage
 \subsection{brute force de hamming}
@@ -196,9 +196,40 @@ Enfin, nous avons un problème de complexité soit $O(n^3)$ et a chaque fois on 
 
 \newpage
 \section{Les fractions continues} 
-\subsection{algo}
+\subsection{Principe}
+    Comme vu précédement la méthode brute force est efficace sur des petits cas de correction mais sur de cas plus grand la complexité explose et il est très difficile d'obtenir des résultats en un temps raisonnable.\newline
+Il faut donc trouver un moyen plus rapide et optimal. Donc comprenons comment intervient l'erreur sur le n-uplet du systéme d'équation.\newline
+Soit m le message envoyé et y le message et l'erreur dans le même message. si l'on fait la différrence de m-y on obtient e l'erreur.
+Maintenant cette erreur ce représente par un uplet en supposant par soucis de représentation que les erreurs se trouve au début de l'uplet associé
+e = [e1,e2,0,0,...,0] cette erreur est donc un multiple de tout les $p_i$ nombres premiers pour i>2 et 2  reste non nul sur les positions erroné.\newline
+Donc y = m + e donc si l'on divise y par N notre entier on a $\frac{y}{N}=\frac{m}{N}+\frac{e}{N}$\newline
+mais $\frac{e}{N}$ peut se simplifier car hormis les positions érronés 2 dans notre cas e est un multiple de tout les autres $p_i$ qui composent N\newline
+Ainsi on a  $\frac{y}{N}=\frac{m}{N}+\frac{e}{N}=\frac{m}{N}+ \frac{e_1 * e_2}{p_1 * p_2 } <\frac{B}{N} $    B étant la borne choisis.\newline
+Finalement $\frac{m}{N}=\frac{y}{N} - \frac{e_1 * e_2}{p_1 * p_2 } $ \newline
+\newline
+Or souvenons-nous que si z est un réel positif et que la fraction rationnelle $\frac{p}{q}$
+vérifie $ \left| z - \frac{p}{q} \right| < \frac{1}{2q^2} $. 
+Alors $\frac{p}{q}$ est une fraction reduité de z.\newline
+\newline
+
+Appliquer à notre probléme il suffit donc de calculé toutes les reduites de $\frac{y}{N}$ jusqu'à que le denominateur depasse le produit des 2 derniers nombres premiers du systéme.\newline
+
+Maintenant parlons de la complexité de cette méthode. 
+On parcours la liste des derniers nombres premiers du systéme, pour calculer une borne à ne pas dépasser au denominateur de la fraction cela reduit drastiquement les itérations à faire.
+Une fois cette borne determiné on calcule les reduites de  $\frac{y}{n}$ sans que le denominateur qui sert d'indication sur la position des erreurs ne depasse la borne.
+A chaque tour de boucle on calcule une reduite qui coute l'ordre de la réduite fois le coût d'une division euclidienne  ,
+l'algorithme permettant de calculé une réduite étant une version modifié de l'algorithme d'Euclide arrété à l'ordre de la fraction réduite voulue.
+Donc finalement pour calculer toutes les réduites qui mettent en évidence les potentiels position érronés le coût et relativement faible car dépend de la taille du systéme lineairement donc relativement faible et rapide.
+Coût que l'on a constater grace a nos experiences et test.
+
+
+
+
+
+
 \newpage
-\subsection{jesaispas}
+\subsection{Résumé d'experiences et test}
+Au début de nos tests nous avons pratiqué avec des petits cas de 6 à 7 nombre premier et cette méthode se révéla très efficace 
 
 
 \end{document}
