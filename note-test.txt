@@ -1,0 +1,13 @@
+51 nb premier
+15 erreur borne (4*10^29)  10^16 et 10^27 fail
+
+5 erreur ok 
+
+Notation 
+
+P = liste des pi nb premier
+N = produit des pi
+B = borne
+X = entier a reconstituer envoyer
+m = entier reconstitué
+r = taille de la liste P
