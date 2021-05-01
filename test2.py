@@ -31,8 +31,13 @@ L_modulo_22=[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89
 L_modulo_23=[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107]
 L_modulo_24=[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113]
 L_modulo_25=[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127,131,137,139,149,151,157,163,173,179,181,191,193,197,199,211,223,227,229,233,239]
+L_modulo_26=[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127,131,137,139,149,151,157,163,173,179,181,191,193,197,199,211,223,227,229,233,239,241,251,257,263,269,271,277,281,283,293,307,311,313,317,331,337,347,349,353,359,367,373,379,383,389,397,401,409,419,421,431,433,439,443,449,457,461,463,467,479,487,491,499,503,509,521,523,541]
 
 
+k=1
+for i in range(len(L_modulo_26)):
+        k=k*L_modulo_26[i]
+print(k)
 
 a=61   ##[1, 1, 1, 5, 6, 9, 10]
 b=610  ##[0, 1, 0, 1, 5, 12, 15]
@@ -66,7 +71,7 @@ k=1000000000000000 ##10^16  ##[0, 1, 0, 6, 10, 12, 12, 8, 5, 19, 1, 1, 1, 16, 40
 (aa,l_h)=generateur_de_cas(510510,h)
 
 
-## test avec 51 nb premier
+## test avec 52 nb premier
 (bb,l_i)= generateur_de_cas_liste(L_modulo_25,i)
 (bb,l_j)= generateur_de_cas_liste(L_modulo_25,j)
 (bb,l_k)= generateur_de_cas_liste(L_modulo_25,k)
@@ -74,8 +79,16 @@ k=1000000000000000 ##10^16  ##[0, 1, 0, 6, 10, 12, 12, 8, 5, 19, 1, 1, 1, 16, 40
 (bb,l_m)= generateur_de_cas_liste(L_modulo_25,m)
 (bb,l_n)= generateur_de_cas_liste(L_modulo_25,n)
 (bb,l_o)= generateur_de_cas_liste(L_modulo_25,o)
-(bb,l_p)= generateur_de_cas_liste(L_modulo_25,p)
-(bb,l_k)= generateur_de_cas_liste(L_modulo_25,k)
+
+
+## test avec 100 nb premier
+
+(cc,l_p)= generateur_de_cas_liste(L_modulo_26,p)
+(cc,l_k)= generateur_de_cas_liste(L_modulo_26,k)
+
+
+
+
 ## test 1
 """
 print(l_a)
@@ -257,9 +270,77 @@ print("n-uplet corespondant <->"+str(lr_p2))
 tmp=decode_fraction_continu(lr_p2,bb,15)
 print(tmp)
 
+print("")
+print("essaie 7 erreurs avec 100 nb premier")
+print("")
+(cc,l_p)= generateur_de_cas_liste(L_modulo_26,p)
+(cc,lr_p15)=create_error(7,cc,l_p)
+print("n-uplet corespondant <->"+str(lr_p15))
+tmp=decode_fraction_continu(lr_p15,cc,15)
+print("modulo supposé erroné"+str(tmp))
+
+print("")
+print("essaie 7 erreurs avec 100 nb premier")
+print("")
+(cc,l_p)= generateur_de_cas_liste(L_modulo_26,p)
+(cc,lr_p15)=create_error(7,cc,l_p)
+print("n-uplet corespondant <->"+str(lr_p15))
+tmp=decode_fraction_continu(lr_p15,cc,15)
+print("modulo supposé erroné"+str(tmp))
+
+print("")
+print("essaie 7 erreurs avec 100 nb premier")
+print("")
+(cc,l_p)= generateur_de_cas_liste(L_modulo_26,p)
+(cc,lr_p15)=create_error(7,cc,l_p)
+print("n-uplet corespondant <->"+str(lr_p15))
+tmp=decode_fraction_continu(lr_p15,cc,15)
+print("modulo supposé erroné"+str(tmp))
+
+print("")
+print("essaie 8 erreurs avec 100 nb premier")
+print("")
+(cc,l_p)= generateur_de_cas_liste(L_modulo_26,p)
+(cc,lr_p15)=create_error(8,cc,l_p)
+print("n-uplet corespondant <->"+str(lr_p15))
+tmp=decode_fraction_continu(lr_p15,cc,15)
+print("modulo supposé erroné"+str(tmp))
+
+print("")
+print("essaie 9 erreurs avec 100 nb premier")
+print("")
+(cc,l_p)= generateur_de_cas_liste(L_modulo_26,p)
+(cc,lr_p15)=create_error(9,cc,l_p)
+print("n-uplet corespondant <->"+str(lr_p15))
+tmp=decode_fraction_continu(lr_p15,cc,15)
+print("modulo supposé erroné"+str(tmp))
+
+print("")
+print("essaie 10 erreurs avec 100 nb premier")
+print("")
+(cc,l_p)= generateur_de_cas_liste(L_modulo_26,p)
+(cc,lr_p15)=create_error(10,cc,l_p)
+print("n-uplet corespondant <->"+str(lr_p15))
+tmp=decode_fraction_continu(lr_p15,cc,15)
+print("modulo supposé erroné"+str(tmp))
 
 
+print("")
+print("essaie 12 erreurs avec 100 nb premier")
+print("")
+(cc,l_p)= generateur_de_cas_liste(L_modulo_26,p)
+(cc,lr_p15)=create_error(12,cc,l_p)
+print("n-uplet corespondant <->"+str(lr_p15))
+tmp=decode_fraction_continu(lr_p15,cc,15)
+print("modulo supposé erroné"+str(tmp))
 
-
+print("")
+print("essaie 15 erreurs avec 100 nb premier")
+print("")
+(cc,l_p)= generateur_de_cas_liste(L_modulo_26,p)
+(cc,lr_p15)=create_error(15,cc,l_p)
+print("n-uplet corespondant <->"+str(lr_p15))
+tmp=decode_fraction_continu(lr_p15,cc,15)
+print("modulo supposé erroné"+str(tmp))
 
 

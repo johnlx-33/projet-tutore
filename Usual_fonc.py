@@ -38,9 +38,16 @@ def liste_nb_fact_premier(n):
 
 def create_error(nb_error,l_modulo,l_reste):
     ## renvoie lk avec au plus nb_error
+    lerrorpos=[]
+    lerrormod=[]
     for i in range(nb_error):
         j=random.randint(0, len(l_reste)-1)
+        while j in lerrorpos:
+            j=random.randint(0, len(l_reste)-1)
         l_reste[j]= (l_reste[j]+random.randint(0, len(l_modulo)-1))%l_modulo[j]
+        lerrorpos=lerrorpos+[j]
+        lerrormod=lerrormod+[l_modulo[j]]
+    print("modulo erroné"+str(sorted(lerrormod)))
     return(l_modulo,l_reste)
 
 
