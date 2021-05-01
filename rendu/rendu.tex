@@ -5,6 +5,7 @@
 \usepackage[francais]{babel}
 \usepackage{graphicx}
 \usepackage[linesnumbered, french]{algorithm2e}
+\usepackage{appendix}
 
 \begin{document}
 \title{Reconstituer avec le théorème chinois en présence d’erreurs}
@@ -17,12 +18,17 @@
 
     Ce devoir est une synthèse de nos travaux depuis plusieurs mois sur la reconstitution du théorème des restes chinois. 
 Grace au soutiens de notre professeur MR ZEMOR, nous avons appris a reconstruire le théorème des restes chinois en présence d'erreur;
-Dans un premier temps, nous avons pris conaissance de ce théorème, puis dans un segond temps, nous l'avons corrigé grace à plusieurs méthode, 
+Dans un premier temps, nous avons pris conaissance de ce théorème, puis dans un second temps, nous l'avons corrigé grâce à plusieurs méthodes, 
 tel que du brut force ou une méthode de fractions continues.
 \newline 
-Avant de commencer, il faut établir des bases. Dans un premier temps quand nous parlons de borne, nous parlons du fait qu'après cette borne la recherche d'erreur ne marche plus.
-dans un segond temps, les notations. Dans le théorème des restes chinois, nous travaillons avec des listes de nombres que l'on note P la liste des nombres premiers, et N la liste des restes modulo les $P_i$.
 
+A  propos du N à choisir ce qui nous intéresse dans le N choisi c'est un N entier produit de plusieurs nombres premiers.\newline 
+Car plus il y à de nombre premier qui compose N plus le systéme des restes chinois engendré par ce N contient d'équation.  \newline
+Tout les nombres de 0 à N-1 ne peuvent pas être "encodé" si l'on veut corrigé des erreurs.\newline
+Il faut determiné une borne B comprise entre 0 et N-1 qui nous servira de "zone" d'encodage.\newline
+Pour determiné cette borne on a 2 maniéres \newline
+La premiére est de choisir N et de trouvé B en se restreingnant à une sous partie du systéme le surplus servant de "données de parité"\newline
+La deuxième est de choisir B l'ensemble des entiers que l'ont veut encodé et rajouté des informations donc des equation suplémentaire au systéme engendré par B donc multiplier B par d'autre nombre premier.\newline
 
 \end{abstract}
 
@@ -32,8 +38,7 @@ dans un segond temps, les notations. Dans le théorème des restes chinois, nous
 
 \newpage
 \begin{flushleft}
-    Nous tenons tout d'abord à remercier Mr CASTAGNOS Guillaume d'avoir était le professeur principale de cette matière et,
-en ayant bien expliqué le fonctionnement pour partir sur de bonne base. Nous remercions par la suite Mm ZEMOR Gilles pour nous 
+    Nous tenons tout d'abord à remercier Mr CASTAGNOS Guillaume, d'avoir mainten .  Nous remercions par la suite Mm ZEMOR Gilles pour nous 
 avoir suivit, aider et tutoré durant ce semestre.
 \newline 
 nous remercions également nos familles et nos proches, pour leurs aide et leur soutiens.
@@ -43,7 +48,7 @@ nous remercions également nos familles et nos proches, pour leurs aide et leur 
 
 \section{théorème des restes}
 \subsection{théorème des restes chinois et son histoire}
-Le théorème des restes chinois viens à la base d’un livre mathématique chinois de Qin JUSHIO publié en 1247. Cependant, on avait déjà découvert ce théorème au part avant dans un livre de Sun ZI au 3° siècle. Le théorème consiste en:
+Le théorème des restes chinois viens à la base d’un livre de mathématique chinois de Qin JUSHIO publié en 1247. Cependant, on avait déjà découvert ce théorème au part avant dans un livre de Sun ZI au 3° siècle. Le théorème consiste en:
 On pose p1,...,pk des entiers premiers 2 à 2. Pour tout n1,...,nk, il existe un entier x tel que :
 \newline
 $ x\equiv n_1 \: (mod \;  p_1)$ 
@@ -66,12 +71,10 @@ Soit $x=\sum_{k = 1}^{y} u_k\times P_k\times n_k$. On pose $i\in [1;y]$ et $k\ne
 On a donc $x\equiv u_i P_i a_i(mod \: p_i)$, mais on sait que $u_i P_i\equiv 1 (mod \: p_i)$ d'où $x\equiv a_i (mod \: p_i)$. Sachant que c'est vrai pour tout i, on a x solution du système. \newline
 \newline
 On a x une solution du système, posons y une autre solution du système. On a alors $x-y\equiv 0( mod p_k)$, soit $p_k$ divise $x-y$. Sachant que les $p_k$ sont premier 2 à 2 entre eux, on a donc $x-y\equiv 0(mod \: P)$, soit P divise x-y, ou encore que $x\equiv y (mod \: P)$, d'où l'unicité modulo P.
-\newline
-\newline
-\newline
+\newpage
 Pour illustrer ce théorème, nous allons donner un exemple, mais pas n'importe quelle exemple, celui dont Sun ZI a proposé une solution:
 \newline
-soient des objets, prenons des bonbons, si on les repartis pour 3 enfants, il en reste 2, si on les répartis
+Soient des objets, prenons des bonbons, si on les repartis pour 3 enfants, il en reste 2, si on les répartis
 pour les 3 enfants et leurs parents (soit 5 personnes), il en reste 3. enfin si on partage ces bonbons avec également les 2 cousins,
 (soit 7 personnes) il en reste 2. On a donc :
 \newline 
@@ -89,19 +92,19 @@ Avant de répondre à ce problème, il faut d'abord voir l'algorithme.
 \newpage
 
 \subsection{notre algoritme}
-L'algotitme du théorème des restes chinois étant un peu lourd, 
-nous allons montrer l'algoritme comme suivant, mais vous pouvez le voir plus en détailles en python dans l'annexe.
+Notre fonction en python du théorème des restes chinois étant un peu lourde, 
+nous allons montrer l'algoritme comme suivant, mais vous pouvez le retrouver dans l'annexe.
 On a ici :
 \newline
-Soit $n_i$ le i-ème termes de la liste des modulos, et on note \newline
-$ N_i=\frac{n}{n_i}=n_1 n_2 ... n_i-1 n_i+1 ... n_k $   \newline
-on a donc $N_i$ et $n_i$  qui sont premier entre eux. \newline
-Il faut alors faire l'algoritme d'euclide étendu sur $N_i$ et $n_i$, se qui nous donne: 
-$1= N_i u_i + n_i v_i$ 
+Soit $p_i$ le i-ème termes de la liste des modulos, et on note \newline
+$ P_i=\frac{p}{p_i}=np_1 p_2 ... p_i-1 p_i+1 ... p_k $   \newline
+on a donc $P_i$ et $p_i$  qui sont premier entre eux. \newline
+Il faut alors faire l'algoritme d'euclide étendu sur $P_i$ et $p_i$, se qui nous donne: 
+$1= P_i u_i + p_i v_i$ 
 où 
 $u_i, v_i \in  \mathbb{Z} $
 \newline
-On pose donc $e_i = u_i N_i$ avec $ e_i \equiv 1 \; (mod \; n_i)$ et $ e_i\equiv 0 \; (mod \; e_j)$ avec $ i\neq j$ \newline
+On pose donc $e_i = u_i P_i$ avec $ e_i \equiv 1 \; (mod \; p_i)$ et $ e_i\equiv 0 \; (mod \; e_j)$ avec $ i\neq j$ \newline
 On trouve donc une solution qui est $x=\sum_{i = 1}^{k}{p_i e_i} $.\newline
 \newline
 \newline
@@ -110,19 +113,23 @@ $ x\equiv 2 \: (mod \:  3)$
 \newline
 $ x\equiv 3 \: (mod \: 5)$
 \newline
-$ x_k \equiv 2 \:(mod\: 7)$
+$ x \equiv 2 \:(mod\: 7)$
 \newline
-On a $N_1=5\times 7=35$, $N_2=3\times 7=21 $, et $N_3=3\times 5=15$ \newline
-On fait l'algorithme d'euclide sur $N_1$ et $n_1$ qui donne $-3\times 23 +2\times 35\times 1= 1 $ et aussi $e_1=2\times 35$ \newline
-Idem sur $N_2$ et $n_2$ qui donne $21\times 1 - 5\times 4=1$, et donc $e_2=21$ \newline
+On a $P_1=5\times 7=35$, $P_2=3\times 7=21 $, et $P_3=3\times 5=15$ \newline
+On fait l'algorithme d'euclide sur $P_1$ et $p_1$ qui donne $-3\times 23 +2\times 35\times 1= 1 $ et aussi $e_1=2\times 35$ \newline
+Idem sur $P_2$ et $p_2$ qui donne $21\times 1 - 5\times 4=1$, et donc $e_2=21$ \newline
 Enfin, on a $15\times 1- 7\times 2 = 1 $ avec $e_3=15$ \newline
-Le résultat final est donc $x=2\times 35 + 3\times 21 + 2\times 15 =233$. Nous avons, comme dit précédement plusieurs résultat, qui sont les entiers congrus à 233 modulo 105
+Un résultat est $x=2\times 35 + 3\times 21 + 2\times 15 =233$.
+Nous avons, comme dit précédement plusieurs résultat, qui sont les entiers congrus à 233 modulo 105.
+$233\equiv 23 (mod \: 105)$
+Le résultat finale est donc $23+105k$, $k \in \mathbb{Z} $.
+Si on reprend notre problème, on a donc 23 bonbons.
 \newline
 \newline
-Comme vous pouvez le voir, nous avons utilisé l'algoritme d'Euclide étendu, qui prend en paramètres a et b, deux entiers,
-et qui renvois d le PGCD de a et b, un couple $(u,v)\epsilon\mathbb{Z} $ tel que $d=au+bv$.
+Comme vous pouvez le voir, nous avons utilisé l'algorithme d'Euclide étendu, qui prend en paramètres a et b, deux entiers,
+et qui renvois d le PGCD de a et b, un couple $(u,v) \in \mathbb{Z} $ tel que $d=au+bv$.
 \newline
-Pour notre utilisation, nous avons un peu modifié cette algorithm, car pour utiliser le théorème des restes chinois, les nombres sont premiers entre eux,
+Pour notre utilisation, nous avons un peu modifié cette algorithme, car pour utiliser le théorème des restes chinois, les nombres sont premiers entre eux 2 à 2,
 donc $d=1$. De plus, il nous fait gagner une étape car il nous renvois l'inverse de a modulo b.
 \begin{algorithm}
     $x_0 \leftarrow 1 $ \;
@@ -164,12 +171,12 @@ $x_1=x_2=...=x_k$
 alors il n'y a pas d'erreur.
 \newline
 Voici un petit exemple pour bien comprendre cette fonction.\newline
-on pose P=[2,3,5,7,11,13,17] et N=[1, 1, 1, 5, 6, 9, 10] \newline
+on pose P=[2,3,5,7,11,13] et N=[1, 1, 1, 5, 6, 9] \newline
 si on applique le théorèmes des restes chinois à ces 2 listes, on trouve 510510. Pour vérifier qu'il ny ai pas d'erreur, on applique le théorème à
-P1=[3,5,7,11,13,17] et N1=[1, 1, 5, 6, 9, 10], puis à P2=[2,5,7,11,13] et N2=[1, 1, 5, 6, 9, 10] jusqu'à P7=[2,3,5,7,11,13] et N7=[1, 1, 1, 5, 6, 9]\newline
-Comme il n'y a pas d'erreur, la fonction va retourner [61, 61, 61, 61, 61, 61, 61] \newline
-à présent, nous mettons une erreur dans les listes, on a P=[2,3,5,7,11,13] et N=[1,1,1,5,8,10]. En appliquant la fonction, il sera retourner une liste [9721, 9721, 3715, 1141, 1531, 4811], où l'on remarque bien que chaque élément est différrent, donc nous avons au plus une erreur.
-Dans cette fonction, on parcours n fois la liste de n élément donc nous somme en $O(n^2)$. Mais on fait n fois l'algo des restes chinois donc on est en $O(n^2)$. Cette algorithme est donc en $O(n^4)$
+P1=[3,5,7,11,13] et N1=[1, 1, 5, 6, 9, puis à P2=[2,5,7,11,13] et N2=[1, 1, 5, 6, 9] jusqu'à P6=[2,3,5,7,11,] et N7=[1, 1, 1, 5, 6]\newline
+Comme il n'y a pas d'erreur, la fonction va retourner [61, 61, 61, 61, 61, 61] \newline
+à présent, nous mettons une erreur dans les listes, on a P=[2,3,5,7,11,13] et N=[1,1,2,5,6,9]. En appliquant la fonction, il sera retourner une liste [6067, 6067, 61, 1777, 607, 1447], où l'on remarque bien que chaque élément est différrent, donc nous avons au moins une erreur.
+Dans cette fonction, on parcours n fois la liste de n élément donc nous somme en $O(n^2)$. Mais on fait n fois l'algo des restes chinois donc on est en $O(n^2)$. Cette algorithme est donc en $O(n^4)$ avec n la taille de la liste. 
 \newline 
 \newline
 Pour créer notre première fonction de correction, nous nous sommes inspirées de la fonction ci dessus. On sait dit que si on enlevé 2 élément des listes, nous pourrions trouver l'erreur. On s'explique;
@@ -184,18 +191,30 @@ On note $x_ij$ le résultat du théorème des restes chinois appliqués à $P_ij
 Et on retourne $L=[[x_11,x_12,...x_1k],[x_21,x_22,...,x_2k],...,[x_1k,x_2k,...,x_kk]]$ \newline
 On a retourné une liste de liste. Si la k-ième sous-liste retourne toujours le même nombre alors cela signifie qu'il y a une erreur sur le k-ième élément. \newline`
 \newline
-Cette fonction est très performante comme vous avez pu le voir sur les exemples, cependant il y a quelque défaut. Premièrement, cette fonction ne marche que avec une erreur,
-on peut facilement changer la fonction pour trouver n erreur juste en rajoutant des boucles FOR. Deuxièmement, nous avons un problème de borne. Pour trouver la borne,
+Si on récupère l'exemple du paragraphe précédent, où l'on avait découvert une erreur. \newline
+On a: $P=[2,3,5,7,11,13]$ et $N=[1,1,2,5,6,9]$ \newline
+On applique notre algoritme et il retourne/
+[[6067, 1062, 61, 1777, 607, 292], [1062, 6067, 61, 347, 607, 677], [61, 61, 61, 61, 61, 61], [1777, 347, 61, 1777, 217, 127], [607, 607, 61, 217, 607, 187], [292, 677, 61, 127, 187, 1447]] \newline
+La première liste retourné ne renvois pas le meme résultat donc l'erreur n'est pas sur la première équation. Elle n'es pas non plus sur la deuxième équation.
+Cependant, on peut voir sur la troisième liste que le résultat est toujours le même; c'est à dire qu'à chaque fois on a fait le théorème des restes chinois en enlevant la troisième équation et une autre, donc nous avons une erreur sur la toisième équation.
+\newline
+Cette fonction est très performante comme vous avez pu le voir sur les exemples, cependant il y a quelque défaut. Premièrement, cette fonction ne marche que avec une seule erreur,
+on peut facilement changer la fonction pour trouver n erreur juste en rajoutant des boucles FOR, mais cela rendrait l'algorithme encore plus lourd. Deuxièmement, nous avons un problème de borne. Pour trouver la borne,
 il suffit de multiplier par les 2 derniers nombre premier de la liste. \newline
-Par exemple pour le nombre 30030, la borne est 30030/(11x13) soit 210.\newline
-Enfin, nous avons un problème de complexité soit $O(n^3)$ et a chaque fois on fait le théorème des restes chinois qui est en $O(n^2)$  l'ensemble des entiers des la zone d'encodage.
+Par exemple pour le nombre 30030, la borne est 30030/(11x13) soit 210, se qui est très peu.\newline
+Enfin, nous avons un problème de complexité soit $O(n^3)$ et a chaque fois on fait le théorème des restes chinois qui est en $O(n^2)$, se qui donne un algorithme en $O(n^5)$.
 
 \newpage
 \subsection{brute force de hamming}
 
-Notre deuxième algorime brut force vonsiste à utilisé la distance de hamming. Soit $x=x_1x_2 ... x_n$ et $y=y_1y_2 ... y_n$, la distance de Hamming c'est
+Notre deuxième algorithme brut force consiste à utilisé la distance de hamming. Soit $x=x_1x_2 ... x_n$ et $y=y_1y_2 ... y_n$, la distance de Hamming c'est
 $d_H(x,y)=Card\{  i\vert x_i \neq y_i \}$ \newline
-Et dans cette algoritme nous utilisons la distance de haming. Nous laissons le choix au lecteur d'aller voir l'algoritme de la distance de hamming en annexe.
+D'après Hamming, si la distance minimale est égal, alors on peut détecter d-1 erreurs et corriger $\frac{d-1}{2}$ erreurs.
+Avant de voir cette algorithme, nous devons expliquer la distance minimale. Soit G un groupe n-uplet appartenant à $A^n$. La distance minimale de G est la plus petite distance de hamming sur tout les éléments de G, soit $d(G)=min{\left\{d_h(x,y)\right\} | x\neq y, x,y\in G}$ \newline
+
+Dans cette algoritme nous utilisons la distance de haming. Nous laissons le choix au lecteur d'aller voir l'algoritme de la distance de hamming en annexe.\newline
+Pour ce nouvel algoritme, nous allons calculer la distance de Hamming entre le uplet à corriger et tout les élements de 0 à la borne. Nous selectionnons tout les éléments de distance de Hamming strictement inférieur à 3 pour pouvoir détecter une erreur. \newline
+Pour choisir la borne de cette algorithme, on retire les 3 plus grandes équations, c'est à dire si $P=[p_1, ..., p_k]$ alors la borne est $\prod{i}{np}$ 
 
 
 \newpage
