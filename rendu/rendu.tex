@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt]{article}
+\documentclass[a4paper, 11pt]{report}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -7,11 +7,11 @@
 \usepackage[linesnumbered, french]{algorithm2e}
 \usepackage{appendix}
 
-\begin{document}
+
 \title{Reconstituer avec le théorème chinois en présence d’erreurs}
 \author{Mr LAVOIX John, Mr GRANERO Fabien }
 \date{5 mai 2021}
-
+\begin{document}
 
 
 \begin{abstract}
@@ -120,8 +120,8 @@ On fait l'algorithme d'euclide sur $P_1$ et $p_1$ qui donne $-3\times 23 +2\time
 Idem sur $P_2$ et $p_2$ qui donne $21\times 1 - 5\times 4=1$, et donc $e_2=21$ \newline
 Enfin, on a $15\times 1- 7\times 2 = 1 $ avec $e_3=15$ \newline
 Un résultat est $x=2\times 35 + 3\times 21 + 2\times 15 =233$.
-Nous avons, comme dit précédement plusieurs résultat, qui sont les entiers congrus à 233 modulo 105.
-$233\equiv 23 (mod \: 105)$
+Nous avons, comme dit précédement plusieurs résultat, qui sont les entiers congrus à 233 modulo 105. \newline
+$233\equiv 23 (mod \: 105)$ \newline
 Le résultat finale est donc $23+105k$, $k \in \mathbb{Z} $.
 Si on reprend notre problème, on a donc 23 bonbons.
 \newline
@@ -131,6 +131,7 @@ et qui renvois d le PGCD de a et b, un couple $(u,v) \in \mathbb{Z} $ tel que $d
 \newline
 Pour notre utilisation, nous avons un peu modifié cette algorithme, car pour utiliser le théorème des restes chinois, les nombres sont premiers entre eux 2 à 2,
 donc $d=1$. De plus, il nous fait gagner une étape car il nous renvois l'inverse de a modulo b.
+
 \begin{algorithm}
     $x_0 \leftarrow 1 $ \;
     $x_1 \leftarrow 0 $ \;
@@ -188,7 +189,7 @@ faisont plutôt exemple.
 Soit $P=[p_1, p_2, ... , p_k]$ et $N=[n_1 , n_2, ... ,n_k]$ \newline
 On note $P_ij =[p_1 , ... , p_i-1 , p_i+1 , ... , p_j-1 , p_j+1 , ... , p_k]$ et $N_ij=[n_1, ..., n_i-1, n_i+1, ..., n_j-1, n_j+1, ..., n_k]$ \newline
 On note $x_ij$ le résultat du théorème des restes chinois appliqués à $P_ij$ et $N_ij$ \newline
-Et on retourne $L=[[x_11,x_12,...x_1k],[x_21,x_22,...,x_2k],...,[x_1k,x_2k,...,x_kk]]$ \newline
+Et on retourne $L=[[x_11,x_12,...x_1k],[x_21,x_22,...,x_2k],...,[x_{1k},x_{2k},...,x_{kk}]]$ \newline
 On a retourné une liste de liste. Si la k-ième sous-liste retourne toujours le même nombre alors cela signifie qu'il y a une erreur sur le k-ième élément. \newline`
 \newline
 Si on récupère l'exemple du paragraphe précédent, où l'on avait découvert une erreur. \newline
@@ -208,13 +209,25 @@ Enfin, nous avons un problème de complexité soit $O(n^3)$ et a chaque fois on 
 \subsection{brute force de hamming}
 
 Notre deuxième algorithme brut force consiste à utilisé la distance de hamming. Soit $x=x_1x_2 ... x_n$ et $y=y_1y_2 ... y_n$, la distance de Hamming c'est
-$d_H(x,y)=Card\{  i\vert x_i \neq y_i \}$ \newline
-D'après Hamming, si la distance minimale est égal, alors on peut détecter d-1 erreurs et corriger $\frac{d-1}{2}$ erreurs.
-Avant de voir cette algorithme, nous devons expliquer la distance minimale. Soit G un groupe n-uplet appartenant à $A^n$. La distance minimale de G est la plus petite distance de hamming sur tout les éléments de G, soit $d(G)=min{\left\{d_h(x,y)\right\} | x\neq y, x,y\in G}$ \newline
+$d_H(x,y)=Card\{  i\vert x_i \neq y_i \}$. Par exemple la distance de Hamming de $x={1,2,3,4}$ et $y={1,2,5,6}$ est 2\newline
+Avant de voir cette algorithme, nous devons expliquer la distance minimale. Soit G un groupe n-uplet appartenant à $A^n$. La distance minimale de G est la plus petite distance de hamming sur tout les éléments de G, soit $d(G)=min{\left\{d_h(x,y)\right\} | x\neq y, x,y\in G}$.
+D'après Hamming, si la distance minimale est égal à d, alors on peut détecter d-1 erreurs et corriger $\frac{d-1}{2}$ erreurs. \newline
 
 Dans cette algoritme nous utilisons la distance de haming. Nous laissons le choix au lecteur d'aller voir l'algoritme de la distance de hamming en annexe.\newline
 Pour ce nouvel algoritme, nous allons calculer la distance de Hamming entre le uplet à corriger et tout les élements de 0 à la borne. Nous selectionnons tout les éléments de distance de Hamming strictement inférieur à 3 pour pouvoir détecter une erreur. \newline
-Pour choisir la borne de cette algorithme, on retire les 3 plus grandes équations, c'est à dire si $P=[p_1, ..., p_k]$ alors la borne est $\prod{i}{np}$ 
+Pour choisir la borne de cette algorithme pour 1 erreur, on retire les 3 plus grandes équations, c'est à dire si $P=[p_1, ..., p_k]$ alors la borne est $\prod_{i=1} ^{k-3} p_i$. Pour e erreurs, on retire les $3e$ dernières équations. \newline
+Faisons un exemple pour illustrer cette algoritme: \newline
+Prenons les listes $P=[2,3,5,7,11,13,17]$ et $N=[1,0,0,5,9,10,7]$ pour nos exemples. \newline
+Détaillons, pour mieux le comprendre, notre algorithme sur $N=[1,0,0,5,7,10,7]$ c'est à dire que nous mettons une erreur sur le cinquième thermes.
+Dans un premier temps, l'algorithme va faire la distance de Hamming entre la liste N et le nombre 0 qui s'écrit $L_O=[0,0,0,0,0,0,0]$ car le reste dans division euclidienne des $p_i$ par 0 est toujours 0.
+La distance de hamming de ces 2 listes est 5, car 2 éléments sur les 7 sont identiques entre les 2 listes, donc on ne prete pas attention à ce cas. \newline
+On fait la distance de hamming entre le liste N et 1 qui s'écrit $L_1=[1,1,1,1,1,1,1]$ car le reste dans la division euclidienne des $p_i$ par 1 est toujours 1.
+La distance de Hamming de ces 2 listes est 6 donc on ne prete pas attention.
+On fais la distance de Hamming entre la liste N et 2 qui s'écrit $L_2=[0,2,2,2,2,2,2]$. La distance de Hamming de ces 2 listes est 7 donc on ne prete pas attention. \newline
+Il continue ses recherches sur les entiers 3, 4, et ainsi de suite. l'algorithme à découvert une liste qui avait une distance de Hamming infèrieur à 3. Cette liste est la liste $L=[1,0,0,5,9,10,7]$ qui correspond au nombre 75. Donc 75 est un candidat possible à la correspondance de cette uplet.
+l'algorithme va continuer ces tests sur tout les nombres jusqu'à notre borne moins 1 qui ici vaut $2\times 3\times 5\times 7 -1=209$. \newline
+
+
 
 
 \newpage
@@ -224,7 +237,7 @@ Comme vu précédement la méthode brute force est efficace sur des petits cas d
 Il faut donc trouver un moyen plus rapide et optimal. Donc comprenons comment intervient l'erreur sur le n-uplet du systéme d'équation.\newline
 Soit m le message envoyé et y le message et l'erreur dans le même message. si l'on fait la différrence de m-y on obtient e l'erreur.
 Maintenant cette erreur ce représente par un uplet en supposant par soucis de représentation que les erreurs se trouve au début de l'uplet associé
-e = [e1,e2,0,0,...,0] cette erreur est donc un multiple de tout les $p_i$ nombres premiers pour i>2 et 2  reste non nul sur les positions erroné.\newline
+$e = [e1,e2,0,0,...,0]$ cette erreur est donc un multiple de tout les $p_i$ nombres premiers pour i>2 et 2  reste non nul sur les positions erroné.\newline
 Donc y = m + e donc si l'on divise y par N notre entier on a $\frac{y}{N}=\frac{m}{N}+\frac{e}{N}$\newline
 mais $\frac{e}{N}$ peut se simplifier car hormis les positions érronés 2 dans notre cas e est un multiple de tout les autres $p_i$ qui composent N\newline
 Ainsi on a  $\frac{y}{N}=\frac{m}{N}+\frac{e}{N}=\frac{m}{N}+ \frac{e_1 * e_2}{p_1 * p_2 } <\frac{B}{N} $    B étant la borne choisis.\newline
@@ -256,6 +269,12 @@ Au début de nos tests nous avons pratiqué avec des petits cas de 6 à 7 nombre
 Mais pour tester des cas avec plus d'erreurs nous avons eu besoin de systéme plus grand nous avons donc directement étendu notre systéme à 51 nombres premiers.
 Déjà N est superieur à $10^8^0$ , nous nous sommes restreint à $10^2^7$ comme espace d'encodage pour testé les cas avec plusieurs erreurs. Même si théoriquement nous pourrions résoudre un cas a 15 erreurs en pratique le systéme est trop erroné pour pouvoir le résoudre.
 Concrétement nous arrivé à corriger jusqu'à 7 erreur en encodant jusqu'à $10^2^7$
+\newpage
+
+\begin{appendix}
+    \section{théorème des restes}
+    \label{a_encartage}
 
 
+\end{appendix}
 \end{document}

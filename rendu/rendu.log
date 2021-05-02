@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.5.10)  1 MAY 2021 23:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.5.10)  2 MAY 2021 23:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,19 +6,20 @@ entering extended mode
 **/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex
 (/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-03-06> (/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+L3 programming layer <2020-03-06> (/usr/local/texlive/2020/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count167
-\c@section=\count168
-\c@subsection=\count169
-\c@subsubsection=\count170
-\c@paragraph=\count171
-\c@subparagraph=\count172
-\c@figure=\count173
-\c@table=\count174
+\c@chapter=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\c@figure=\count174
+\c@table=\count175
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
@@ -44,30 +45,30 @@ Package francais.ldf Warning: Option `francais' for Babel is *deprecated*,
 Language: french 2020/01/30 v3.5g French support from the babel system
  (/usr/local/texlive/2020/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2020/03/22 3.42 Babel common definitions
-\babel@savecnt=\count175
+\babel@savecnt=\count176
 \U@D=\dimen135
  (/usr/local/texlive/2020/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count176
+\bbl@dirlevel=\count177
 )
 Package babel Info: \l@acadian = using hyphenrules for french
 (babel)             (\language28) on input line 91.
 Package babel Info: \l@canadien = using hyphenrules for french
 (babel)             (\language28) on input line 92.
-\FB@nonchar=\count177
+\FB@nonchar=\count178
 Package babel Info: Making : an active character on input line 419.
 Package babel Info: Making ; an active character on input line 420.
 Package babel Info: Making ! an active character on input line 421.
 Package babel Info: Making ? an active character on input line 422.
-\FBguill@level=\count178
+\FBguill@level=\count179
 \FBold@everypar=\toks17
 \FB@Mht=\dimen136
-\mc@charclass=\count179
-\mc@charfam=\count180
-\mc@charslot=\count181
-\std@mcc=\count182
-\dec@mcc=\count183
-\c@FBcaption@count=\count184
+\mc@charclass=\count180
+\mc@charfam=\count181
+\mc@charslot=\count182
+\std@mcc=\count183
+\dec@mcc=\count184
+\c@FBcaption@count=\count185
 \listindentFB=\dimen137
 \descindentFB=\dimen138
 \labelindentFB=\dimen139
@@ -95,14 +96,14 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \Gin@req@width=\dimen145
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count185
+\c@AlgoLine=\count186
  (/usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \algocf@hangindent=\skip49
  (/usr/local/texlive/2020/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count186
+\c@checkoddpage=\count187
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/relsize/relsize.sty
@@ -138,52 +139,52 @@ Package: relsize 2013/03/29 ver 4.1
 \algoheightrule=\skip65
 \algotitleheightruledefault=\skip66
 \algotitleheightrule=\skip67
-\c@algocfline=\count187
-\c@algocfproc=\count188
-\c@algocf=\count189
+\c@algocfline=\count188
+\c@algocfproc=\count189
+\c@algocf=\count190
 \algocf@algoframe=\box51
 \algocf@algobox=\box52
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count190
-\c@@ppsavesec=\count191
-\c@@ppsaveapp=\count192
+\c@@pps=\count191
+\c@@ppsavesec=\count192
+\c@@ppsaveapp=\count193
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count193
+\l__kernel_color_stack_int=\count194
 \l__pdf_internal_box=\box53
 ) (/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.aux)
 \openout1 = `rendu.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Info: Redefining \degres on input line 10.
-LaTeX Info: Redefining \dots on input line 10.
-LaTeX Info: Redefining \up on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Info: Redefining \degres on input line 14.
+LaTeX Info: Redefining \dots on input line 14.
+LaTeX Info: Redefining \up on input line 14.
  (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count194
+\scratchcounter=\count195
 \scratchdimen=\dimen152
 \scratchbox=\box54
-\nofMPsegments=\count195
-\nofMParguments=\count196
+\nofMPsegments=\count196
+\nofMParguments=\count197
 \everyMPshowfont=\toks19
-\MPscratchCnt=\count197
+\MPscratchCnt=\count198
 \MPscratchDim=\dimen153
-\MPnumerator=\count198
-\makeMPintoPDFobject=\count199
+\MPnumerator=\count199
+\makeMPintoPDFobject=\count266
 \everyMPtoPDFconversion=\toks20
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -207,7 +208,9 @@ No file rendu.toc.
 \tf@toc=\write3
 \openout3 = `rendu.toc'.
 
-[2] [3]
+[1
+
+] [2]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 54.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -239,7 +242,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--74
 
  []
 
-[4] [5]
+[3] [4]
 /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:105: Undefined control sequence.
 l.105 $u_i, v_i \in  \mathbb
                             {Z} $
@@ -267,18 +270,33 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:149: Missing $ inserted.
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--134
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--134
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--134
+
+ []
+
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:150: Missing $ inserted.
 <inserted text> 
                 $
-l.149     \Return
+l.150     \Return
                  {$s\times x_0 + ((1-s)\div 2)\times d$}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:149: Extra }, or forgotten $.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:150: Extra }, or forgotten $.
 <recently read> \egroup 
                         
-l.149     \Return
+l.150     \Return
                  {$s\times x_0 + ((1-s)\div 2)\times d$}
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -286,10 +304,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:149: Extra }, or forgotten $.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:150: Extra }, or forgotten $.
 <recently read> \egroup 
                         
-l.149     \Return
+l.150     \Return
                  {$s\times x_0 + ((1-s)\div 2)\times d$}
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -297,18 +315,18 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:149: Missing $ inserted.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:150: Missing $ inserted.
 <inserted text> 
                 $
-l.149     \Return
+l.150     \Return
                  {$s\times x_0 + ((1-s)\div 2)\times d$}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:150: Missing } inserted.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:151: Missing } inserted.
 <inserted text> 
                 }
-l.150 \end{algorithm}
+l.151 \end{algorithm}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -317,14 +335,14 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) detected at line 150
+Underfull \hbox (badness 10000) detected at line 151
 [][]
  []
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:150: Missing } inserted.
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:151: Missing } inserted.
 <inserted text> 
                 }
-l.150 \end{algorithm}
+l.151 \end{algorithm}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -332,91 +350,90 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--151
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--151
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 161--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--151
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 160--206
-
- []
-
-
-Overfull \hbox (7.88013pt too wide) in paragraph at lines 160--206
+Overfull \hbox (7.88013pt too wide) in paragraph at lines 161--207
 \T1/cmr/m/n/10.95 Pour v�-ri-fier qu'il ny ai pas d'er-reur, on ap-plique le th�o-r�me � P1=[3,5,7,11,13]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--206
+Underfull \hbox (badness 10000) in paragraph at lines 161--207
 
  []
 
-[7] [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 210--214
-
- []
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 223--237
+[6] [7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 211--215
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--237
+Overfull \hbox (21.31424pt too wide) in paragraph at lines 216--229
+\T1/cmr/m/n/10.95 D�taillons, pour mieux le com-prendre, notre al-go-rithme sur $\OML/cmm/m/it/10.95 N \OT1/cmr/m/n/10.95 = [1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 7\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 10\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 7]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--229
+
+ []
+
+[9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 236--250
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--237
+Underfull \hbox (badness 10000) in paragraph at lines 236--250
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--239
+Underfull \hbox (badness 10000) in paragraph at lines 236--250
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
 
  []
 
 [11]
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:257: Double superscript.
-l.257 Déjà N est superieur à $10^8^
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:270: Double superscript.
+l.270 Déjà N est superieur à $10^8^
                                       0$ , nous nous sommes restreint à $10...
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:257: Double superscript.
-l.257 ...0$ , nous nous sommes restreint à $10^2^
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:270: Double superscript.
+l.270 ...0$ , nous nous sommes restreint à $10^2^
                                                   7$ comme espace d'encodage...
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:258: Double superscript.
-l.258 ...u'à 7 erreur en encodant jusqu'à $10^2^
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:271: Double superscript.
+l.271 ...u'à 7 erreur en encodant jusqu'à $10^2^
                                                   7$
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-[12] (/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.aux) ) 
+[12] [13] (/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4062 strings out of 480608
- 60917 string characters out of 5903630
- 333031 words of memory out of 5000000
- 19933 multiletter control sequences out of 15000+600000
- 543057 words of font info for 44 fonts, out of 8000000 for 9000
+ 4077 strings out of 480608
+ 61107 string characters out of 5903630
+ 334472 words of memory out of 5000000
+ 19948 multiletter control sequences out of 15000+600000
+ 543064 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,12n,35p,474b,486s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.pdf (12 pages, 258600 bytes).
+ 32i,11n,35p,474b,482s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
+Output written on /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.pdf (14 pages, 245078 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
+ 118 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
