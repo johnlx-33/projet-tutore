@@ -1,11 +1,11 @@
 \babel@toc {french}{}
-\contentsline {section}{\numberline {0.1}théorème des restes}{3}%
-\contentsline {subsection}{\numberline {0.1.1}théorème des restes chinois et son histoire}{3}%
-\contentsline {subsection}{\numberline {0.1.2}notre algoritme}{5}%
-\contentsline {section}{\numberline {0.2}Brute force}{6}%
-\contentsline {subsection}{\numberline {0.2.1}Notre premier algo version naïve }{6}%
-\contentsline {subsection}{\numberline {0.2.2}brute force de hamming}{9}%
-\contentsline {section}{\numberline {0.3}Les fractions continues}{11}%
-\contentsline {subsection}{\numberline {0.3.1}Principe}{11}%
-\contentsline {subsection}{\numberline {0.3.2}Résumé d'experiences et test}{12}%
-\contentsline {section}{\numberline {.1}théorème des restes}{13}%
+\contentsline {chapter}{\numberline {1}théorème des restes}{2}%
+\contentsline {section}{\numberline {1.1}théorème des restes chinois et son histoire}{2}%
+\contentsline {section}{\numberline {1.2}notre algoritme}{5}%
+\contentsline {chapter}{\numberline {2}}{7}%
+\contentsline {section}{\numberline {2.1}Notre premier algo version naïve }{7}%
+\contentsline {section}{\numberline {2.2}brute force de hamming}{10}%
+\contentsline {chapter}{\numberline {3}Les fractions continues}{12}%
+\contentsline {section}{\numberline {3.1}Principe}{12}%
+\contentsline {section}{\numberline {3.2}Résumé d'experiences et test}{14}%
+\contentsline {chapter}{\numberline {A}théorème des restes}{15}%

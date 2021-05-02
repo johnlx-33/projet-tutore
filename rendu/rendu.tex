@@ -8,11 +8,12 @@
 \usepackage{appendix}
 
 
-\title{Reconstituer avec le théorème chinois en présence d’erreurs}
+\title{Reconstituer le théorème chinois en présence d’erreurs}
 \author{Mr LAVOIX John, Mr GRANERO Fabien }
-\date{5 mai 2021}
-\begin{document}
+\date{7 mai 2021}
 
+\begin{document}
+\maketitle
 
 \begin{abstract}
 
@@ -21,7 +22,7 @@ Grace au soutiens de notre professeur MR ZEMOR, nous avons appris a reconstruire
 Dans un premier temps, nous avons pris conaissance de ce théorème, puis dans un second temps, nous l'avons corrigé grâce à plusieurs méthodes, 
 tel que du brut force ou une méthode de fractions continues.
 \newline 
-
+Avant de commencer ce devoir, il faut expliciter certains points important pour partir sur de bonne base.
 A  propos du N à choisir ce qui nous intéresse dans le N choisi c'est un N entier produit de plusieurs nombres premiers.\newline 
 Car plus il y à de nombre premier qui compose N plus le systéme des restes chinois engendré par ce N contient d'équation.  \newline
 Tout les nombres de 0 à N-1 ne peuvent pas être "encodé" si l'on veut corrigé des erreurs.\newline
@@ -32,23 +33,14 @@ La deuxième est de choisir B l'ensemble des entiers que l'ont veut encodé et r
 
 \end{abstract}
 
-\newpage
 
 \tableofcontents
 
 \newpage
-\begin{flushleft}
-    Nous tenons tout d'abord à remercier Mr CASTAGNOS Guillaume, d'avoir mainten .  Nous remercions par la suite Mm ZEMOR Gilles pour nous 
-avoir suivit, aider et tutoré durant ce semestre.
-\newline 
-nous remercions également nos familles et nos proches, pour leurs aide et leur soutiens.
-\end{flushleft}
 
-\newpage
-
-\section{théorème des restes}
-\subsection{théorème des restes chinois et son histoire}
-Le théorème des restes chinois viens à la base d’un livre de mathématique chinois de Qin JUSHIO publié en 1247. Cependant, on avait déjà découvert ce théorème au part avant dans un livre de Sun ZI au 3° siècle. Le théorème consiste en:
+\chapter{théorème des restes}
+\section{théorème des restes chinois et son histoire}
+Le théorème des restes chinois vient à la base d’un livre de mathématique chinois de Qin JUSHIO publié en 1247. Cependant, on avait déjà découvert ce théorème au part avant dans un livre de Sun ZI au 3° siècle. Le théorème consiste en:
 On pose p1,...,pk des entiers premiers 2 à 2. Pour tout n1,...,nk, il existe un entier x tel que :
 \newline
 $ x\equiv n_1 \: (mod \;  p_1)$ 
@@ -91,7 +83,7 @@ Avant de répondre à ce problème, il faut d'abord voir l'algorithme.
 
 \newpage
 
-\subsection{notre algoritme}
+\section{notre algoritme}
 Notre fonction en python du théorème des restes chinois étant un peu lourde, 
 nous allons montrer l'algoritme comme suivant, mais vous pouvez le retrouver dans l'annexe.
 On a ici :
@@ -154,10 +146,10 @@ donc $d=1$. De plus, il nous fait gagner une étape car il nous renvois l'invers
 
 \newpage
 
-\section{Brute force}
+\chapter{}{Brute force}
 Il existe plusieur algoritmes de brut force qui permette de résoudre les erreurs tel que essayer tout les cas possibles. Mais cette algoritme est trop lourd a écrire. Nous avons donc fait des algoritmes moins lourd.
 Nous vous présentons 2 algorithmes dans cette section.
-\subsection{Notre premier algo version naïve }
+\section{Notre premier algo version naïve }
 Tout d'abord, nous avons fait une fonction qui nous montre si il y a une erreur ou pas dans nos listes, car avant de vouloir trouver les erreurs, il faut savoir si il y en a une.
 Nous avons donc fait un petit algorithme qui enlèves, chacun leurs tours, un élément des listes; c'est à dire qu'on retire le premier élément des 2 listes, puis on retire que le deuxième élément, puis le troisième et ainsi de suite. Nous appliquons alors le théorème des restes chinois a chaque itération, et on mets le résultats dans une liste auxiliaire. Si il n'y a pas d'erreur,
 lorsqu'on retourne cette liste auxiliaire, on devrais avoir la même valeur partout, si les valeurs de la liste sont différentes, nous avons une erreur. \newline
@@ -206,7 +198,7 @@ Par exemple pour le nombre 30030, la borne est 30030/(11x13) soit 210, se qui es
 Enfin, nous avons un problème de complexité soit $O(n^3)$ et a chaque fois on fait le théorème des restes chinois qui est en $O(n^2)$, se qui donne un algorithme en $O(n^5)$.
 
 \newpage
-\subsection{brute force de hamming}
+\section{brute force de hamming}
 
 Notre deuxième algorithme brut force consiste à utilisé la distance de hamming. Soit $x=x_1x_2 ... x_n$ et $y=y_1y_2 ... y_n$, la distance de Hamming c'est
 $d_H(x,y)=Card\{  i\vert x_i \neq y_i \}$. Par exemple la distance de Hamming de $x={1,2,3,4}$ et $y={1,2,5,6}$ est 2\newline
@@ -231,8 +223,8 @@ l'algorithme va continuer ces tests sur tout les nombres jusqu'à notre borne mo
 
 
 \newpage
-\section{Les fractions continues} 
-\subsection{Principe}
+\chapter{Les fractions continues} 
+\section{Principe}
 Comme vu précédement la méthode brute force est efficace sur des petits cas de correction mais sur de cas plus grand la complexité explose et il est très difficile d'obtenir des résultats en un temps raisonnable.\newline
 Il faut donc trouver un moyen plus rapide et optimal. Donc comprenons comment intervient l'erreur sur le n-uplet du systéme d'équation.\newline
 Soit m le message envoyé et y le message et l'erreur dans le même message. si l'on fait la différrence de m-y on obtient e l'erreur.
@@ -264,17 +256,17 @@ Coût que l'on a constater grace a nos experiences et test.
 
 
 \newpage
-\subsection{Résumé d'experiences et test}
+\section{Résumé d'experiences et test}
 Au début de nos tests nous avons pratiqué avec des petits cas de 6 à 7 nombre premier et cette méthode se révéla très efficace.
 Mais pour tester des cas avec plus d'erreurs nous avons eu besoin de systéme plus grand nous avons donc directement étendu notre systéme à 51 nombres premiers.
 Déjà N est superieur à $10^8^0$ , nous nous sommes restreint à $10^2^7$ comme espace d'encodage pour testé les cas avec plusieurs erreurs. Même si théoriquement nous pourrions résoudre un cas a 15 erreurs en pratique le systéme est trop erroné pour pouvoir le résoudre.
 Concrétement nous arrivé à corriger jusqu'à 7 erreur en encodant jusqu'à $10^2^7$
 \newpage
 
-\begin{appendix}
-    \section{théorème des restes}
+\begin{appendices}
+    \chapter{théorème des restes}
     \label{a_encartage}
 
 
-\end{appendix}
+\end{appendices}
 \end{document}

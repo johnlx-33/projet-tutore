@@ -11,3 +11,10 @@ B = borne
 X = entier a reconstituer envoyer
 m = entier reconstitué
 r = taille de la liste P
+
+\begin{flushleft}
+    Nous tenons tout d'abord à remercier Mr CASTAGNOS Guillaume, d'avoir mainten .  Nous remercions par la suite Mm ZEMOR Gilles pour nous 
+avoir suivit, aider et tutoré durant ce semestre.
+\newline 
+nous remercions également nos familles et nos proches, pour leurs aide et leur soutiens.
+\end{flushleft}
