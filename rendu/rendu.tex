@@ -17,19 +17,10 @@
 
 \begin{abstract}
 
-    Ce devoir est une synthèse de nos travaux depuis plusieurs mois sur la reconstitution du théorème des restes chinois. 
-Grace au soutiens de notre professeur MR ZEMOR, nous avons appris a reconstruire le théorème des restes chinois en présence d'erreur;
-Dans un premier temps, nous avons pris conaissance de ce théorème, puis dans un second temps, nous l'avons corrigé grâce à plusieurs méthodes, 
-tel que du brut force ou une méthode de fractions continues.
-\newline 
-Avant de commencer ce devoir, il faut expliciter certains points important pour partir sur de bonne base.
-A  propos du N à choisir ce qui nous intéresse dans le N choisi c'est un N entier produit de plusieurs nombres premiers.\newline 
-Car plus il y à de nombre premier qui compose N plus le systéme des restes chinois engendré par ce N contient d'équation.  \newline
-Tout les nombres de 0 à N-1 ne peuvent pas être "encodé" si l'on veut corrigé des erreurs.\newline
-Il faut determiné une borne B comprise entre 0 et N-1 qui nous servira de "zone" d'encodage.\newline
-Pour determiné cette borne on a 2 maniéres \newline
-La premiére est de choisir N et de trouvé B en se restreingnant à une sous partie du systéme le surplus servant de "données de parité"\newline
-La deuxième est de choisir B l'ensemble des entiers que l'ont veut encodé et rajouté des informations donc des equation suplémentaire au systéme engendré par B donc multiplier B par d'autre nombre premier.\newline
+Ce rapport est  une synthèse de nos travaux durant ce semestre, sur la reconstitution du théorème des restes chinois en présence d'erreurs.
+Grace au soutiens de notre professeur Mr Zemor, 
+qui nous a guidé tout au long de ce projet nous avons découvert et maitrisé plusieurs méthodes pour parvenir à notre objectif.
+
 
 \end{abstract}
 
@@ -80,6 +71,11 @@ La question que l'on se pose à présent est combien y a t'il de bonbons?
 \newline
 Grace au théorème des restes chinois, on peut trouver la réponse. Enfin, nous avons plusieurs réponse, c'est à dire que tout les nombres congru a x modulo n sont des bonnes réponses.
 Avant de répondre à ce problème, il faut d'abord voir l'algorithme.
+
+\newpage
+\section{Ces Domaines d'Application}
+
+
 
 \newpage
 
@@ -141,14 +137,45 @@ donc $d=1$. De plus, il nous fait gagner une étape car il nous renvois l'invers
     }
     \Return{$s\times x_0 + ((1-s)\div 2)\times d$}
 \end{algorithm}
+\newpage
+
+\chapter{Presentation du problème}
+\section{Le probléme et ces restrictions}
+Le théorème des restes chinois induit une bijection :
+\newline
+
+$[0,N-1] \rightarrow \mathbb{Z}/p_1\mathbb{Z}$ X ... X $ \mathbb{Z}/p_i\mathbb{Z} $  
+$x \rightarrow (x_1,...,x_i) $ 
+
+\newline
+\newline
+
+Oû $ x\equiv x_i \: (mod \: p_i)$
+\newline
+
+Malheuresement nous ne pouvons encodé l'ensemble $[0,N-1]$ dans son entièreté et être capable de corriger et faire face au erreur.\newline
+A  propos du N à choisir ce qui nous intéresse dans le N choisi c'est un N entier produit de plusieurs nombres premiers.\newline 
+Car plus il y à de nombre premier qui compose N plus le systéme des restes chinois engendré par ce N contient d'équation.  \newline
+Tout les nombres de 0 à N-1 ne peuvent pas être "encodé" si l'on veut corrigé des erreurs.\newline
+Il faut determiné une borne B comprise entre 0 et N-1 qui nous servira de "zone" d'encodage.\newline
+Pour determiné cette borne on a 2 maniéres \newline
+La premiére est de choisir N et de trouvé B en se restreingnant à une sous partie du systéme le surplus servant de "données de parité"\newline
+La deuxième est de choisir B l'ensemble des entiers que l'ont veut encodé et rajouté des informations donc des equation suplémentaire au systéme engendré par B donc multiplier B par d'autre nombre premier.\newline
+
+\section{Comment déterminer la borne}
 
 
+Maintenant comment déterminer B de façon calculatoire ? \newline
+
+inserer explication du prof sur la borne.
 
 \newpage
 
-\chapter{}{Brute force}
+\chapter{Brute force}
+
 Il existe plusieur algoritmes de brut force qui permette de résoudre les erreurs tel que essayer tout les cas possibles. Mais cette algoritme est trop lourd a écrire. Nous avons donc fait des algoritmes moins lourd.
 Nous vous présentons 2 algorithmes dans cette section.
+
 \section{Notre premier algo version naïve }
 Tout d'abord, nous avons fait une fonction qui nous montre si il y a une erreur ou pas dans nos listes, car avant de vouloir trouver les erreurs, il faut savoir si il y en a une.
 Nous avons donc fait un petit algorithme qui enlèves, chacun leurs tours, un élément des listes; c'est à dire qu'on retire le premier élément des 2 listes, puis on retire que le deuxième élément, puis le troisième et ainsi de suite. Nous appliquons alors le théorème des restes chinois a chaque itération, et on mets le résultats dans une liste auxiliaire. Si il n'y a pas d'erreur,
@@ -197,6 +224,9 @@ il suffit de multiplier par les 2 derniers nombre premier de la liste. \newline
 Par exemple pour le nombre 30030, la borne est 30030/(11x13) soit 210, se qui est très peu.\newline
 Enfin, nous avons un problème de complexité soit $O(n^3)$ et a chaque fois on fait le théorème des restes chinois qui est en $O(n^2)$, se qui donne un algorithme en $O(n^5)$.
 
+
+
+
 \newpage
 \section{brute force de hamming}
 
@@ -229,8 +259,8 @@ Comme vu précédement la méthode brute force est efficace sur des petits cas d
 Il faut donc trouver un moyen plus rapide et optimal. Donc comprenons comment intervient l'erreur sur le n-uplet du systéme d'équation.\newline
 Soit m le message envoyé et y le message et l'erreur dans le même message. si l'on fait la différrence de m-y on obtient e l'erreur.
 Maintenant cette erreur ce représente par un uplet en supposant par soucis de représentation que les erreurs se trouve au début de l'uplet associé
-$e = [e1,e2,0,0,...,0]$ cette erreur est donc un multiple de tout les $p_i$ nombres premiers pour i>2 et 2  reste non nul sur les positions erroné.\newline
-Donc y = m + e donc si l'on divise y par N notre entier on a $\frac{y}{N}=\frac{m}{N}+\frac{e}{N}$\newline
+$e = [e1,e2,e3,...,e_k,0,...,0]$ cette erreur est donc un multiple de tout les $p_i$ nombres premiers pour i>k et k  reste non nul sur les positions erronés.\newline
+Donc $y = m + e$ donc si l'on divise y par N notre entier on a $\frac{y}{N}=\frac{m}{N}+\frac{e}{N}$\newline
 mais $\frac{e}{N}$ peut se simplifier car hormis les positions érronés 2 dans notre cas e est un multiple de tout les autres $p_i$ qui composent N\newline
 Ainsi on a  $\frac{y}{N}=\frac{m}{N}+\frac{e}{N}=\frac{m}{N}+ \frac{e_1 * e_2}{p_1 * p_2 } <\frac{B}{N} $    B étant la borne choisis.\newline
 Finalement $\frac{m}{N}=\frac{y}{N} - \frac{e_1 * e_2}{p_1 * p_2 } $ \newline
@@ -240,7 +270,8 @@ vérifie $ \left| z - \frac{p}{q} \right| < \frac{1}{2q^2} $.
 Alors $\frac{p}{q}$ est une fraction reduité de z.\newline
 \newline
 
-Appliquer à notre probléme il suffit donc de calculé toutes les reduites de $\frac{y}{N}$ jusqu'à que le denominateur depasse le produit des 2 derniers nombres premiers du systéme.\newline
+Appliquer à notre probléme chaque réduite de cette fraction liste au dénominateur des candidats potentiels pour les positions érronés.\newline
+
 
 Maintenant parlons de la complexité de cette méthode. 
 On parcours la liste des derniers nombres premiers du systéme, pour calculer une borne à ne pas dépasser au denominateur de la fraction cela reduit drastiquement les itérations à faire.
@@ -259,8 +290,11 @@ Coût que l'on a constater grace a nos experiences et test.
 \section{Résumé d'experiences et test}
 Au début de nos tests nous avons pratiqué avec des petits cas de 6 à 7 nombre premier et cette méthode se révéla très efficace.
 Mais pour tester des cas avec plus d'erreurs nous avons eu besoin de systéme plus grand nous avons donc directement étendu notre systéme à 51 nombres premiers.
-Déjà N est superieur à $10^8^0$ , nous nous sommes restreint à $10^2^7$ comme espace d'encodage pour testé les cas avec plusieurs erreurs. Même si théoriquement nous pourrions résoudre un cas a 15 erreurs en pratique le systéme est trop erroné pour pouvoir le résoudre.
-Concrétement nous arrivé à corriger jusqu'à 7 erreur en encodant jusqu'à $10^2^7$
+Nous avons pris la borne B = $10^{29}$ ordre de grandeur de la borne théorique pour corriger 15 erreurs.
+Dans ce cas et grâce à la méthode des fractions continue nous avons étè en capacité de corriger jusqu'à 7 erreur.
+
+
+
 \newpage
 
 \begin{appendices}
