@@ -18,7 +18,7 @@
 \begin{abstract}
 
 Ce rapport est  une synthèse de nos travaux durant ce semestre, sur la reconstitution du théorème des restes chinois en présence d'erreurs.
-Grace au soutiens de notre professeur Mr Zemor, 
+Grâce au soutien de notre professeur Mr ZEMOR, 
 qui nous a guidé tout au long de ce projet nous avons découvert et maitrisé plusieurs méthodes pour parvenir à notre objectif.
 
 
@@ -31,7 +31,7 @@ qui nous a guidé tout au long de ce projet nous avons découvert et maitrisé p
 
 \chapter{théorème des restes}
 \section{théorème des restes chinois et son histoire}
-Le théorème des restes chinois vient à la base d’un livre de mathématique chinois de Qin JUSHIO publié en 1247. Cependant, on avait déjà découvert ce théorème au part avant dans un livre de Sun ZI au 3° siècle. Le théorème consiste en:
+Les premières apparitions du théorème des restes chinois ont eu lieu au XIII° siècle  dans un livre de mathématique chinois de Qin JUSHIO publié en 1247. Cependant, on avait déjà découvert ce théorème auparavant dans un livre de Sun ZI au III° siècle. Le théorème consiste en:
 On pose p1,...,pk des entiers premiers 2 à 2. Pour tout n1,...,nk, il existe un entier x tel que :
 \newline
 $ x\equiv n_1 \: (mod \;  p_1)$ 
@@ -42,24 +42,32 @@ $ x \equiv n_k \:(mod\: p_k)$
 \newline
 \newline
 \newline
+\newline
+\newline
 Nous allons dans un premier temps démontrer l'unicité de ce théorème.
 \newline
-d'abord, voici l'existance d'une solution: \newline
+Tout d'abord, nous cherchons l'existence d'une solution: \newline
 On a $\forall k \in [1;y]  $, $x\equiv n_k (mod \: p_k)$ \newline
 $\forall k \in [1;y] $, on note $P_k=\frac{P}{p_k} $ où $P=p_1 \times  ... \times p_y$ \newline
-On voit assez simplement que $P_k$ et $p_k$ sont premier entre eux car tout les entiers $p_i$ sont premier entre eux 2 à 2. Et donc $P_k$ est inversible modulo 
-$p_k$, car en faisant le théorème d'euclide, on va trouver $u,v\in \mathbb{Z}$ tel que $P_k\times u + p_k \times v = d$ avec d le PGCD. Or $P_k$ et $p_k$ sont premier entre eux donc $d=1$ et on trouve facilement l'inverse de $P_k$ modulo $p_k$. \newline
+On voit assez simplement que $P_k$ et $p_k$ sont premiers entre eux car tous les entiers $p_i$ sont premiers entre eux 2 à 2. Donc $P_k$ est inversible modulo 
+$p_k$, car en faisant le théorème d'euclide, on va trouver $u,v\in \mathbb{Z}$ tel que $P_k\times u + p_k \times v = d$ avec d le PGCD. Or $P_k$ et $p_k$ sont premiers entre eux donc $d=1$ et on trouve facilement l'inverse de $P_k$ modulo $p_k$. \newline
 On note alors $u_k$ le nombre tel que $u_k\times P_k + v_k\times p_k= 1$, soit $u_k\times P_k\equiv 1(p_k)$. \newline
 Soit $x=\sum_{k = 1}^{y} u_k\times P_k\times n_k$. On pose $i\in [1;y]$ et $k\neq i$ alors $P_i\equiv 0(mode \: p_k)$ car $P_i=p_1\times ... \times p_k \times ...\times p_y$. \newline
-On a donc $x\equiv u_i P_i a_i(mod \: p_i)$, mais on sait que $u_i P_i\equiv 1 (mod \: p_i)$ d'où $x\equiv a_i (mod \: p_i)$. Sachant que c'est vrai pour tout i, on a x solution du système. \newline
+On a donc $x\equiv u_i P_i a_i(mod \: p_i)$, mais on sait que $u_i P_i\equiv 1 (mod \: p_i)$ d'où $x\equiv a_i (mod \: p_i)$. Sachant que cette équation est vrai pour tout i, on a x solution du système. \newline
+Par conséquent, nous avons prouvé l'existence d'une solution.
+
+Ensuite, nous montrons l'unicité du système. \newline
+On a x une solution du système, posons y une autre solution du système. On a alors $x-y\equiv 0( mod p_k)$, soit $p_k$ divise $x-y$. Sachant que les $p_k$ sont premiers 2 à 2 entre eux, on a donc $x-y\equiv 0(mod \: P)$, donc P divise x-y, ou encore que $x\equiv y (mod \: P)$. Par cela, nous avons montré l'unicité modulo P.
 \newline
-On a x une solution du système, posons y une autre solution du système. On a alors $x-y\equiv 0( mod p_k)$, soit $p_k$ divise $x-y$. Sachant que les $p_k$ sont premier 2 à 2 entre eux, on a donc $x-y\equiv 0(mod \: P)$, soit P divise x-y, ou encore que $x\equiv y (mod \: P)$, d'où l'unicité modulo P.
-\newpage
-Pour illustrer ce théorème, nous allons donner un exemple, mais pas n'importe quelle exemple, celui dont Sun ZI a proposé une solution:
 \newline
-Soient des objets, prenons des bonbons, si on les repartis pour 3 enfants, il en reste 2, si on les répartis
-pour les 3 enfants et leurs parents (soit 5 personnes), il en reste 3. enfin si on partage ces bonbons avec également les 2 cousins,
-(soit 7 personnes) il en reste 2. On a donc :
+\newline
+\newline
+\newline
+Pour illustrer ce théorème, nous allons donner un exemple, extrait du livre de Sun ZI qui a proposé une solution:
+\newline
+Choisissons des objets comme des bonbons: si on les repartis pour 3 enfants, il en reste 2, si on les répartis
+pour les 3 enfants et leurs parents (soit 5 personnes), il en reste 3. Enfin si on rajoute les 2 cousins
+(soit 7 personnes), il reste alors 2 bonbons. On a donc :
 \newline 
 $ x\equiv 2 \: (mod \:  3)$ 
 \newline
@@ -67,10 +75,11 @@ $ x\equiv 3 \: (mod \: 5)$
 \newline
 $ x\equiv 2 \:(mod\: 7)$
 \newline
-La question que l'on se pose à présent est combien y a t'il de bonbons?
+\newline 
+La question que l'on se pose à présent est : combien y a t'il de bonbons?
 \newline
-Grace au théorème des restes chinois, on peut trouver la réponse. Enfin, nous avons plusieurs réponse, c'est à dire que tout les nombres congru a x modulo n sont des bonnes réponses.
-Avant de répondre à ce problème, il faut d'abord voir l'algorithme.
+Grâce au théorème des restes chinois, on peut trouver la réponse. Nous avons en réalité plusieurs réponse, c'est-à-dire que tout les nombres congru à x modulo N sont des bonnes réponses.
+Avant de répondre à ce problème, il faut tout d'abord examiner l'algorithme.
 
 \newpage
 \section{Ces Domaines d'Application}
@@ -79,21 +88,21 @@ Avant de répondre à ce problème, il faut d'abord voir l'algorithme.
 
 \newpage
 
-\section{notre algoritme}
-Notre fonction en python du théorème des restes chinois étant un peu lourde, 
-nous allons montrer l'algoritme comme suivant, mais vous pouvez le retrouver dans l'annexe.
-On a ici :
+\section{notre algorithme}
+Notre fonction en Python du théorème des restes chinois étant un peu lourde, 
+nous allons montrer l'algorithme ci-dessous (voir annexe). \newline
+On obtient donc :
 \newline
-Soit $p_i$ le i-ème termes de la liste des modulos, et on note \newline
-$ P_i=\frac{p}{p_i}=np_1 p_2 ... p_i-1 p_i+1 ... p_k $   \newline
-on a donc $P_i$ et $p_i$  qui sont premier entre eux. \newline
-Il faut alors faire l'algoritme d'euclide étendu sur $P_i$ et $p_i$, se qui nous donne: 
+Soit $p_i$ le i-ème terme de la liste des modulos, on note \newline
+$ P_i=\frac{p}{p_i}=p_1 p_2 ... p_{i-1} p_{i+1} ... p_k $   \newline
+on a donc $P_i$ et $p_i$  qui sont premiers entre eux. \newline
+Il faut alors faire l'algorithme d'Euclide étendu sur $P_i$ et $p_i$, ce qui nous donne: 
 $1= P_i u_i + p_i v_i$ 
 où 
 $u_i, v_i \in  \mathbb{Z} $
 \newline
 On pose donc $e_i = u_i P_i$ avec $ e_i \equiv 1 \; (mod \; p_i)$ et $ e_i\equiv 0 \; (mod \; e_j)$ avec $ i\neq j$ \newline
-On trouve donc une solution qui est $x=\sum_{i = 1}^{k}{p_i e_i} $.\newline
+On trouve alors une solution qui est $x=\sum_{i = 1}^{k}{p_i e_i} $.\newline
 \newline
 \newline
 Nous pouvons à présent répondre à l'exemple précédent. Nous avions: \newline
@@ -103,19 +112,19 @@ $ x\equiv 3 \: (mod \: 5)$
 \newline
 $ x \equiv 2 \:(mod\: 7)$
 \newline
-On a $P_1=5\times 7=35$, $P_2=3\times 7=21 $, et $P_3=3\times 5=15$ \newline
-On fait l'algorithme d'euclide sur $P_1$ et $p_1$ qui donne $-3\times 23 +2\times 35\times 1= 1 $ et aussi $e_1=2\times 35$ \newline
-Idem sur $P_2$ et $p_2$ qui donne $21\times 1 - 5\times 4=1$, et donc $e_2=21$ \newline
+On obtient $P_1=5\times 7=35$, $P_2=3\times 7=21 $, et $P_3=3\times 5=15$ \newline
+On fait l'algorithme d'Euclide étendu sur $P_1$ et $p_1$ qui donne $-3\times 23 +2\times 35\times 1= 1 $, par conséquent on trouve $e_1=2\times 35$ \newline
+Idem sur $P_2$ et $p_2$ qui donne $21\times 1 - 5\times 4=1$, donc $e_2=21$ \newline
 Enfin, on a $15\times 1- 7\times 2 = 1 $ avec $e_3=15$ \newline
-Un résultat est $x=2\times 35 + 3\times 21 + 2\times 15 =233$.
-Nous avons, comme dit précédement plusieurs résultat, qui sont les entiers congrus à 233 modulo 105. \newline
+Le résultat est $x=2\times 35 + 3\times 21 + 2\times 15 =233$.
+Nous avons, comme dit précédement, plusieurs résultats qui sont les entiers congrus à 233 modulo 105. \newline
 $233\equiv 23 (mod \: 105)$ \newline
-Le résultat finale est donc $23+105k$, $k \in \mathbb{Z} $.
+Le résultat final est donc $23+105k$, $k \in \mathbb{Z} $.
 Si on reprend notre problème, on a donc 23 bonbons.
 \newline
 \newline
-Comme vous pouvez le voir, nous avons utilisé l'algorithme d'Euclide étendu, qui prend en paramètres a et b, deux entiers,
-et qui renvois d le PGCD de a et b, un couple $(u,v) \in \mathbb{Z} $ tel que $d=au+bv$.
+Comme vous pouvez le voir, nous avons utilisé l'algorithme d'Euclide étendu. Celui-ci prend en paramètres a et b, deux entiers.
+Il renvoit d le PGCD de a et b et un couple $(u,v) \in \mathbb{Z} $ tel que $d=au+bv$.
 \newline
 Pour notre utilisation, nous avons un peu modifié cette algorithme, car pour utiliser le théorème des restes chinois, les nombres sont premiers entre eux 2 à 2,
 donc $d=1$. De plus, il nous fait gagner une étape car il nous renvois l'inverse de a modulo b.
@@ -144,7 +153,7 @@ donc $d=1$. De plus, il nous fait gagner une étape car il nous renvois l'invers
 Le théorème des restes chinois induit une bijection :
 \newline
 
-$[0,N-1] \rightarrow \mathbb{Z}/p_1\mathbb{Z}$ X ... X $ \mathbb{Z}/p_i\mathbb{Z} $  
+$[0,N-1] \rightarrow \mathbb{Z}/p_1\mathbb{Z}$ \times  ... \times  $ \mathbb{Z}/p_i\mathbb{Z} $  \newline
 $x \rightarrow (x_1,...,x_i) $ 
 
 \newline
@@ -173,13 +182,13 @@ inserer explication du prof sur la borne.
 
 \chapter{Brute force}
 
-Il existe plusieur algoritmes de brut force qui permette de résoudre les erreurs tel que essayer tout les cas possibles. Mais cette algoritme est trop lourd a écrire. Nous avons donc fait des algoritmes moins lourd.
-Nous vous présentons 2 algorithmes dans cette section.
+Il existe plusieurs algorithmes de brut force qui permettent de résoudre les erreurs tel que essayer tout les cas possibles. Mais cet algorithme est trop lourd à écrire. Nous avons donc fait des algorithmes moins lourd.
+Nous vous présenterons deux algorithmes dans cette section.
 
-\section{Notre premier algo version naïve }
-Tout d'abord, nous avons fait une fonction qui nous montre si il y a une erreur ou pas dans nos listes, car avant de vouloir trouver les erreurs, il faut savoir si il y en a une.
-Nous avons donc fait un petit algorithme qui enlèves, chacun leurs tours, un élément des listes; c'est à dire qu'on retire le premier élément des 2 listes, puis on retire que le deuxième élément, puis le troisième et ainsi de suite. Nous appliquons alors le théorème des restes chinois a chaque itération, et on mets le résultats dans une liste auxiliaire. Si il n'y a pas d'erreur,
-lorsqu'on retourne cette liste auxiliaire, on devrais avoir la même valeur partout, si les valeurs de la liste sont différentes, nous avons une erreur. \newline
+\section{Notre premier algorithme version naïve }
+Tout d'abord, nous avons fait une fonction qui nous montre s'il y a une erreur dans nos listes, car avant de vouloir trouver les erreurs, il faut savoir s'il y en a une.
+Nous avons donc fait un petit algorithme qui permet d'enlèver alternativement un élément des listes. Autrement dit, on retire le premier élément des deux listes, puis on retire que le deuxième élément, puis que le troisième et ainsi de suite. Nous appliquons alors le théorème des restes chinois à chaque itération. Puis on mets le résultat dans une liste auxiliaire. S'il n'y a pas d'erreur,
+lorsqu'on retourne cette liste auxiliaire, on devrait avoir la même valeur partout, en revanche si les valeurs de la liste sont différentes, nous avons une erreur. \newline
 \newline
 Soit $P=[p_1 , p_2, ... , p_k]$ et $N=[n_1, n_2, ..., n_k]$ \newline
 On note $P_i = [p_1,..., p_i-1, p_i+1, p_k]$ et $N_i=[n_1,..., n_i-1, n_i+1, ... , n_k]$ \newline
@@ -188,14 +197,14 @@ Puis on retourne
 $L=[x_1, ..., x_k]$ \newline
 Si 
 $x_1=x_2=...=x_k$ 
-alors il n'y a pas d'erreur.
+alors il n'y a pas d'erreur. \newline
 \newline
 Voici un petit exemple pour bien comprendre cette fonction.\newline
-on pose P=[2,3,5,7,11,13] et N=[1, 1, 1, 5, 6, 9] \newline
-si on applique le théorèmes des restes chinois à ces 2 listes, on trouve 510510. Pour vérifier qu'il ny ai pas d'erreur, on applique le théorème à
+On pose P=[2,3,5,7,11,13] et N=[1, 1, 1, 5, 6, 9] \newline
+Si on applique le théorème des restes chinois à ces deux listes, on trouve 510510. Pour vérifier qu'il n'y ai pas d'erreur, on applique le théorème à
 P1=[3,5,7,11,13] et N1=[1, 1, 5, 6, 9, puis à P2=[2,5,7,11,13] et N2=[1, 1, 5, 6, 9] jusqu'à P6=[2,3,5,7,11,] et N7=[1, 1, 1, 5, 6]\newline
 Comme il n'y a pas d'erreur, la fonction va retourner [61, 61, 61, 61, 61, 61] \newline
-à présent, nous mettons une erreur dans les listes, on a P=[2,3,5,7,11,13] et N=[1,1,2,5,6,9]. En appliquant la fonction, il sera retourner une liste [6067, 6067, 61, 1777, 607, 1447], où l'on remarque bien que chaque élément est différrent, donc nous avons au moins une erreur.
+À présent, nous mettons une erreur dans les listes, on a P=[2,3,5,7,11,13] et N=[1,1,2,5,6,9]. En appliquant la fonction, il sera retourner une liste [6067, 6067, 61, 1777, 607, 1447], où l'on remarque bien que chaque élément est différrent, donc nous avons au moins une erreur.
 Dans cette fonction, on parcours n fois la liste de n élément donc nous somme en $O(n^2)$. Mais on fait n fois l'algo des restes chinois donc on est en $O(n^2)$. Cette algorithme est donc en $O(n^4)$ avec n la taille de la liste. 
 \newline 
 \newline
@@ -204,7 +213,7 @@ On a vu que si on enlevais 1 éléments des listes, le théorème des restes chi
 tours, et en appliquantle théorème à chaque fois, on retourne une liste. Puis, on réitére en enlevant le deuxième élément, et les autres chacun leurs tours, en re-appliquant les restes chinois à chaque fois, en mettant les résultats dans
 une nouvelle liste. Ainsi de suite jusqu'au dernier élément. Cette fonction retourne une liste de liste. Donc la liste où se trouve le même nombre partout, c'est que l'erreur est à la meme position.
 faisont plutôt exemple.
-\newline
+\newline 
 Soit $P=[p_1, p_2, ... , p_k]$ et $N=[n_1 , n_2, ... ,n_k]$ \newline
 On note $P_ij =[p_1 , ... , p_i-1 , p_i+1 , ... , p_j-1 , p_j+1 , ... , p_k]$ et $N_ij=[n_1, ..., n_i-1, n_i+1, ..., n_j-1, n_j+1, ..., n_k]$ \newline
 On note $x_ij$ le résultat du théorème des restes chinois appliqués à $P_ij$ et $N_ij$ \newline
