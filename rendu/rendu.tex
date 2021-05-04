@@ -44,7 +44,9 @@ $ x \equiv n_k \:(mod\: p_k)$
 \newline
 \newline
 Il est difficile de trouver des applications immédiates au théorème des restes chinois. 
-Pourtant il se révéle trés pratique dans des calculs à grandes échelles trés rapidement en minimisant les possibilités d'erreurs de calcul ; ainsi qu'en cryptologie où la possibilité de faire des calculs sur de grands nombres avec des valeurs discrétes permet d'assurer une certaine sécurité si toutefois une partie des données fuitait.
+Pourtant il se révéle trés pratique dans des calculs à grandes échelles pour calculer trés rapidement 
+en minimisant les possibilités d'erreurs de calcul ;
+ ainsi qu'en cryptologie où la possibilité de faire des calculs sur de grands nombres avec des valeurs discrétes permet d'assurer une certaine sécurité si toutefois une partie des données fuitait.
 Particuliérement dans le domaine des cartes à puces (cartes bancaires,badges ,cartes d'abonnements,...), oû il y a une interaction avec un terminale pour transmettre un code.
 Il est très intéressant de délivré l'information souhaité par morceaux, surtout dans le cas ou le terminale ferait l'objet d'une attaque.
 Alors dans ce cas si l'ensemble des données recupéré par l'attaquant n'est pas trop important alors il est impossible pour lui de les exploiter.
@@ -175,8 +177,8 @@ quelque sorte la fonction inverse du théorème des restes chinois.
 
 \end{algorithm}
 
-Par exemple notre algorithme d'encodage sur $(30030,61)$ renvoie les listes $P=[2,3,5,7,11,13]$ et la liste $N=[1, 1, 1, 5, 6, 9, 10]$ ,
-qui représente la liste des facteurs premiers qui composent 30030 et la représentation de 61 modulo les elements de P .  \newline
+Par exemple notre algorithme d'encodage sur $(30030,61)$ renvoie les listes $P=[2,3,5,7,11,13]$ et la liste $N=[1,1,1,5,6,9,10]$ ,
+qui représente la liste des facteurs premiers qui composent 30030 et la représentation de 61 modulo les élements de P .  \newline
 
 Nous pouvons remarquer que dans la fonction au dessus, nous utilisons la fonction nombre facteur premier qui prend en paramètre un nombre n et renvoie la liste des ses facteurs premiers. 
 
@@ -207,10 +209,13 @@ Par exemple nombre facteur premier (210) renvoie la liste $[2,3,5,7]$ car $210=2
 \section{Le probléme et ses restrictions}
 Le théorème des restes chinois induit une bijection :
 \newline
+\begin{center}
+  
 
 $[0,N-1] \rightarrow \mathbb{Z}/ p_{1 \mathbb{Z}} \times  ... \times   \mathbb{Z}/ p_{i \mathbb{Z}} $  \newline
 $x \rightarrow (x_1,...,x_i) $ 
 
+\end{center}
 \newline
 \newline
 
@@ -358,7 +363,7 @@ Une fois cette borne determiné on calcule les reduites de  $\frac{y}{n}$ sans q
 A chaque tour de boucle on calcule une reduite qui coute l'ordre de la réduite fois le coût d'une division euclidienne  ,
 l'algorithme permettant de calculé une réduite étant une version modifié de l'algorithme d'Euclide arrété à l'ordre de la fraction réduite voulue.
 Donc finalement pour calculer toutes les réduites qui mettent en évidence les potentiels position érronés le coût et relativement faible car dépend de la taille du systéme lineairement donc relativement faible et rapide.
-Coût que l'on a constater grace a nos experiences et test.
+Coût que l'on a constater grâce  nos experiences et test.
 
 
 
