@@ -21,7 +21,7 @@
 
 Ce rapport est  une synthèse de nos travaux durant ce semestre, sur la reconstitution du théorème des restes chinois en présence d'erreurs.
 Grâce au soutien de notre professeur Mr ZEMOR, qui nous a guidé tout au long de ce projet nous avons découvert et maitrisé plusieurs méthodes pour parvenir à notre objectif.
-Nous avons tout d'abord pris connaissance du théorème, puis nous avons chercher et appris plusieurs facon de corriger le théorème des restes chinois lors de la présence d'erreurs.
+Nous avons tout d'abord pris connaissance du théorème, puis nous avons cherché et appris plusieurs facon de corriger le théorème des restes chinois lors de la présence d'erreurs.
 
 \end{abstract}
 
@@ -41,9 +41,8 @@ $ x\equiv n_2 \: (mod \: p_2)$
 \newline
 $ x \equiv n_k \:(mod\: p_k)$
 \newline
-Il est difficile de trouver des Applications immédiates au théorème des restes chinois. 
-Pourtant il se révéle trés pratique dans des calcules à grandes échelles trés rapidement en minimisant les possibilité d'erreur de calcul.
-Ainsi qu'en cryptologie oû la possibilité de faire des calculs sur de grand nombres avec des valeurs discretes permettent d'assuré une certaine sécurité si toutefois une partie des données fuitez.
+Il est difficile de trouver des applications immédiates au théorème des restes chinois. 
+Pourtant il se révéle trés pratique dans des calculs à grandes échelles trés rapidement en minimisant les possibilités d'erreurs de calcul ; ainsi qu'en cryptologie où la possibilité de faire des calculs sur de grands nombres avec des valeurs discrétes permet d'assurer une certaine sécurité si toutefois une partie des données fuitait.
 Particuliérement dans le domaine des cartes à puces (cartes bancaires,badges ,cartes d'abonnements,...), oû il y a une interaction avec un terminale pour transmettre un code.
 Il est très intéressant de délivré l'information souhaité par morceaux, surtout dans le cas ou le terminale ferait l'objet d'une attaque.
 Alors dans ce cas si l'ensemble des données recupéré par l'attaquant n'est pas trop important alors il est impossible pour lui de les exploiter.
@@ -60,7 +59,7 @@ On voit assez simplement que $P_k$ et $p_k$ sont premiers entre eux car tous les
 $p_k$, car en faisant le théorème d'euclide, on va trouver $u,v\in \mathbb{Z}$ tel que $P_k\times u + p_k \times v = d$ avec d le PGCD. Or $P_k$ et $p_k$ sont premiers entre eux donc $d=1$ et on trouve facilement l'inverse de $P_k$ modulo $p_k$. \newline
 On note alors $u_k$ le nombre tel que $u_k\times P_k + v_k\times p_k= 1$, soit $u_k\times P_k\equiv 1(p_k)$. \newline
 Soit $x=\sum_{k = 1}^{y} u_k\times P_k\times n_k$. On pose $i\in [1;y]$ et $k\neq i$ alors $P_i\equiv 0(mode \: p_k)$ car $P_i=p_1\times ... \times p_k \times ...\times p_y$. \newline
-On a donc $x\equiv u_i P_i a_i(mod \: p_i)$, mais on sait que $u_i P_i\equiv 1 (mod \: p_i)$ d'où $x\equiv a_i (mod \: p_i)$. Sachant que cette équation est vrai pour tout i, on a x solution du système. \newline
+On a donc $x\equiv u_i P_i a_i(mod \: p_i)$, mais on sait que $u_i P_i\equiv 1 (mod \: p_i)$ d'où $x\equiv a_i (mod \: p_i)$. Sachant que cette équation est vraie pour tout i, on a x solution du système. \newline
 Par conséquent, nous avons prouvé l'existence d'une solution.
 
 Ensuite, nous montrons l'unicité du système. \newline
@@ -70,9 +69,9 @@ On a x une solution du système, posons y une autre solution du système. On a a
 \newline
 \newline
 \newline
-Pour illustrer ce théorème, nous allons donner un exemple, extrait du livre de Sun ZI qui a proposé une solution:
+Pour illustrer ce théorème, nous allons donner un exemple, extrait du livre de Sun ZI qui a proposé une solution.
 \newline
-Choisissons des objets comme des bonbons: si on les repartis pour 3 enfants, il en reste 2, si on les répartis
+Choisissons des objets comme des bonbons: si on les répartit pour 3 enfants, il en reste 2, si on les répartis
 pour les 3 enfants et leurs parents (soit 5 personnes), il en reste 3. Enfin si on rajoute les 2 cousins
 (soit 7 personnes), il reste alors 2 bonbons. On a donc :
 \newline 
@@ -85,14 +84,14 @@ $ x\equiv 2 \:(mod\: 7)$
 \newline 
 La question que l'on se pose à présent est : combien y a t'il de bonbons?
 \newline
-Grâce au théorème des restes chinois, on peut trouver la réponse. Nous avons en réalité plusieurs réponse, c'est-à-dire que tout les nombres congru à x modulo N sont des bonnes réponses.
+Grâce au théorème des restes chinois, on peut trouver la réponse. Nous avons en réalité plusieurs réponses, c'est-à-dire que tout les nombres congrus à x modulo N sont des bonnes réponses.
 Avant de répondre à ce problème, il faut tout d'abord examiner l'algorithme.
 
 
 
 \newpage
 
-\section{notre algorithme}
+\section{Notre algorithme}
 Notre fonction en Python du théorème des restes chinois étant un peu lourde, 
 nous allons montrer l'algorithme ci-dessous (voir annexe A). \newline
 On obtient donc :
@@ -130,8 +129,8 @@ Si on reprend notre problème, on a donc 23 bonbons.
 Comme vous pouvez le voir, nous avons utilisé l'algorithme d'Euclide étendu. Celui-ci prend en paramètres a et b, deux entiers.
 Il renvoit $d$ le PGCD de $a$ et $b$ et un couple $(u,v) \in \mathbb{Z} $ tel que $d=au+bv$.
 \newline
-Pour notre utilisation, nous avons un peu modifié cette algorithme, car pour utiliser le théorème des restes chinois, les nombres sont premiers entre eux 2 à 2,
-donc $d=1$. De plus, il nous fait gagner une étape car il nous renvois l'inverse de a modulo b.
+Pour notre utilisation, nous avons un peu modifié cet algorithme, car pour utiliser le théorème des restes chinois, les nombres sont premiers entre eux 2 à 2,
+donc $d=1$. De plus, il nous fait gagner une étape car il nous renvoit l'inverse de a modulo b.
 
 \begin{algorithm}
     \caption{algorithme d'euclide étendu}
@@ -155,8 +154,8 @@ donc $d=1$. De plus, il nous fait gagner une étape car il nous renvois l'invers
 
 \end{algorithm}
 
-Maintenant que nous avons présenté les algorithmes principaux du théorème des restes chinois, voici quelque fonction que nous pourrions qualifié de segondaire au premier abord, mais très utile dans certains cas. \newline
-En premier, nous avons fait un algorithmes s'intitulant générateur de cas, qui prend en argument 2 nombres et qui génère les listes des nombres premier entre eux, et la liste des reste modulo les $p_i$. C'est en
+Maintenant que nous avons présenté les algorithmes principaux du théorème des restes chinois, voici quelques fonctions que nous pourrions qualifier de secondaires au premier abord, mais très utiles dans certains cas. \newline
+En premier, nous avons fait un algorithme s'intitulant générateur de cas, qui prend en argument 2 nombres et qui génère les listes des nombres premiers entre eux, et la liste des restes modulo les $p_i$. C'est en
 quelque sorte la fonction inverse du théorème des restes chinois. 
 
 \begin{algorithm}
@@ -175,7 +174,7 @@ quelque sorte la fonction inverse du théorème des restes chinois.
 
 Par exemple générateur de cas $(30030,61)$ renvoie les listes $P=[2,3,5,7,11,13]$ et la liste (àcompléter)!!!! \newline
 
-Nous pouvons remarquer que dans la fonction au dessus, nous utilisons la fonction nombre facteur premier qui prend en paramètre un nombre n et renvoie la liste des ses facteurs premier. 
+Nous pouvons remarquer que dans la fonction au dessus, nous utilisons la fonction nombre facteur premier qui prend en paramètre un nombre n et renvoie la liste des ses facteurs premiers. 
 
 \begin{algorithm}
     \caption{nombre facteur premier}
@@ -201,7 +200,7 @@ Par exemple nombre facteur premier (210) renvoie la liste $[2,3,5,7]$ car $210=2
 
 \newpage
 \chapter{Presentation du problème}
-\section{Le probléme et ces restrictions}
+\section{Le probléme et ses restrictions}
 Le théorème des restes chinois induit une bijection :
 \newline
 
@@ -214,28 +213,28 @@ $x \rightarrow (x_1,...,x_i) $
 Oû $ x\equiv x_i \: (mod \: p_i)$
 \newline
 
-Malheuresement nous ne pouvons encodé l'ensemble $[0,N-1]$ dans son entièreté et être capable de corriger et faire face au erreur.\newline
+Malheuresement nous ne pouvons encoder l'ensemble $[0,N-1]$ dans son entièreté et être capable de corriger et faire face aux erreurs.\newline
 A  propos du N à choisir ce qui nous intéresse dans le N choisi c'est un N entier produit de plusieurs nombres premiers.\newline 
-Car plus il y à de nombre premier qui compose N plus le systéme des restes chinois engendré par ce N contient d'équation.  \newline
-Tout les nombres de 0 à N-1 ne peuvent pas être "encodé" si l'on veut corrigé des erreurs.\newline
-Il faut determiné une borne B comprise entre 0 et N-1 qui nous servira de "zone" d'encodage.\newline
-Pour determiné cette borne on a 2 maniéres \newline
-La premiére est de choisir N et de trouvé B en se restreingnant à une sous partie du systéme le surplus servant de "données de parité"\newline
-La deuxième est de choisir B l'ensemble des entiers que l'ont veut encodé et rajouté des informations donc des equation suplémentaire au systéme engendré par B donc multiplier B par d'autre nombre premier.\newline
+Car plus il y a de nombres premiers qui composent N plus le systéme des restes chinois engendré par ce N contient d'équations.  \newline
+Tout les nombres de 0 à N-1 ne peuvent pas être "encodés" si l'on veut corriger des erreurs.\newline
+Il faut determiner une borne B comprise entre 0 et N-1 qui nous servira de "zone" d'encodage.\newline
+Pour determiner cette borne on a 2 maniéres :\newline
+la premiére est de choisir N et de trouver B en se restreingnant à une sous partie du systéme, le surplus servant de "donnée de parité" ;\newline
+la deuxième est de choisir B l'ensemble des entiers que l'ont veut encoder et rajouter des informations donc des équations supplémentaires au systéme engendré par B, donc multiplier B par d'autres nombres premiers.\newline
 
 \section{Comment déterminer la borne}
 
 
 Maintenant comment déterminer B de façon calculatoire ? \newline
 
-Dans les algorithmes que vous verrez dans la suite de notre travaille, vous pourrez trouver nos calculs de borne. Cependant, ces calculs sont propres à chaque algorithme,
-c'est à dire que la borne pour un meme nombre et un meme nombre d'erreur peut varier en focntion des algorithmes utilisé. \newline
+Dans les algorithmes que vous verrez dans la suite de notre travail, vous pourrez trouver nos calculs de borne. Cependant, ces calculs sont propres à chaque algorithme,
+c'est à dire que la borne pour un même nombre et un même nombre d'erreurs peut varier en fonction des algorithmes utilisés. \newline
 Mais, on peut calculer mathématiquement la borne maximale. \newline
-Soit t le nombres d'erreurs et 
-Cela signifie que aprsè cette borne, la correction d'erreurs marche parfois, ce n'est donc plus une valeur sur à cent pour cent, alors que avant cette borne, oui.
+Soit t le nombre d'erreurs et 
+Cela signifie que après cette borne, la correction d'erreurs marche parfois, ce n'est donc plus une valeur sur à cent pour cent, alors que avant cette borne, oui.
 \newline
-La question que nous sommes à présent en droit de se poser est, es qu'il exite une borne tel que l'on ne puisse corriger aucun nombres supèrieur à cette borne. Et la réponse est oui.
-Partons d'un n-uplet de départ $x=(x_1, x_2, ..., x_n)$. On pose également, dans le n-uplet reçu, $y$ le resultat possible avec t erreurs. Avec biensur, le cardinal des n-uplets reçu qui est infèrieur à la sommes des $p_i$. Dans les n-uplets reçu, il y a un nombre $D$ de résultat possibles. Nous cherchons donc à calculer $D$, qui vaut: \newline
+La question que nous sommes à présent en droit de nous poser est, est-ce qu'il existe une borne tel que l'on ne puisse corriger aucun nombre supérieur à cette borne. Et la réponse est oui.
+Partons d'un n-uplet de départ $x=(x_1, x_2, ..., x_n)$. On pose également, dans le n-uplet reçu, $y$ le résultat possible avec t erreurs. Avec bien sûr, le cardinal des n-uplets reçu qui est infèrieur à la sommes des $p_i$. Dans les n-uplets reçus, il y a un nombre $D$ de résultats possibles. Nous cherchons donc à calculer $D$, qui vaut: \newline
 $D=\sum_{I\subset \left[n\right]  \newline \left\lvert I\right\rvert=t  }^{??} \: \prod _{i \in I} (p_i - 1) \thickapprox \binom{n}{t} p^t  $ 
 Par exemple si $x=(x_1, x_2, x_3, x_4)$ et $t=2$ alors $D=(p_1-1)(p_2-1)+(p_3-1)(p_4-1)+(p_1-1)(p_3-1)+(p_1-1)(p_4-1)+(p_2-1)(p_3-1)+(p_2-1)(p_4-1)$ \newline
 On a donc $\left\lvert reçu\right\rvert \simeq \left\lvert B\right\rvert \times D\leq \sum_{i = 1}^{n} p_i  $ \newline
