@@ -6,6 +6,8 @@
 \usepackage{graphicx}
 \usepackage[linesnumbered, french]{algorithm2e}
 \usepackage{appendix}
+\usepackage{algorithm}
+\usepackage{algorithmic}
 
 
 \title{Reconstituer le théorème chinois en présence d’erreurs}
@@ -18,9 +20,8 @@
 \begin{abstract}
 
 Ce rapport est  une synthèse de nos travaux durant ce semestre, sur la reconstitution du théorème des restes chinois en présence d'erreurs.
-Grâce au soutien de notre professeur Mr ZEMOR, 
-qui nous a guidé tout au long de ce projet nous avons découvert et maitrisé plusieurs méthodes pour parvenir à notre objectif.
-
+Grâce au soutien de notre professeur Mr ZEMOR, qui nous a guidé tout au long de ce projet nous avons découvert et maitrisé plusieurs méthodes pour parvenir à notre objectif.
+Nous avons tout d'abord pris connaissance du théorème, puis nous avons chercher et appris plusieurs facon de corriger le théorème des restes chinois lors de la présence d'erreurs.
 
 \end{abstract}
 
@@ -40,6 +41,12 @@ $ x\equiv n_2 \: (mod \: p_2)$
 \newline
 $ x \equiv n_k \:(mod\: p_k)$
 \newline
+Il est difficile de trouver des Applications immédiates au théorème des restes chinois. 
+Pourtant il se révéle trés pratique dans des calcules à grandes échelles trés rapidement en minimisant les possibilité d'erreur de calcul.
+Ainsi qu'en cryptologie oû la possibilité de faire des calculs sur de grand nombres avec des valeurs discretes permettent d'assuré une certaine sécurité si toutefois une partie des données fuitez.
+Particuliérement dans le domaine des cartes à puces (cartes bancaires,badges ,cartes d'abonnements,...), oû il y a une interaction avec un terminale pour transmettre un code.
+Il est très intéressant de délivré l'information souhaité par morceaux, surtout dans le cas ou le terminale ferait l'objet d'une attaque.
+Alors dans ce cas si l'ensemble des données recupéré par l'attaquant n'est pas trop important alors il est impossible pour lui de les exploiter.
 \newline
 \newline
 \newline
@@ -81,16 +88,13 @@ La question que l'on se pose à présent est : combien y a t'il de bonbons?
 Grâce au théorème des restes chinois, on peut trouver la réponse. Nous avons en réalité plusieurs réponse, c'est-à-dire que tout les nombres congru à x modulo N sont des bonnes réponses.
 Avant de répondre à ce problème, il faut tout d'abord examiner l'algorithme.
 
-\newpage
-\section{Ces Domaines d'Application}
-
 
 
 \newpage
 
 \section{notre algorithme}
 Notre fonction en Python du théorème des restes chinois étant un peu lourde, 
-nous allons montrer l'algorithme ci-dessous (voir annexe). \newline
+nous allons montrer l'algorithme ci-dessous (voir annexe A). \newline
 On obtient donc :
 \newline
 Soit $p_i$ le i-ème terme de la liste des modulos, on note \newline
@@ -124,36 +128,84 @@ Si on reprend notre problème, on a donc 23 bonbons.
 \newline
 \newline
 Comme vous pouvez le voir, nous avons utilisé l'algorithme d'Euclide étendu. Celui-ci prend en paramètres a et b, deux entiers.
-Il renvoit d le PGCD de a et b et un couple $(u,v) \in \mathbb{Z} $ tel que $d=au+bv$.
+Il renvoit $d$ le PGCD de $a$ et $b$ et un couple $(u,v) \in \mathbb{Z} $ tel que $d=au+bv$.
 \newline
 Pour notre utilisation, nous avons un peu modifié cette algorithme, car pour utiliser le théorème des restes chinois, les nombres sont premiers entre eux 2 à 2,
 donc $d=1$. De plus, il nous fait gagner une étape car il nous renvois l'inverse de a modulo b.
 
 \begin{algorithm}
-    $x_0 \leftarrow 1 $ \;
-    $x_1 \leftarrow 0 $ \;
-    $y_0 \leftarrow 0 $ \;
-    $y_1 \leftarrow 1 $ \;
-    $s \leftarrow 1 $ \;
-    $d \leftarrow b $ \;
-    \While{ b\neq 0}{
-        $ (q,r) \leftarrow divmod(a,b) $  /* q est le quotient et r le reste de la division euclidienne de a par b */ \;
-        $ (a,b) \leftarrow (b,r) $ \;
-        $ (x,y) \leftarrow (x_1,y_1)$ \;
-        $ (r_1,y_1) \leftarrow (q\times s1 + x_0 , q\times y_1 + y_0) $ \;
-        $ (x_0,y_0) \leftarrow (x,y)$ \;
-        $ s \leftarrow -s$ \;
-    }
-    \Return{$s\times x_0 + ((1-s)\div 2)\times d$}
-\end{algorithm}
-\newpage
+    \caption{algorithme d'euclide étendu}
+    \begin{algorithmic}
+        \STATE $x_0 \leftarrow 1 $ 
+        \STATE $x_1 \leftarrow 0 $
+        \STATE $y_0 \leftarrow 0 $ 
+        \STATE $y_1 \leftarrow 1 $ 
+        \STATE $s \leftarrow 1 $ 
+        \STATE $d \leftarrow b $
+        \WHILE{$b\neq 0$}
+        \STATE $ (q,r) \leftarrow divmod(a,b) $  /* q est le quotient et r le reste de la division euclidienne de a par b */ 
+        \STATE $ (a,b) \leftarrow (b,r) $ 
+        \STATE $ (x,y) \leftarrow (x_1,y_1)$ 
+        \STATE $ (r_1,y_1) \leftarrow (q\times s1 + x_0 , q\times y_1 + y_0) $
+        \STATE $ (x_0,y_0) \leftarrow (x,y)$ 
+        \STATE $ s \leftarrow -s$ 
+        \ENDWHILE
+        \RETURN {$s\times x_0 + ((1-s)\div 2)\times d$}
+    \end{algorithmic}
 
+\end{algorithm}
+
+Maintenant que nous avons présenté les algorithmes principaux du théorème des restes chinois, voici quelque fonction que nous pourrions qualifié de segondaire au premier abord, mais très utile dans certains cas. \newline
+En premier, nous avons fait un algorithmes s'intitulant générateur de cas, qui prend en argument 2 nombres et qui génère les listes des nombres premier entre eux, et la liste des reste modulo les $p_i$. C'est en
+quelque sorte la fonction inverse du théorème des restes chinois. 
+
+\begin{algorithm}
+    \caption{générateur de cas}
+    \begin{algorithmic}
+        \REQUIRE $n>k$
+        \STATE $l_n= nombre-facteur-premier(n)$
+        \STATE $l_k=[]$
+        \FOR {i in range(len(ln))}
+        \STATE $l_k=l_k +[k/ln(i)]$
+        \ENDFOR
+        \RETURN {($l_n$, $l_k$)}
+    \end{algorithmic}
+
+\end{algorithm}
+
+Par exemple générateur de cas $(30030,61)$ renvoie les listes $P=[2,3,5,7,11,13]$ et la liste (àcompléter)!!!! \newline
+
+Nous pouvons remarquer que dans la fonction au dessus, nous utilisons la fonction nombre facteur premier qui prend en paramètre un nombre n et renvoie la liste des ses facteurs premier. 
+
+\begin{algorithm}
+    \caption{nombre facteur premier}
+    \begin{algorithmic}
+        \STATE $l=[]$
+        \STATE $i=2$
+        \WHILE {$n\neq 1$} 
+        \STATE $c=1$
+        \WHILE {$n=i\times k +0$}
+        \STATE $n=n//i$
+        \STATE $c=c\times i$
+        \ENDWHILE
+        \IF {$n\times c= i\times k + 0$} 
+        \STATE $l=l+\left[c\right] $
+        \ENDIF
+        \STATE $i=i+1$
+        \ENDWHILE
+        \RETURN{$l$}
+    \end{algorithmic}
+\end{algorithm}
+
+Par exemple nombre facteur premier (210) renvoie la liste $[2,3,5,7]$ car $210=2\times 3\times 5\times 7$
+
+\newpage
 \chapter{Presentation du problème}
 \section{Le probléme et ces restrictions}
 Le théorème des restes chinois induit une bijection :
 \newline
 
-$[0,N-1] \rightarrow \mathbb{Z}/p_1\mathbb{Z}$ \times  ... \times  $ \mathbb{Z}/p_i\mathbb{Z} $  \newline
+$[0,N-1] \rightarrow \mathbb{Z}/ p_{1 \mathbb{Z}} \times  ... \times   \mathbb{Z}/ p_{i \mathbb{Z}} $  \newline
 $x \rightarrow (x_1,...,x_i) $ 
 
 \newline
@@ -176,7 +228,18 @@ La deuxième est de choisir B l'ensemble des entiers que l'ont veut encodé et r
 
 Maintenant comment déterminer B de façon calculatoire ? \newline
 
-inserer explication du prof sur la borne.
+Dans les algorithmes que vous verrez dans la suite de notre travaille, vous pourrez trouver nos calculs de borne. Cependant, ces calculs sont propres à chaque algorithme,
+c'est à dire que la borne pour un meme nombre et un meme nombre d'erreur peut varier en focntion des algorithmes utilisé. \newline
+Mais, on peut calculer mathématiquement la borne maximale. \newline
+Soit t le nombres d'erreurs et 
+Cela signifie que aprsè cette borne, la correction d'erreurs marche parfois, ce n'est donc plus une valeur sur à cent pour cent, alors que avant cette borne, oui.
+\newline
+La question que nous sommes à présent en droit de se poser est, es qu'il exite une borne tel que l'on ne puisse corriger aucun nombres supèrieur à cette borne. Et la réponse est oui.
+Partons d'un n-uplet de départ $x=(x_1, x_2, ..., x_n)$. On pose également, dans le n-uplet reçu, $y$ le resultat possible avec t erreurs. Avec biensur, le cardinal des n-uplets reçu qui est infèrieur à la sommes des $p_i$. Dans les n-uplets reçu, il y a un nombre $D$ de résultat possibles. Nous cherchons donc à calculer $D$, qui vaut: \newline
+$D=\sum_{I\subset \left[n\right]  \newline \left\lvert I\right\rvert=t  }^{??} \: \prod _{i \in I} (p_i - 1) \thickapprox \binom{n}{t} p^t  $ 
+Par exemple si $x=(x_1, x_2, x_3, x_4)$ et $t=2$ alors $D=(p_1-1)(p_2-1)+(p_3-1)(p_4-1)+(p_1-1)(p_3-1)+(p_1-1)(p_4-1)+(p_2-1)(p_3-1)+(p_2-1)(p_4-1)$ \newline
+On a donc $\left\lvert reçu\right\rvert \simeq \left\lvert B\right\rvert \times D\leq \sum_{i = 1}^{n} p_i  $ \newline
+Donc la borne absolue vaut : $\left\lvert B\right\rvert \leq  \frac{\sum_{i= 1}^{n} p_i }{D}  $
 
 \newpage
 
@@ -186,7 +249,7 @@ Il existe plusieurs algorithmes de brut force qui permettent de résoudre les er
 Nous vous présenterons deux algorithmes dans cette section.
 
 \section{Notre premier algorithme version naïve }
-Tout d'abord, nous avons fait une fonction qui nous montre s'il y a une erreur dans nos listes, car avant de vouloir trouver les erreurs, il faut savoir s'il y en a une.
+Tout d'abord, nous avons fait une fonction qui nous montre s'il y a une erreur dans nos listes, car avant de vouloir trouver les erreurs, il faut savoir s'il y en a une (voir annexe B).
 Nous avons donc fait un petit algorithme qui permet d'enlèver alternativement un élément des listes. Autrement dit, on retire le premier élément des deux listes, puis on retire que le deuxième élément, puis que le troisième et ainsi de suite. Nous appliquons alors le théorème des restes chinois à chaque itération. Puis on mets le résultat dans une liste auxiliaire. S'il n'y a pas d'erreur,
 lorsqu'on retourne cette liste auxiliaire, on devrait avoir la même valeur partout, en revanche si les valeurs de la liste sont différentes, nous avons une erreur. \newline
 \newline
@@ -208,7 +271,7 @@ Comme il n'y a pas d'erreur, la fonction va retourner [61, 61, 61, 61, 61, 61] \
 Dans cette fonction, on parcours n fois la liste de n élément donc nous somme en $O(n^2)$. Mais on fait n fois l'algo des restes chinois donc on est en $O(n^2)$. Cette algorithme est donc en $O(n^4)$ avec n la taille de la liste. 
 \newline 
 \newline
-Pour créer notre première fonction de correction, nous nous sommes inspirées de la fonction ci dessus. On sait dit que si on enlevé 2 élément des listes, nous pourrions trouver l'erreur. On s'explique;
+Pour créer notre première fonction de correction, nous nous sommes inspirées de la fonction ci dessus (voir annexe C). On sait dit que si on enlevé 2 élément des listes, nous pourrions trouver l'erreur. On s'explique;
 On a vu que si on enlevais 1 éléments des listes, le théorème des restes chinois marchait encore, et si on enlève 2 éléments, il marche encore. Donc, en enlevant le premier élément et tout les autres chacun leurs
 tours, et en appliquantle théorème à chaque fois, on retourne une liste. Puis, on réitére en enlevant le deuxième élément, et les autres chacun leurs tours, en re-appliquant les restes chinois à chaque fois, en mettant les résultats dans
 une nouvelle liste. Ainsi de suite jusqu'au dernier élément. Cette fonction retourne une liste de liste. Donc la liste où se trouve le même nombre partout, c'est que l'erreur est à la meme position.
@@ -255,8 +318,10 @@ La distance de hamming de ces 2 listes est 5, car 2 éléments sur les 7 sont id
 On fait la distance de hamming entre le liste N et 1 qui s'écrit $L_1=[1,1,1,1,1,1,1]$ car le reste dans la division euclidienne des $p_i$ par 1 est toujours 1.
 La distance de Hamming de ces 2 listes est 6 donc on ne prete pas attention.
 On fais la distance de Hamming entre la liste N et 2 qui s'écrit $L_2=[0,2,2,2,2,2,2]$. La distance de Hamming de ces 2 listes est 7 donc on ne prete pas attention. \newline
-Il continue ses recherches sur les entiers 3, 4, et ainsi de suite. l'algorithme à découvert une liste qui avait une distance de Hamming infèrieur à 3. Cette liste est la liste $L=[1,0,0,5,9,10,7]$ qui correspond au nombre 75. Donc 75 est un candidat possible à la correspondance de cette uplet.
+Il continue ses recherches sur les entiers 3, 4, et ainsi de suite. L'algorithme à découvert une liste qui avait une distance de Hamming infèrieur à 3. Cette liste est la liste $L=[1,0,0,5,9,10,7]$ qui correspond au nombre 75. Donc 75 est un candidat possible à la correspondance de cette uplet.
 l'algorithme va continuer ces tests sur tout les nombres jusqu'à notre borne moins 1 qui ici vaut $2\times 3\times 5\times 7 -1=209$. \newline
+\newline
+L'algoritme de la distance de Hamming à une borne simple à trouver car il l'utilise lui même. \newline
 
 
 
@@ -307,9 +372,77 @@ Dans ce cas et grâce à la méthode des fractions continue nous avons étè en 
 \newpage
 
 \begin{appendices}
-    \chapter{théorème des restes}
-    \label{a_encartage}
+    \begin{algorithm}
+        \caption{algorithme du théorème des restes chinois}
+        \begin{algorithmic}
+            \REQUIRE $len(P)=len(N)$
+            \STATE $b=0$
+            \FOR {i in range(len(N))}
+            \STATE $p_i=1$
+            \STATE $pi=P[i]$
+            \STATE $k=1$
+            \FOR {j in range(len(N))}
+            \IF {$j\neq i$}
+            \STATE $p_i=p_i\times P[j]$
+            \ENDIF
+            \ENDFOR
+            \WHILE {$k\times p_i \neq pi\times y +1$ }
+            \STATE $k=k+1$
+            \ENDWHILE
+            \STATE $b=b+k\times p_i \times N[i] $
+            \ENDFOR
+            \RETURN{$b$}
+        \end{algorithmic}
+    \end{algorithm}
+\end{appendices}
 
+\begin{appendices}
+    \begin{algorithm}
+        \caption{algoritme pour savoir s'il y a une erreur}
+        \begin{algorithmic}
+            \REQUIRE $len(P)=len(N)$
+            \STATE $L=[]$
+            \FOR {i in range(len(N))}
+            \STATE $N1=[]$
+            \STATE $P1=[]$
+            \FOR {j in range(len(N))}
+            \IF{$i\neq j$}
+            \STATE $N1=N1+[N[j]]$
+            \STATE $P1=P1+[P[j]]$
+            \ENDIF
+            \ENDFOR
+            \STATE $l=reste-chinois(N1,P1)$
+            \STATE $L=L+[l]$
+            \ENDFOR
+            \RETURN{$L$}
+        \end{algorithmic}
+    \end{algorithm}
+\end{appendices}
 
+\begin{appendices}
+    \begin{algorithm}
+        \caption{brute force détection 1 erreur}
+        \begin{algorithmic}
+            \REQUIRE $len(P)=len(N)$
+            \STATE $L1=[]$
+            \FOR {i in range(len(N))}
+            \STATE $L=[]$
+            \FOR{j in range(len(N))}
+            \STATE $N_i=[]$
+            \STATE $P_i=[]$
+            \FOR{k in range(len(N))}
+            \IF{$k\neq i$ and $k\neq j$}
+            \STATE $N_i=N_i+[N[k]]$
+            \STATE $P_i=P_i+[P[k]]$
+            \ENDIF
+            \ENDFOR
+            \STATE $l=reste-chinois(N_i,P_i)$
+            \STATE $L=L+[l]$
+            \ENDFOR
+            \STATE $L1=L1+[L]$
+            \ENDFOR
+            \RETURN{$L1$}
+        \end{algorithmic}
+    \end{algorithm}
 \end{appendices}
 \end{document}

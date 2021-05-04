@@ -1,8 +1,7 @@
 \babel@toc {french}{}
 \contentsline {chapter}{\numberline {1}théorème des restes}{2}%
 \contentsline {section}{\numberline {1.1}théorème des restes chinois et son histoire}{2}%
-\contentsline {section}{\numberline {1.2}Ces Domaines d'Application}{4}%
-\contentsline {section}{\numberline {1.3}notre algorithme}{5}%
+\contentsline {section}{\numberline {1.2}notre algorithme}{4}%
 \contentsline {chapter}{\numberline {2}Presentation du problème}{7}%
 \contentsline {section}{\numberline {2.1}Le probléme et ces restrictions}{7}%
 \contentsline {section}{\numberline {2.2}Comment déterminer la borne}{7}%
@@ -12,4 +11,3 @@
 \contentsline {chapter}{\numberline {4}Les fractions continues}{14}%
 \contentsline {section}{\numberline {4.1}Principe}{14}%
 \contentsline {section}{\numberline {4.2}Résumé d'experiences et test}{16}%
-\contentsline {chapter}{\numberline {A}théorème des restes}{17}%
