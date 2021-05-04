@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.5.10)  4 MAY 2021 17:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.5.10)  4 MAY 2021 23:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -246,8 +246,8 @@ No file rendu.toc.
 Chapitre 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 38.
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:59: Undefined control sequence.
-l.59 ...e d'euclide, on va trouver $u,v\in \mathbb
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:61: Undefined control sequence.
+l.61 ...e d'euclide, on va trouver $u,v\in \mathbb
                                                   {Z}$ tel que $P_k\times u ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -256,50 +256,60 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--64
+Underfull \hbox (badness 10000) in paragraph at lines 35--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--64
+Underfull \hbox (badness 10000) in paragraph at lines 35--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--64
+Underfull \hbox (badness 10000) in paragraph at lines 35--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--66
 
  []
 
 [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 65--89
+Underfull \hbox (badness 10000) in paragraph at lines 67--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--89
+Underfull \hbox (badness 10000) in paragraph at lines 67--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--89
+Underfull \hbox (badness 10000) in paragraph at lines 67--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--89
+Underfull \hbox (badness 10000) in paragraph at lines 67--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--89
+Underfull \hbox (badness 10000) in paragraph at lines 67--91
 
  []
 
 [3]
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:105: Undefined control sequence.
-l.105 $u_i, v_i \in  \mathbb
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:107: Undefined control sequence.
+l.107 $u_i, v_i \in  \mathbb
                             {Z} $
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -307,8 +317,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:125: Undefined control sequence.
-l.125 ... final est donc $23+105k$, $k \in \mathbb
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:127: Undefined control sequence.
+l.127 ... final est donc $23+105k$, $k \in \mathbb
                                                   {Z} $.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -316,8 +326,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:130: Undefined control sequence.
-l.130 ...a$ et $b$ et un couple $(u,v) \in \mathbb
+/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:132: Undefined control sequence.
+l.132 ...a$ et $b$ et un couple $(u,v) \in \mathbb
                                                   {Z} $ tel que $d=au+bv$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -326,40 +336,35 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--134
+Underfull \hbox (badness 10000) in paragraph at lines 97--136
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--134
+Underfull \hbox (badness 10000) in paragraph at lines 97--136
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--134
+Underfull \hbox (badness 10000) in paragraph at lines 97--136
 
  []
 
 
-Overfull \hbox (28.19142pt too wide) in paragraph at lines 175--176
+Overfull \hbox (28.19142pt too wide) in paragraph at lines 177--178
 []\T1/cmr/m/n/10.95 Par exemple gÈ-nÈ-ra-teur de cas $\OT1/cmr/m/n/10.95 (30030\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 61)$ \T1/cmr/m/n/10.95 ren-voie les listes $\OML/cmm/m/it/10.95 P \OT1/cmr/m/n/10.95 = [2\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 3\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 7\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 11\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 13]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
 
  []
 
 [4] [5] [6]
 Chapitre 2.
-
-Underfull \hbox (badness 10000) in paragraph at lines 204--206
-
- []
-
 /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:207: Undefined control sequence.
-l.207 $[0,N-1] \rightarrow \mathbb
-                                  {Z}/ p_{1 \mathbb{Z}} \times  ... \times  ...
+l.207 $\left[0,N-1\right] \rightarrow\mathbb
+                                            {Z}/ p_{1 \mathbb{Z}} \times  .....
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -367,7 +372,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:207: Undefined control sequence.
-l.207 ...N-1] \rightarrow \mathbb{Z}/ p_{1 \mathbb
+l.207 ...ight] \rightarrow\mathbb{Z}/ p_{1 \mathbb
                                                   {Z}} \times  ... \times   ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -436,7 +441,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 228--229
 
 /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:238: Undefined control sequence.
 l.238 ...bset \left[n\right]  \newline \left\lvert
-                                                   I\right\rvert=t  }^{??} \...
+                                                   I\right\rvert=t  } \: \pr...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -447,7 +452,7 @@ and I'll forget about whatever was undefined.
 <to be read again> 
                    I
 l.238 ...et \left[n\right]  \newline \left\lvert I
-                                                  \right\rvert=t  }^{??} \: ...
+                                                  \right\rvert=t  } \: \prod...
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
 should probably delete the `{' by typing `1' now, so that
@@ -457,7 +462,7 @@ nonnegative, or you can use `\delimiter <delimiter code>'.
 
 /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:238: Undefined control sequence.
 l.238 ...ight]  \newline \left\lvert I\right\rvert
-                                                  =t  }^{??} \: \prod _{i \i...
+                                                  =t  } \: \prod _{i \in I} ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -468,7 +473,7 @@ and I'll forget about whatever was undefined.
 <to be read again> 
                    =
 l.238 ...ght]  \newline \left\lvert I\right\rvert=
-                                                  t  }^{??} \: \prod _{i \in...
+                                                  t  } \: \prod _{i \in I} (...
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
 should probably delete the `{' by typing `1' now, so that
@@ -477,16 +482,7 @@ Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
 /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:238: Undefined control sequence.
-l.238 ...: \prod _{i \in I} (p_i - 1) \thickapprox
-                                                   \binom{n}{t} p^t  $
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:238: Undefined control sequence.
-l.238 ... _{i \in I} (p_i - 1) \thickapprox \binom
+l.238 ...rod _{i \in I} (p_i - 1)$ $\simeq  \binom
                                                   {n}{t} p^t  $
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -496,7 +492,7 @@ and I'll forget about whatever was undefined.
 
 /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:240: Undefined control sequence.
 l.240 On a donc $\left\lvert
-                             re√ßu\right\rvert \simeq \left\lvert B\right\rv...
+                             recu\right\rvert \simeq \left\lvert B\right\rve...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -507,7 +503,7 @@ and I'll forget about whatever was undefined.
 <to be read again> 
                    r
 l.240 On a donc $\left\lvert r
-                              e√ßu\right\rvert \simeq \left\lvert B\right\rv...
+                              ecu\right\rvert \simeq \left\lvert B\right\rve...
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
 should probably delete the `{' by typing `1' now, so that
@@ -515,12 +511,9 @@ braces don't get unbalanced. Otherwise just proceed.
 Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
-
-LaTeX Warning: Command \c invalid in math mode on input line 240.
-
 /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:240: Undefined control sequence.
-l.240 On a donc $\left\lvert re√ßu\right\rvert
-                                               \simeq \left\lvert B\right\rv...
+l.240 On a donc $\left\lvert recu\right\rvert
+                                              \simeq \left\lvert B\right\rve...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -530,7 +523,7 @@ and I'll forget about whatever was undefined.
 /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:240: Missing delimiter (. inserted).
 <to be read again> 
                    \simeq 
-l.240 ...onc $\left\lvert re√ßu\right\rvert \simeq
+l.240 ...donc $\left\lvert recu\right\rvert \simeq
                                                    \left\lvert B\right\rvert...
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -540,7 +533,7 @@ Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
 /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:240: Undefined control sequence.
-l.240 ...vert re√ßu\right\rvert \simeq \left\lvert
+l.240 ...lvert recu\right\rvert \simeq \left\lvert
                                                    B\right\rvert \times D\le...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -551,7 +544,7 @@ and I'll forget about whatever was undefined.
 /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:240: Missing delimiter (. inserted).
 <to be read again> 
                    B
-l.240 ...rt re√ßu\right\rvert \simeq \left\lvert B
+l.240 ...ert recu\right\rvert \simeq \left\lvert B
                                                   \right\rvert \times D\leq ...
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -581,7 +574,6 @@ braces don't get unbalanced. Otherwise just proceed.
 Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
-Missing character: There is no Á in font cmr10!
 /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.tex:241: Undefined control sequence.
 l.241 Donc la borne absolue vaut : $\left\lvert
                                                 B\right\rvert \leq  \frac{\s...
@@ -651,58 +643,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 304--308
  []
 
 
-Overfull \hbox (21.31424pt too wide) in paragraph at lines 309--324
+Overfull \hbox (21.31424pt too wide) in paragraph at lines 326--341
 \T1/cmr/m/n/10.95 DÈtaillons, pour mieux le com-prendre, notre al-go-rithme sur $\OML/cmm/m/it/10.95 N \OT1/cmr/m/n/10.95 = [1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 7\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 10\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 7]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--324
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 309--324
+Underfull \hbox (badness 10000) in paragraph at lines 326--341
 
  []
 
 [12] [13]
 Chapitre 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--345
+Underfull \hbox (badness 10000) in paragraph at lines 348--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--345
+Underfull \hbox (badness 10000) in paragraph at lines 348--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--345
+Underfull \hbox (badness 10000) in paragraph at lines 348--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--347
+Underfull \hbox (badness 10000) in paragraph at lines 363--364
 
  []
 
 [14
 
-] [15] [16] [17] [18] (/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.aux) ) 
+] [15] [16] [17] [18] [19] (/Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.aux) ) 
 Here is how much of TeX's memory you used:
  4310 strings out of 480608
  64102 string characters out of 5903630
- 335285 words of memory out of 5000000
+ 339285 words of memory out of 5000000
  20169 multiletter control sequences out of 15000+600000
  544054 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  32i,6n,35p,475b,690s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb>
-Output written on /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.pdf (20 pages, 238496 bytes).
+Output written on /Users/fabiengranero/Desktop/projet-tutore/rendu/rendu.pdf (21 pages, 241174 bytes).
 PDF statistics:
- 137 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
+ 140 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

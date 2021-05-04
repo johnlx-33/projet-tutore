@@ -41,6 +41,8 @@ $ x\equiv n_2 \: (mod \: p_2)$
 \newline
 $ x \equiv n_k \:(mod\: p_k)$
 \newline
+\newline
+\newline
 Il est difficile de trouver des applications immédiates au théorème des restes chinois. 
 Pourtant il se révéle trés pratique dans des calculs à grandes échelles trés rapidement en minimisant les possibilités d'erreurs de calcul ; ainsi qu'en cryptologie où la possibilité de faire des calculs sur de grands nombres avec des valeurs discrétes permet d'assurer une certaine sécurité si toutefois une partie des données fuitait.
 Particuliérement dans le domaine des cartes à puces (cartes bancaires,badges ,cartes d'abonnements,...), oû il y a une interaction avec un terminale pour transmettre un code.
@@ -201,11 +203,9 @@ Par exemple nombre facteur premier (210) renvoie la liste $[2,3,5,7]$ car $210=2
 \newpage
 \chapter{Presentation du problème}
 \section{Le probléme et ses restrictions}
-Le théorème des restes chinois induit une bijection :
-\newline
-
-$[0,N-1] \rightarrow \mathbb{Z}/ p_{1 \mathbb{Z}} \times  ... \times   \mathbb{Z}/ p_{i \mathbb{Z}} $  \newline
-$x \rightarrow (x_1,...,x_i) $ 
+Le théorème des restes chinois induit une bijection :\newline
+$\left[0,N-1\right] \rightarrow\mathbb{Z}/ p_{1 \mathbb{Z}} \times  ... \times   \mathbb{Z}/ p_{i \mathbb{Z}} $  \newline
+$ x \rightarrow (x_1,...,x_i) $ 
 
 \newline
 \newline
@@ -235,9 +235,9 @@ Cela signifie que après cette borne, la correction d'erreurs marche parfois, ce
 \newline
 La question que nous sommes à présent en droit de nous poser est, est-ce qu'il existe une borne tel que l'on ne puisse corriger aucun nombre supérieur à cette borne. Et la réponse est oui.
 Partons d'un n-uplet de départ $x=(x_1, x_2, ..., x_n)$. On pose également, dans le n-uplet reçu, $y$ le résultat possible avec t erreurs. Avec bien sûr, le cardinal des n-uplets reçu qui est infèrieur à la sommes des $p_i$. Dans les n-uplets reçus, il y a un nombre $D$ de résultats possibles. Nous cherchons donc à calculer $D$, qui vaut: \newline
-$D=\sum_{I\subset \left[n\right]  \newline \left\lvert I\right\rvert=t  }^{??} \: \prod _{i \in I} (p_i - 1) \thickapprox \binom{n}{t} p^t  $ 
+$D=\sum_{I\subset \left[n\right]  \newline \left\lvert I\right\rvert=t  } \: \prod _{i \in I} (p_i - 1)$ $\simeq  \binom{n}{t} p^t  $ 
 Par exemple si $x=(x_1, x_2, x_3, x_4)$ et $t=2$ alors $D=(p_1-1)(p_2-1)+(p_3-1)(p_4-1)+(p_1-1)(p_3-1)+(p_1-1)(p_4-1)+(p_2-1)(p_3-1)+(p_2-1)(p_4-1)$ \newline
-On a donc $\left\lvert reçu\right\rvert \simeq \left\lvert B\right\rvert \times D\leq \sum_{i = 1}^{n} p_i  $ \newline
+On a donc $\left\lvert recu\right\rvert \simeq \left\lvert B\right\rvert \times D\leq \sum_{i = 1}^{n} p_i  $ \newline
 Donc la borne absolue vaut : $\left\lvert B\right\rvert \leq  \frac{\sum_{i= 1}^{n} p_i }{D}  $
 
 \newpage
@@ -306,8 +306,24 @@ $d_H(x,y)=Card\{  i\vert x_i \neq y_i \}$. Par exemple la distance de Hamming de
 Avant de voir cette algorithme, nous devons expliquer la distance minimale. Soit G un groupe n-uplet appartenant à $A^n$. La distance minimale de G est la plus petite distance de hamming sur tout les éléments de G, soit $d(G)=min{\left\{d_h(x,y)\right\} | x\neq y, x,y\in G}$.
 D'après Hamming, si la distance minimale est égal à d, alors on peut détecter d-1 erreurs et corriger $\frac{d-1}{2}$ erreurs. \newline
 
-Dans cette algoritme nous utilisons la distance de haming. Nous laissons le choix au lecteur d'aller voir l'algoritme de la distance de hamming en annexe.\newline
-Pour ce nouvel algoritme, nous allons calculer la distance de Hamming entre le uplet à corriger et tout les élements de 0 à la borne. Nous selectionnons tout les éléments de distance de Hamming strictement inférieur à 3 pour pouvoir détecter une erreur. \newline
+
+Dans cette algoritme nous utilisons la distance de haming qui prend en entré 2 listes de nombres nommés $A1$ et $A2$, et retoune le distance de Hamming. Du coup, il nous a fallu le coder. \newline
+\begin{algorithm}
+    \caption{distance de hamming}
+    \begin{algorithmic}
+        \STATE $n=min(len(A1),len(A2))$
+        \STATE $m=max(len(A1),len(A2))$
+        \STATE $cpt=m-n$
+        \FOR{i in range(n)}
+        \IF{$A1[i]\neq A2[i]$}
+        \STATE $cpt=cpt+1$
+        \ENDIF
+        \ENDFOR
+        \RETURN{cpt}        
+    \end{algorithmic}
+\end{algorithm}
+
+Pour ce nouvel algoritme (voir annexe D), nous allons calculer la distance de Hamming entre le uplet à corriger et tout les élements de 0 à la borne. Nous selectionnons tout les éléments de distance de Hamming strictement inférieur à 3 pour pouvoir détecter une erreur. \newline
 Pour choisir la borne de cette algorithme pour 1 erreur, on retire les 3 plus grandes équations, c'est à dire si $P=[p_1, ..., p_k]$ alors la borne est $\prod_{i=1} ^{k-3} p_i$. Pour e erreurs, on retire les $3e$ dernières équations. \newline
 Faisons un exemple pour illustrer cette algoritme: \newline
 Prenons les listes $P=[2,3,5,7,11,13,17]$ et $N=[1,0,0,5,9,10,7]$ pour nos exemples. \newline
@@ -320,7 +336,8 @@ On fais la distance de Hamming entre la liste N et 2 qui s'écrit $L_2=[0,2,2,2,
 Il continue ses recherches sur les entiers 3, 4, et ainsi de suite. L'algorithme à découvert une liste qui avait une distance de Hamming infèrieur à 3. Cette liste est la liste $L=[1,0,0,5,9,10,7]$ qui correspond au nombre 75. Donc 75 est un candidat possible à la correspondance de cette uplet.
 l'algorithme va continuer ces tests sur tout les nombres jusqu'à notre borne moins 1 qui ici vaut $2\times 3\times 5\times 7 -1=209$. \newline
 \newline
-L'algoritme de la distance de Hamming à une borne simple à trouver car il l'utilise lui même. \newline
+La complexité de cette algorithme se calcul assez rapidement. Nous avons une boucle while, on fait donc $b$ fois la distance de Hamming. LA distance de Hamming est donc $O(r)$ où r est la taille du système. On a donc cette algorithme 
+qui est en $O(b\times r)$.
 
 
 
@@ -371,6 +388,7 @@ Dans ce cas et grâce à la méthode des fractions continue nous avons étè en 
 \newpage
 
 \begin{appendices}
+    Annexe 1
     \begin{algorithm}
         \caption{algorithme du théorème des restes chinois}
         \begin{algorithmic}
@@ -419,6 +437,7 @@ Dans ce cas et grâce à la méthode des fractions continue nous avons étè en 
 \end{appendices}
 
 \begin{appendices}
+
     \begin{algorithm}
         \caption{brute force détection 1 erreur}
         \begin{algorithmic}
@@ -441,6 +460,34 @@ Dans ce cas et grâce à la méthode des fractions continue nous avons étè en 
             \STATE $L1=L1+[L]$
             \ENDFOR
             \RETURN{$L1$}
+        \end{algorithmic}
+    \end{algorithm}
+\end{appendices}
+
+\begin{appendices}
+    Cette algorithme prend en paramètre la liste des modulos, la liste des restes, et le nombre d'erreur. Et retourne la liste des candidats.
+    \begin{algorithm}
+        \caption{brute force de hamming}
+        \begin{algorithmic}
+            \STATE $n=len(N)$
+            \STATE $cpt=0 $
+            \STATE $N=1$
+            \STATE $borne=0$
+            \FOR{i in range(n)}
+            \STATE $N=N\times P[i]$
+            \STATE $borne=borne+ (P[i]-1)$
+            \ENDFOR
+            \STATE $borne=N//borne$
+            \STATE $(a,L-force)= generateur-de-cas(N,cpt) $
+            \STATE $l-candidat=[]$
+            \WHILE{$cpt \leq borne$}
+            \IF{$distance-hamming(L-force,N) \leq nb-erreur$}
+            \STATE $l-candidat = l-candidat+[cpt]$
+            \ENDIF
+            \STATE $cpt=cpt+1$
+            \STATE $(a,L-force)=genrateur-de-cas(N,cpt)$
+            \ENDWHILE
+            \RETURN{l-candidat}
         \end{algorithmic}
     \end{algorithm}
 \end{appendices}
