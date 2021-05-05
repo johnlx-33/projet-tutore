@@ -1,13 +1,13 @@
 \babel@toc {french}{}
-\contentsline {chapter}{\numberline {1}théorème des restes}{2}%
-\contentsline {section}{\numberline {1.1}théorème des restes chinois et son histoire}{2}%
-\contentsline {section}{\numberline {1.2}Notre algorithme}{4}%
-\contentsline {chapter}{\numberline {2}Presentation du problème}{7}%
-\contentsline {section}{\numberline {2.1}Le probléme et ses restrictions}{7}%
-\contentsline {section}{\numberline {2.2}Comment déterminer la borne}{8}%
-\contentsline {chapter}{\numberline {3}Brute force}{9}%
-\contentsline {section}{\numberline {3.1}Notre premier algorithme version naïve }{9}%
-\contentsline {section}{\numberline {3.2}brute force de hamming}{12}%
-\contentsline {chapter}{\numberline {4}Les fractions continues}{14}%
-\contentsline {section}{\numberline {4.1}Principe}{14}%
-\contentsline {section}{\numberline {4.2}Résumé d'experiences et test}{16}%
+\contentsline {chapter}{\numberline {1}théorème des restes}{3}%
+\contentsline {section}{\numberline {1.1}théorème des restes chinois et son histoire}{3}%
+\contentsline {section}{\numberline {1.2}Notre algorithme}{5}%
+\contentsline {chapter}{\numberline {2}Presentation du problème}{8}%
+\contentsline {section}{\numberline {2.1}Le probléme et ses restrictions}{8}%
+\contentsline {section}{\numberline {2.2}Comment déterminer la borne}{9}%
+\contentsline {chapter}{\numberline {3}Brute force}{10}%
+\contentsline {section}{\numberline {3.1}Notre premier algorithme version naïve }{10}%
+\contentsline {section}{\numberline {3.2}brute force de hamming}{13}%
+\contentsline {chapter}{\numberline {4}Les fractions continues}{15}%
+\contentsline {section}{\numberline {4.1}Définition}{15}%
+\contentsline {section}{\numberline {4.2}Résumé d'experiences et test}{17}%

@@ -12,7 +12,8 @@
 \usepackage{amsmath}
 
 
-\title{Reconstituer le théorème chinois en présence d’erreurs}
+
+\title{PROJET TUTORÉ\newline Reconstituer le théorème chinois en présence d’erreurs}
 \author{Mr LAVOIX John, Mr GRANERO Fabien }
 \date{7 mai 2021}
 
@@ -21,9 +22,14 @@
 
 \begin{abstract}
 
+    Nous sommes étudiant en troisième année de licence mathématique et informatique. Suite au cours d'algèbres des années précédente 
+et au cours de aritmétique et cryptologie de ce semestre, nous avons décidé d'approfondir nos connaissances dans le doamine des restes chinois.
+De plus, voulant tout les 2 continuer nos études en poursuivant avec le master de cryptologie et sécurité informatique, ce projet fut l'occasion de découvrir les prémisses des enseignements dispensés dans ce master. \newline
+\newline
+\newline
 Ce rapport est  une synthèse de nos travaux durant ce semestre, sur la reconstitution du théorème des restes chinois en présence d'erreurs.
 Grâce au soutien de notre professeur Mr ZEMOR, qui nous a guidé tout au long de ce projet nous avons découvert et maitrisé plusieurs méthodes pour parvenir à notre objectif.
-Nous avons tout d'abord pris connaissance du théorème, puis nous avons cherché et appris plusieurs facon de corriger le théorème des restes chinois lors de la présence d'erreurs.
+Pour ce faire, nous avons d'abord pris connaissance du théorème dans son ensemble. Puis dans un second temps, nous avons cherché et appris plusieurs facon de corriger le théorème des restes chinois lors de la présence d'erreurs.
 
 \end{abstract}
 
@@ -31,6 +37,13 @@ Nous avons tout d'abord pris connaissance du théorème, puis nous avons cherch�
 \tableofcontents
 
 \newpage
+
+\begin{flushleft}
+    Nous tenons tout d'abord à remercier monsieur CASTAGNOS Guillaume, d'avoir maintenu cette unité d'enseignement malgrès la situation sanitaire actuelle.  
+Nous remercions par la suite monsieur ZEMOR Gilles de nous avoir formé durant cette période compliqué, d'être resté à notre écoute, et de nous avoir suivit tout au long de ce projet.
+\newline 
+Nous remercions également nos familles et nos proches, pour leurs aide et leurs soutiens moral.
+\end{flushleft}
 
 \chapter{théorème des restes}
 \section{théorème des restes chinois et son histoire}
@@ -237,6 +250,19 @@ la deuxième est de choisir B l'ensemble des entiers que l'ont veut encoder et r
 
 
 Maintenant comment déterminer B de façon calculatoire ? \newline
+Soit $N=p_1\times ...\times p_n$
+On pose $x=p_1 \times p_2 \times ... \times p_{n-2t}$ où t est le nombre d'erreurs. \newline
+On note la représentation de x par le théorème des restes chinois $m=(0...0 a_1 a_2 ... a_t ... a_{2t})$ \newline
+On reçois le message $r=(0...0 a_1...a_t 0...0)$ \newline
+Nous obtenons 2 possibilités d'erreurs, soit: \newline
+- $(0...0 a_1...a_t 0...0) $ avec des erreurs sur le t-uplets de $a_1$ à $a_t$, qui correspond à l'encodage de 0. \newline
+- $(0...0 a_1...a_t a_{t+1}...a_{2t})$ avec des erreurs sur le t-uplets de $a_{t+1}$ à $a_{2t}$, qui correspond à l'encodage de $x$. \newline
+Donc la borne est x pour ne pas laisser de doute au moment de la correction. \newline
+\newline
+Pour illustrer cette détermination de borne, voici un petit exemple: \newline
+Posons $N=2\times 3\times 5\times 7\times 11\times 13 \times 17= 510510$ et $t=2$. \newline
+On trouve $x=2\times 3\times 5=30$. Donc pour 2 erreurs, la borne de N est 30.
+
 
 Dans les algorithmes que vous verrez dans la suite de notre travail, vous pourrez trouver nos calculs de borne. Cependant, ces calculs sont propres à chaque algorithme,
 c'est à dire que la borne pour un même nombre et un même nombre d'erreurs peut varier en fonction des algorithmes utilisés. \newline
@@ -246,10 +272,14 @@ Cela signifie que après cette borne, la correction d'erreurs marche parfois, ce
 \newline
 La question que nous sommes à présent en droit de nous poser est, est-ce qu'il existe une borne tel que l'on ne puisse corriger aucun nombre supérieur à cette borne. Et la réponse est oui.
 Partons d'un n-uplet de départ $x=(x_1, x_2, ..., x_n)$. On pose également, dans le n-uplet reçu, $y$ le résultat possible avec t erreurs. Avec bien sûr, le cardinal des n-uplets reçu qui est infèrieur à la sommes des $p_i$. Dans les n-uplets reçus, il y a un nombre $D$ de résultats possibles. Nous cherchons donc à calculer $D$, qui vaut: \newline
-$D=\sum_{I \subset  [n]  \newline |I|=t  }  \prod _{i \in I} p_i - 1 \simeq  \binom{n}{t} p^t  $ avec $[n]$ les entiers de 1 à n\newline
+$D=\sum_{I \subset  [n]  \newline |I|=t  }  \prod _{i \in I} p_i - 1 \simeq  \binom{n}{t} p^t  $ avec $[n]$ les entiers de 1 à n et $p=p_n$\newline
 Par exemple si $x=(x_1, x_2, x_3, x_4)$ et $t=2$ alors $D=(p_1-1)(p_2-1)+(p_3-1)(p_4-1)+(p_1-1)(p_3-1)+(p_1-1)(p_4-1)+(p_2-1)(p_3-1)+(p_2-1)(p_4-1)$ \newline
 On a donc $ |recu| \simeq |B| \times D\leq \sum_{i = 1}^{n} p_i  $ \newline
-Donc la borne absolue vaut : $|B| \leq  \frac{\sum_{i= 1}^{n} p_i }{D}  $
+Donc la borne absolue vaut : $|B| \leq  \frac{\sum_{i= 1}^{n} p_i }{D} $.\newline
+Idem que précédement, faisons un petit exemple. \newline
+Posons $N=2\times 3\times 5\times 7\times 11\times 13$ et $t=2$, alors $D\simeq \binom{6}{2}\times 13^2=2535$
+$B \leq  \frac{2\times 3\times 5\times 7\times 11\times 13}{D}=\frac{510510}{2535} \simeq 201 $.
+
 
 \newpage
 
@@ -278,7 +308,8 @@ Si on applique le théorème des restes chinois à ces deux listes, on trouve 51
 P1=[3,5,7,11,13] et N1=[1, 1, 5, 6, 9, puis à P2=[2,5,7,11,13] et N2=[1, 1, 5, 6, 9] jusqu'à P6=[2,3,5,7,11,] et N7=[1, 1, 1, 5, 6]\newline
 Comme il n'y a pas d'erreur, la fonction va retourner [61, 61, 61, 61, 61, 61] \newline
 À présent, nous mettons une erreur dans les listes, on a P=[2,3,5,7,11,13] et N=[1,1,2,5,6,9]. En appliquant la fonction, il sera retourner une liste [6067, 6067, 61, 1777, 607, 1447], où l'on remarque bien que chaque élément est différrent, donc nous avons au moins une erreur.
-Dans cette fonction, on parcours n fois la liste de n élément donc nous somme en $O(n^2)$. Mais on fait n fois l'algo des restes chinois donc on est en $O(n^2)$. Cette algorithme est donc en $O(n^4)$ avec n la taille de la liste. 
+Dans cette fonction, on parcours n fois la liste de n élément donc nous somme en $O(n^2)$. Mais on fait n fois l'algo des restes chinois donc on est en $O(n^2)$. Cette algorithme est donc en $O(n^4)$ avec n la taille de la liste.
+Cette fonction à éaglement une borne qui est $ \prod_{i=1}^{n-1} p_i $.
 \newline 
 \newline
 Pour créer notre première fonction de correction, nous nous sommes inspirées de la fonction ci dessus (voir annexe C). On sait dit que si on enlevé 2 élément des listes, nous pourrions trouver l'erreur. On s'explique;
@@ -300,8 +331,13 @@ On applique notre algoritme et il retourne/
 La première liste retourné ne renvois pas le meme résultat donc l'erreur n'est pas sur la première équation. Elle n'es pas non plus sur la deuxième équation.
 Cependant, on peut voir sur la troisième liste que le résultat est toujours le même; c'est à dire qu'à chaque fois on a fait le théorème des restes chinois en enlevant la troisième équation et une autre, donc nous avons une erreur sur la toisième équation.
 \newline
+Voici un exemple d'échec de notre algorithme pour des valeurs prisent en dehors de la borne.
+si $N=[0, 2, 0, 5, 9, 11]$ la liste qui représnete 2000 modulo les $p_i$. Posons un erreur sur $N$, tel que $N=[0, 2, 0, 6, 9, 11]$ l'algorithme renvoie 
+[[12725, 2715, 713, 2000, 440, 20], [2715, 7720, 1714, 570, 440, 20], [713, 1714, 3716, 284, 440, 20], [2000, 570, 284, 2000, 50, 20], [440, 440, 440, 50, 440, 20], [20, 20, 20, 20, 20, 20]]
+Comme on l'observe, l'algorithme trouve parfois 2 000 mais ne trouve pas l'erreur, ou du moins, il en trouve une mauvaise.
+\newline
 Cette fonction est très performante comme vous avez pu le voir sur les exemples, cependant il y a quelque défaut. Premièrement, cette fonction ne marche que avec une seule erreur,
-on peut facilement changer la fonction pour trouver n erreur juste en rajoutant des boucles FOR, mais cela rendrait l'algorithme encore plus lourd. Deuxièmement, nous avons un problème de borne. Pour trouver la borne,
+on peut facilement changer la fonction pour trouver n erreur juste en rajoutant des boucles FOR, mais cela rendrait l'algorithme encore plus lourd et une borne très faible. Deuxièmement, nous avons un problème de borne. Pour trouver la borne,
 il suffit de multiplier par les 2 derniers nombre premier de la liste. \newline
 Par exemple pour le nombre 30030, la borne est 30030/(11x13) soit 210, se qui est très peu.\newline
 Enfin, nous avons un problème de complexité soit $O(n^3)$ et a chaque fois on fait le théorème des restes chinois qui est en $O(n^2)$, se qui donne un algorithme en $O(n^5)$.
@@ -347,6 +383,10 @@ On fais la distance de Hamming entre la liste N et 2 qui s'écrit $L_2=[0,2,2,2,
 Il continue ses recherches sur les entiers 3, 4, et ainsi de suite. L'algorithme à découvert une liste qui avait une distance de Hamming infèrieur à 3. Cette liste est la liste $L=[1,0,0,5,9,10,7]$ qui correspond au nombre 75. Donc 75 est un candidat possible à la correspondance de cette uplet.
 l'algorithme va continuer ces tests sur tout les nombres jusqu'à notre borne moins 1 qui ici vaut $2\times 3\times 5\times 7 -1=209$. \newline
 \newline
+De même que pour l'algorithme précédent, voici le même exemple. \newline
+Rapelons les faits, $N=[0, 2, 0, 5, 9, 11]$, et on implémente une erreur qui est: $N=[0, 2, 0, 6, 9, 11]$.
+L'algorithme retourne [20], c'est une nouvelle fois une erreur.
+\newline
 La complexité de cette algorithme se calcul assez rapidement. Nous avons une boucle while, on fait donc $b$ fois la distance de Hamming. LA distance de Hamming est donc $O(r)$ où r est la taille du système. On a donc cette algorithme 
 qui est en $O(b\times r)$.
 
@@ -355,7 +395,7 @@ qui est en $O(b\times r)$.
 
 \newpage
 \chapter{Les fractions continues} 
-\section{Principe}
+\section{Définition}
 Comme vu précédement la méthode brute force est efficace sur des petits cas de correction mais sur de cas plus grand la complexité explose et il est très difficile d'obtenir des résultats en un temps raisonnable.\newline
 Il faut donc trouver un moyen plus rapide et optimal. Donc comprenons comment intervient l'erreur sur le n-uplet du systéme d'équation.\newline
 Soit m le message envoyé et y le message et l'erreur dans le même message. si l'on fait la différrence de m-y on obtient e l'erreur.
@@ -380,8 +420,7 @@ Une fois cette borne determiné on calcule les reduites de  $\frac{y}{n}$ sans q
 A chaque tour de boucle on calcule une reduite qui coute l'ordre de la réduite fois le coût d'une division euclidienne  ,
 l'algorithme permettant de calculé une réduite étant une version modifié de l'algorithme d'Euclide arrété à l'ordre de la fraction réduite voulue.
 Donc finalement pour calculer toutes les réduites qui mettent en évidence les potentiels position érronés le coût et relativement faible car dépend de la taille du systéme lineairement donc relativement faible et rapide.
-Coût que l'on a constater grâce  nos experiences et test.
-
+Coût que l'on a constater grâce  nos experiences et test. \newline
 
 
 
@@ -389,15 +428,35 @@ Coût que l'on a constater grâce  nos experiences et test.
 
 \newpage
 \section{Résumé d'experiences et test}
-Au début de nos tests nous avons pratiqué avec des petits cas de 6 à 7 nombre premier et cette méthode se révéla très efficace.
-Mais pour tester des cas avec plus d'erreurs nous avons eu besoin de systéme plus grand nous avons donc directement étendu notre systéme à 51 nombres premiers.
+Au début de nos tests nous avons pratiqué avec des petits cas de 6 à 7 nombre premier et cette méthode ne se révéla pas très efficace. Du aufait que le système étudié est trop petit, la méthode des fractions continues échoue par manque d'équation.
+Mais pour tester des cas avec plus d'erreurs nous avons eu besoin de systéme plus grand, nous avons donc directement étendu notre systéme à 51 nombres premiers.
 Nous avons pris la borne B = $10^{29}$ ordre de grandeur de la borne théorique pour corriger 15 erreurs.
-Dans ce cas et grâce à la méthode des fractions continue nous avons étè en capacité de corriger jusqu'à 7 erreur.
+Dans ce cas et grâce à la méthode des fractions continue nous avons étè en capacité de corriger jusqu'à 7 erreur. \newline
+Voici quelque exemple: \newline 
+Pour le premier exemple, nous avons choisi de travailler avec les 20 premiers nombre premier, et $[1, 2, 1, 1, 0, 8, 1, 18, 4, 23, 10, 12, 6, 0, 9, 51, 50, 26, 61, 61]$ le n-uplet avec 2 erreurs.
+L'algorithme retoune $[[2], [3, 43]]$. On reconstitue le thèorème en enlevant, dans un premier temps l'équation du modulo 3. Et dans un autre temps, nous avons fait le théorème en retirant 
+les équations modulo 3 et 43. Nous avons deux valeurs retourné, suite à la reconstitution du thèorème, qui sont 2162561357080315373769686 pour la première et 86842888231 pour le segond. Le bon résultat étant le plus petit, cela 
+signifie que l'erreur est sur l'équation modulo 3 et modulo 43. \newline
+\newline
 
+
+De plus, on pose pour les $p_i$ les 50 premiers nombres premiers, et $N=[0, 2, 0, 4, 7, 1, 16, 2, 22, 25, 26, 34, 18, 19, 30, 24, 24, 22, 52, 56, 4, 15, 54, 68, 89, 58, 39, 15, 54, 11, 112, 73, 134, 126, 102, 142, 142, 92, 159, 48, 119, 33, 16, 77, 28, 29, 67, 89, 86, 163, 150]$ le n-uplet reçu, c'est à dire avec des erreurs(7). 
+Les erreurs sont sur les positions correspondant aux nombres premiers de la liste suivante $[7, 79, 97, 107, 127, 157, 223]$. 
+L'algorithme retourne $[[5], [2, 7], [3, 11], [7, 79, 97, 107, 127, 157, 223]]$. Comme nous pouvons l'observer, l'algorithme à trouvé la bonne réponse. Cependant il propose d'autres cas. Par le même biais que l'exemple précédent, nous trouver que la bonne solution est le 7-uplets.
 
 
 \newpage
+ 
+\chapter*{Conclusion}
+Finalement on peut distingué 2 cas. Premiérement si l'on doit corriger quelques erreurs sur un petit système 
+les méthodes brute force évoquées précédement sont a préconiser malgrés leur coût trés élevé
+et dans un second cas sur des systéme plus grand de taille 20 ou plus avec plus d'erreur alors la méthode des fractions continue
+se révéle beaucoup plus efficace voir nécessaire pour ésperé avoir un résultat comparé au méthode brut force.
+Dans des cas concret appliqué a la vie de tout les jours on ce retrouve face a des grands cas comme dans le domaine des cartes a puces ect ..
+alors la méthode des fraction continue est à choisir .
+\newpage
 
+\chapter*{Annexes}
 \begin{appendices}
     Annexe 1
     \begin{algorithm}
@@ -424,6 +483,8 @@ Dans ce cas et grâce à la méthode des fractions continue nous avons étè en 
     \end{algorithm}
 \end{appendices}
 
+\newpage
+
 \begin{appendices}
     Annexe 2
     \begin{algorithm}
@@ -447,6 +508,8 @@ Dans ce cas et grâce à la méthode des fractions continue nous avons étè en 
         \end{algorithmic}
     \end{algorithm}
 \end{appendices}
+
+\newpage
 
 \begin{appendices}
     Annexe 3
@@ -503,6 +566,37 @@ Dans ce cas et grâce à la méthode des fractions continue nous avons étè en 
             \STATE $(a,L-force)=genrateur-de-cas(N,cpt)$
             \ENDWHILE
             \RETURN{l-candidat}
+        \end{algorithmic}
+    \end{algorithm}
+\end{appendices}
+
+\newpage
+
+\begin{appendices}
+    Annexe 5
+    Cette fonction prend en paramètre la liste des $p_i$ la liste des restes modulos les $p_i$, et le nombre d'erreur.
+    \begin{algorithm}
+        \caption{fraction continue}
+        \begin{algorithmic}
+            \STATE $k=reste-chinois(P,N)$
+            \STATE $p=1$
+            \STATE $n=1$
+            \STATE $L=[]$
+            \FOR{i in range(len(P))}
+            \STATE $n=n\times P[i]$
+            \ENDFOR
+            \STATE $borne=max-borne-frac(N,nb-erreur)$
+            \STATE $b=0$
+            \WHILE{$b\leq borne$}
+            \STATE $L1= fraction-reduite(k,n,p)$
+            \STATE $(a,d)=list-int-reduite(L1)$
+            \STATE $L2=decompose-liste(b,N)$
+            \IF{$L2\neq -1$ and $L2\neq []$}
+            \STATE $L=L+[L2]$
+            \ENDIF
+            \STATE $p=p+1$
+            \ENDWHILE
+            \RETURN{$L$}
         \end{algorithmic}
     \end{algorithm}
 \end{appendices}
