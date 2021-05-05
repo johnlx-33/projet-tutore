@@ -162,6 +162,7 @@ donc $d=1$. De plus, il nous fait gagner une étape car il nous renvoit l'invers
     \end{algorithmic}
 
 \end{algorithm}
+\newpage
 
 Maintenant que nous avons présenté les algorithmes principaux du théorème des restes chinois, voici quelques fonctions que nous pourrions qualifier de secondaires au premier abord, mais très utiles dans certains cas. \newline
 En premier, nous avons fait un algorithme s'intitulant générateur de cas, qui prend en argument 2 nombres et qui génère les listes des nombres premiers entre eux, et la liste des restes modulo les $p_i$. C'est en
@@ -211,11 +212,6 @@ Par exemple nombre facteur premier (210) renvoie la liste $[2,3,5,7]$ car $210=2
 \newpage
 \chapter{Presentation du problème}
 \section{Le probléme et ses restrictions}
-<<<<<<< HEAD
-Le théorème des restes chinois induit une bijection :\newline
-$\left[0,N-1\right] \rightarrow\mathbb{Z}/ p_{1 \mathbb{Z}} \times  ... \times   \mathbb{Z}/ p_{i \mathbb{Z}} $  \newline
-$ x \rightarrow (x_1,...,x_i) $ 
-=======
 Le théorème des restes chinois induit une bijection :
 \newline
 \begin{center}
@@ -223,11 +219,8 @@ Le théorème des restes chinois induit une bijection :
 
 $[0,N-1] \rightarrow \mathbb{Z}/ p_{1 \mathbb{Z}} \times  ... \times   \mathbb{Z}/ p_{i \mathbb{Z}} $  \newline
 $x \rightarrow (x_1,...,x_i) $ 
->>>>>>> 7c6e23505ddd577c077ad6df31ea69b5c4dde166
 
 \end{center}
-\newline
-\newline
 
 Oû $ x\equiv x_i \: (mod \: p_i)$
 \newline
@@ -435,6 +428,7 @@ Dans ce cas et grâce à la méthode des fractions continue nous avons étè en 
 \end{appendices}
 
 \begin{appendices}
+    Annexe 2
     \begin{algorithm}
         \caption{algoritme pour savoir s'il y a une erreur}
         \begin{algorithmic}
@@ -458,7 +452,7 @@ Dans ce cas et grâce à la méthode des fractions continue nous avons étè en 
 \end{appendices}
 
 \begin{appendices}
-
+    Annexe 3
     \begin{algorithm}
         \caption{brute force correction 1 erreur}
         \begin{algorithmic}
@@ -485,7 +479,10 @@ Dans ce cas et grâce à la méthode des fractions continue nous avons étè en 
     \end{algorithm}
 \end{appendices}
 
+\newpage
+
 \begin{appendices}
+    Annexe 4 \newline
     Cette algorithme prend en paramètre la liste des modulos, la liste des restes, et le nombre d'erreur. Et retourne la liste des candidats.
     \begin{algorithm}
         \caption{brute force de hamming}

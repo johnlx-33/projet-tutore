@@ -4,7 +4,7 @@
 \contentsline {section}{\numberline {1.2}Notre algorithme}{4}%
 \contentsline {chapter}{\numberline {2}Presentation du problème}{7}%
 \contentsline {section}{\numberline {2.1}Le probléme et ses restrictions}{7}%
-\contentsline {section}{\numberline {2.2}Comment déterminer la borne}{7}%
+\contentsline {section}{\numberline {2.2}Comment déterminer la borne}{8}%
 \contentsline {chapter}{\numberline {3}Brute force}{9}%
 \contentsline {section}{\numberline {3.1}Notre premier algorithme version naïve }{9}%
 \contentsline {section}{\numberline {3.2}brute force de hamming}{12}%
