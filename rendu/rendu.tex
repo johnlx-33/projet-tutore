@@ -8,6 +8,8 @@
 \usepackage{appendix}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{amsfonts}
+\usepackage{amsmath}
 
 
 \title{Reconstituer le théorème chinois en présence d’erreurs}
@@ -43,10 +45,6 @@ $ x\equiv n_2 \: (mod \: p_2)$
 $ x \equiv n_k \:(mod\: p_k)$
 \newline
 \newline
-<<<<<<< HEAD
-\newline
-=======
->>>>>>> 7c6e23505ddd577c077ad6df31ea69b5c4dde166
 Il est difficile de trouver des applications immédiates au théorème des restes chinois. 
 Pourtant il se révéle trés pratique dans des calculs à grandes échelles pour calculer trés rapidement 
 en minimisant les possibilités d'erreurs de calcul ;
@@ -101,8 +99,8 @@ Avant de répondre à ce problème, il faut tout d'abord examiner l'algorithme.
 \newpage
 
 \section{Notre algorithme}
-Notre fonction en Python du théorème des restes chinois étant un peu lourde, 
-nous allons montrer l'algorithme ci-dessous (voir annexe A). \newline
+Notre fonction en Python du théorème des restes chinois étant un peu lourde,
+nous allons montrer l'algorithme ci-dessous (voir annexe A).
 On obtient donc :
 \newline
 Soit $p_i$ le i-ème terme de la liste des modulos, on note \newline
@@ -111,7 +109,7 @@ on a donc $P_i$ et $p_i$  qui sont premiers entre eux. \newline
 Il faut alors faire l'algorithme d'Euclide étendu sur $P_i$ et $p_i$, ce qui nous donne: 
 $1= P_i u_i + p_i v_i$ 
 où 
-$u_i, v_i \in  \mathbb{Z} $
+$u_i, v_i \in  \mathbb{Z}  $
 \newline
 On pose donc $e_i = u_i P_i$ avec $ e_i \equiv 1 \; (mod \; p_i)$ et $ e_i\equiv 0 \; (mod \; e_j)$ avec $ i\neq j$ \newline
 On trouve alors une solution qui est $x=\sum_{i = 1}^{k}{p_i e_i} $.\newline
@@ -212,8 +210,7 @@ Par exemple nombre facteur premier (210) renvoie la liste $[2,3,5,7]$ car $210=2
 \newpage
 \chapter{Presentation du problème}
 \section{Le probléme et ses restrictions}
-Le théorème des restes chinois induit une bijection :
-\newline
+\hbox{Le théorème des restes chinois induit une bijection :}
 \begin{center}
   
 
@@ -249,10 +246,10 @@ Cela signifie que après cette borne, la correction d'erreurs marche parfois, ce
 \newline
 La question que nous sommes à présent en droit de nous poser est, est-ce qu'il existe une borne tel que l'on ne puisse corriger aucun nombre supérieur à cette borne. Et la réponse est oui.
 Partons d'un n-uplet de départ $x=(x_1, x_2, ..., x_n)$. On pose également, dans le n-uplet reçu, $y$ le résultat possible avec t erreurs. Avec bien sûr, le cardinal des n-uplets reçu qui est infèrieur à la sommes des $p_i$. Dans les n-uplets reçus, il y a un nombre $D$ de résultats possibles. Nous cherchons donc à calculer $D$, qui vaut: \newline
-$D=\sum_{I\subset \left[n\right]  \newline \left\lvert I\right\rvert=t  } \: \prod _{i \in I} (p_i - 1)$ $\simeq  \binom{n}{t} p^t  $ 
+$D=\sum_{I \subset  [n]  \newline |I|=t  }  \prod _{i \in I} p_i - 1 \simeq  \binom{n}{t} p^t  $ avec $[n]$ les entiers de 1 à n\newline
 Par exemple si $x=(x_1, x_2, x_3, x_4)$ et $t=2$ alors $D=(p_1-1)(p_2-1)+(p_3-1)(p_4-1)+(p_1-1)(p_3-1)+(p_1-1)(p_4-1)+(p_2-1)(p_3-1)+(p_2-1)(p_4-1)$ \newline
-On a donc $\left\lvert recu\right\rvert \simeq \left\lvert B\right\rvert \times D\leq \sum_{i = 1}^{n} p_i  $ \newline
-Donc la borne absolue vaut : $\left\lvert B\right\rvert \leq  \frac{\sum_{i= 1}^{n} p_i }{D}  $
+On a donc $ |recu| \simeq |B| \times D\leq \sum_{i = 1}^{n} p_i  $ \newline
+Donc la borne absolue vaut : $|B| \leq  \frac{\sum_{i= 1}^{n} p_i }{D}  $
 
 \newpage
 
