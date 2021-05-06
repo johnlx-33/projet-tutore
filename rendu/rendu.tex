@@ -19,10 +19,11 @@
 
 \begin{document}
 \maketitle
-
+\newpage
 \begin{abstract}
 
-    Nous sommes étudiant en troisième année de licence mathématique et informatique. Suite au cours d'algèbres des années précédente 
+Nous sommes étudiant en troisième année de licence mathématique et informatique. 
+Suite au cours d'algèbres des années précédente 
 et au cours de aritmétique et cryptologie de ce semestre, nous avons décidé d'approfondir nos connaissances dans le doamine des restes chinois.
 De plus, voulant tout les 2 continuer nos études en poursuivant avec le master de cryptologie et sécurité informatique, ce projet fut l'occasion de découvrir les prémisses des enseignements dispensés dans ce master. \newline
 \newline
@@ -44,6 +45,7 @@ Nous remercions par la suite monsieur ZEMOR Gilles de nous avoir formé durant c
 \newline 
 Nous remercions également nos familles et nos proches, pour leurs aide et leurs soutiens moral.
 \end{flushleft}
+
 
 \chapter{théorème des restes}
 \section{théorème des restes chinois et son histoire}
@@ -205,11 +207,11 @@ Nous pouvons remarquer que dans la fonction au dessus, nous utilisons la fonctio
         \STATE $i=2$
         \WHILE {$n\neq 1$} 
         \STATE $c=1$
-        \WHILE {$n=i\times k +0$}
+        \WHILE {$n\%i=0$}
         \STATE $n=n//i$
         \STATE $c=c\times i$
         \ENDWHILE
-        \IF {$n\times c= i\times k + 0$} 
+        \IF {$(n\times c) \%i= 0$} 
         \STATE $l=l+\left[c\right] $
         \ENDIF
         \STATE $i=i+1$
@@ -221,8 +223,8 @@ Nous pouvons remarquer que dans la fonction au dessus, nous utilisons la fonctio
 Par exemple nombre facteur premier (210) renvoie la liste $[2,3,5,7]$ car $210=2\times 3\times 5\times 7$
 
 \newpage
-\chapter{Presentation du problème}
-\section{Le probléme et ses restrictions}
+\chapter{}{Presentation du problème}
+section{Le probléme et ses restrictions}
 \hbox{Le théorème des restes chinois induit une bijection :}
 \begin{center}
   
@@ -283,7 +285,7 @@ $B \leq  \frac{2\times 3\times 5\times 7\times 11\times 13}{D}=\frac{510510}{253
 
 \newpage
 
-\chapter{Brute force}
+\chapter{section}{Brute force}
 
 Il existe plusieurs algorithmes de brut force qui permettent de résoudre les erreurs tel que essayer tout les cas possibles. Mais cet algorithme est trop lourd à écrire. Nous avons donc fait des algorithmes moins lourd.
 Nous vous présenterons deux algorithmes dans cette section.
@@ -396,7 +398,8 @@ qui est en $O(b\times r)$.
 \newpage
 \chapter{Les fractions continues} 
 \section{Définition}
-Comme vu précédement la méthode brute force est efficace sur des petits cas de correction mais sur de cas plus grand la complexité explose et il est très difficile d'obtenir des résultats en un temps raisonnable.\newline
+Comme vu précédement la méthode brute force est efficace sur des petits cas de 
+correction mais sur de cas plus grand la complexité explose et il est très difficile d'obtenir des résultats en un temps raisonnable.\newline
 Il faut donc trouver un moyen plus rapide et optimal. Donc comprenons comment intervient l'erreur sur le n-uplet du systéme d'équation.\newline
 Soit m le message envoyé et y le message et l'erreur dans le même message. si l'on fait la différrence de m-y on obtient e l'erreur.
 Maintenant cette erreur ce représente par un uplet en supposant par soucis de représentation que les erreurs se trouve au début de l'uplet associé
@@ -412,7 +415,63 @@ Alors $\frac{p}{q}$ est une fraction reduité de z.\newline
 \newline
 
 Appliquer à notre probléme chaque réduite de cette fraction liste au dénominateur des candidats potentiels pour les positions érronés.\newline
-
+Lors de l'écriture des fractions continues en pyhton, nous avons du faire appelle à des foncitons segondaires (voir annexe 5). Tout d'abord, il nous a fallu une petite fonction qui calcul la borne maximal pour cette méthode.
+\begin{algorithm}
+    \caption{borne maximale pour les fractions continues}
+    \begin{algorithmic}
+        \STATE $borne=1$
+        \FOR{i in range(len(N)-1,len(N)-t-1,-1)}
+        \STATE $borne=borne\times N[i]$
+        \ENDFOR
+        \RETURN{borne}
+    \end{algorithmic}
+\end{algorithm}    
+\newpage
+Dans un segond temps, nous avons utilisé la fonction réduite qui prend en paramètres les 3 entiers $k$, $n$ et $p$ et renvoie $l$ la liste .
+\begin{algorithm}
+    \caption{fraction reduite}
+    \begin{algorithmic}
+        \STATE $a=k$
+        \STATE $b=n$
+        \STATE $q=1$
+        \STATE $r=1$
+        \STATE $l=[]$
+        \STATE $n=0$
+        \WHILE{$n<p$}
+        \STATE $q=a//b$
+        \STATE $r=a\%b$
+        \STATE $l=l+[q]$
+        \STATE $a=b$
+        \STATE $b=r$
+        \STATE $n=n+1$
+        \IF{r=0}
+        \RETURN{l}
+        \ENDIF
+        \ENDWHILE
+        \RETURN{l}
+    \end{algorithmic}
+\end{algorithm}
+Et enfin, nous retrouvons la fonction liste-int-réduite qui prend en paramètre l, retourné par la fonction d'avant et qui renvois 2 entiers
+\begin{algorithm}
+    \caption{liste entier réduite}
+    \begin{algorithmic}
+        \STATE $h_2=0$
+        \STATE $h_1=1$
+        \STATE $k_1=0$
+        \STATE $k_2=1$
+        \STATE $hp=0$
+        \STATE $kp=0$
+        \FOR{i in range(len(l))}
+        \STATE $hp=l[i]\times h_1+h_2$
+        \STATE $kp=l[i]\times k_1+k_2$
+        \STATE $h_2=h_1$
+        \STATE $h_1=hp$
+        \STATE $k_2=k_1$
+        \STATE $k_1=kp$
+        \ENDFOR
+        \RETURN{hp,kp}
+    \end{algorithmic}
+\end{algorithm}
 
 Maintenant parlons de la complexité de cette méthode. 
 On parcours la liste des derniers nombres premiers du systéme, pour calculer une borne à ne pas dépasser au denominateur de la fraction cela reduit drastiquement les itérations à faire.
@@ -440,9 +499,12 @@ signifie que l'erreur est sur l'équation modulo 3 et modulo 43. \newline
 \newline
 
 
-De plus, on pose pour les $p_i$ les 50 premiers nombres premiers, et $N=[0, 2, 0, 4, 7, 1, 16, 2, 22, 25, 26, 34, 18, 19, 30, 24, 24, 22, 52, 56, 4, 15, 54, 68, 89, 58, 39, 15, 54, 11, 112, 73, 134, 126, 102, 142, 142, 92, 159, 48, 119, 33, 16, 77, 28, 29, 67, 89, 86, 163, 150]$ le n-uplet reçu, c'est à dire avec des erreurs(7). 
+De plus, on pose pour les $p_i$ les 50 premiers nombres premiers, et 
+$N=[0, 2, 0, 4, 7, 1, 16, 2, 22, 25, 26, 34, 18, 19, 30, 24, 24, 22, 52, 56, 4, 15, 54, 68, 
+89,\newline 58, 39, 15, 54, 11, 112, 73, 134, 126, 102, 142, 142, 92, 159, 48, 119, 33, 16, 77, 28,
+ \newline 29, 67, 89, 86, 163, 150]$ le n-uplet reçu, c'est à dire avec des erreurs(7). 
 Les erreurs sont sur les positions correspondant aux nombres premiers de la liste suivante $[7, 79, 97, 107, 127, 157, 223]$. 
-L'algorithme retourne $[[5], [2, 7], [3, 11], [7, 79, 97, 107, 127, 157, 223]]$. Comme nous pouvons l'observer, l'algorithme à trouvé la bonne réponse. Cependant il propose d'autres cas. Par le même biais que l'exemple précédent, nous trouver que la bonne solution est le 7-uplets.
+L'algorithme retourne $[[5], [2, 7], [3, 11], [7, 79, 97,\newline 107, 127, 157, 223]]$. Comme nous pouvons l'observer, l'algorithme à trouvé la bonne réponse. Cependant il propose d'autres cas. Par le même biais que l'exemple précédent, nous trouver que la bonne solution est le 7-uplets.
 
 
 \newpage
