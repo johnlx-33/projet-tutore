@@ -427,7 +427,8 @@ Lors de l'écriture des fractions continues en pyhton, nous avons du faire appel
     \end{algorithmic}
 \end{algorithm}    
 \newpage
-Dans un segond temps, nous avons utilisé la fonction réduite qui prend en paramètres les 3 entiers $k$, $n$ et $p$ et renvoie $l$ la liste .
+Dans un second temps, nous avons utilisé la fonction réduite qui prend en paramètres les 3 entiers 
+$k$ , $n$ qui sont le numérateur et le dénominateur de la fraction d'origine et $p$ l'ordre de la réduite de $\frac{k}{n}$ et renvoie $l$ la liste des $a_i$ qui compose la réduite.
 \begin{algorithm}
     \caption{fraction reduite}
     \begin{algorithmic}
@@ -451,7 +452,8 @@ Dans un segond temps, nous avons utilisé la fonction réduite qui prend en para
         \RETURN{l}
     \end{algorithmic}
 \end{algorithm}
-Et enfin, nous retrouvons la fonction liste-int-réduite qui prend en paramètre l, retourné par la fonction d'avant et qui renvois 2 entiers
+Et enfin, nous retrouvons la fonction liste-int-réduite qui prend en paramètre l la liste des $a_i$ qui compose la réduite, 
+retourné par la fonction d'avant et qui renvois 2 entiers le numérateur et le dénominateur de la réduite reconstitué
 \begin{algorithm}
     \caption{liste entier réduite}
     \begin{algorithmic}
