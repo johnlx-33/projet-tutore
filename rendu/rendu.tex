@@ -10,10 +10,11 @@
 \usepackage{algorithmic}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{hyperref}
 
 
 
-\title{PROJET TUTORÉ\newline Reconstituer le théorème chinois en présence d’erreurs}
+\title{\: \: \: \: PROJET TUTORÉ\newline Reconstituer le théorème chinois en présence d’erreurs}
 \author{Mr LAVOIX John, Mr GRANERO Fabien }
 \date{7 mai 2021}
 
@@ -22,14 +23,14 @@
 \newpage
 \begin{abstract}
 
-Nous sommes étudiant en troisième année de licence mathématique et informatique. 
-Suite au cours d'algèbres des années précédente 
-et au cours de aritmétique et cryptologie de ce semestre, nous avons décidé d'approfondir nos connaissances dans le doamine des restes chinois.
-De plus, voulant tout les 2 continuer nos études en poursuivant avec le master de cryptologie et sécurité informatique, ce projet fut l'occasion de découvrir les prémisses des enseignements dispensés dans ce master. \newline
+Nous sommes étudiants en troisième année de licence mathématique et informatique. 
+Suite au cours d'algèbre des années précédentes 
+et au cours d'arithmétique et cryptologie de ce semestre, nous avons décidé d'approfondir nos connaissances dans le domaine des restes chinois. \newline
+De plus, voulant tous les 2 poursuivre nos études en nous inscrivant au  master de cryptologie et sécurité informatique, ce projet fut l'occasion de découvrir les prémisses des enseignements qui y sont dispensés.  \newline
 \newline
 \newline
-Ce rapport est  une synthèse de nos travaux durant ce semestre, sur la reconstitution du théorème des restes chinois en présence d'erreurs.
-Grâce au soutien de notre professeur Mr ZEMOR, qui nous a guidé tout au long de ce projet nous avons découvert et maitrisé plusieurs méthodes pour parvenir à notre objectif.
+    Ce rapport est  une synthèse de nos travaux durant ce semestre, sur la reconstitution du théorème des restes chinois en présence d'erreurs.
+Grâce au soutien de notre professeur Mr ZEMOR, qui nous a guidé tout au long de ce projet, nous avons découvert et maitrisé plusieurs méthodes pour parvenir à notre objectif. \newline
 Pour ce faire, nous avons d'abord pris connaissance du théorème dans son ensemble. Puis dans un second temps, nous avons cherché et appris plusieurs facon de corriger le théorème des restes chinois lors de la présence d'erreurs.
 
 \end{abstract}
@@ -39,13 +40,14 @@ Pour ce faire, nous avons d'abord pris connaissance du théorème dans son ensem
 
 \newpage
 
-\begin{flushleft}
-    Nous tenons tout d'abord à remercier monsieur CASTAGNOS Guillaume, d'avoir maintenu cette unité d'enseignement malgrès la situation sanitaire actuelle.  
-Nous remercions par la suite monsieur ZEMOR Gilles de nous avoir formé durant cette période compliqué, d'être resté à notre écoute, et de nous avoir suivit tout au long de ce projet.
+\chapter*{Remerciements}
+\: Nous tenons tout d'abord à remercier monsieur CASTAGNOS Guillaume, d'avoir maintenu cette unité d'enseignement malgré la situation sanitaire actuelle.  
+Nous remercions par la suite monsieur ZEMOR Gilles de nous avoir formé durant cette période compliquée, d'être resté à notre écoute, et de nous avoir suivi tout au long de ce projet.
 \newline 
-Nous remercions également nos familles et nos proches, pour leurs aide et leurs soutiens moral.
-\end{flushleft}
+\newline
+\: \: Nous remercions également nos familles et nos proches, pour leur aide et leur soutien moral.
 
+\newpage
 
 \chapter{théorème des restes}
 \section{théorème des restes chinois et son histoire}
@@ -61,12 +63,12 @@ $ x \equiv n_k \:(mod\: p_k)$
 \newline
 \newline
 Il est difficile de trouver des applications immédiates au théorème des restes chinois. 
-Pourtant il se révéle trés pratique dans des calculs à grandes échelles pour calculer trés rapidement 
-en minimisant les possibilités d'erreurs de calcul ;
- ainsi qu'en cryptologie où la possibilité de faire des calculs sur de grands nombres avec des valeurs discrétes permet d'assurer une certaine sécurité si toutefois une partie des données fuitait.
-Particuliérement dans le domaine des cartes à puces (cartes bancaires,badges ,cartes d'abonnements,...), oû il y a une interaction avec un terminale pour transmettre un code.
-Il est très intéressant de délivré l'information souhaité par morceaux, surtout dans le cas ou le terminale ferait l'objet d'une attaque.
-Alors dans ce cas si l'ensemble des données recupéré par l'attaquant n'est pas trop important alors il est impossible pour lui de les exploiter.
+Pourtant il se révéle trés pratique dans des comptages à grandes échelles pour calculer trés rapidement 
+en minimisant les possibilités d'erreurs ;
+ainsi qu'en cryptologie où la possibilité de faire des calculs sur de grands nombres avec des valeurs discrétes permet d'assurer une certaine sécurité si toutefois une partie des données fuitait.
+Cela s'applique particuliérement dans le domaine des cartes à puces (cartes bancaires, badges, cartes d'abonnement,...), où il y a une interaction avec un terminal pour transmettre un code.
+Il est très intéressant de délivrer l'information souhaitée par morceaux, surtout dans le cas ou le terminal ferait l'objet d'une attaque.
+Dans ce cas, si l'ensemble des données recupérées par l'attaquant n'est pas trop important, alors il est impossible pour lui de les exploiter.
 \newline
 \newline
 \newline
@@ -223,8 +225,8 @@ Nous pouvons remarquer que dans la fonction au dessus, nous utilisons la fonctio
 Par exemple nombre facteur premier (210) renvoie la liste $[2,3,5,7]$ car $210=2\times 3\times 5\times 7$
 
 \newpage
-\chapter{}{Presentation du problème}
-section{Le probléme et ses restrictions}
+\chapter{Presentation du problème}
+\section{Le probléme et ses restrictions}
 \hbox{Le théorème des restes chinois induit une bijection :}
 \begin{center}
   
@@ -255,10 +257,10 @@ Maintenant comment déterminer B de façon calculatoire ? \newline
 Soit $N=p_1\times ...\times p_n$
 On pose $x=p_1 \times p_2 \times ... \times p_{n-2t}$ où t est le nombre d'erreurs. \newline
 On note la représentation de x par le théorème des restes chinois $m=(0...0 a_1 a_2 ... a_t ... a_{2t})$ \newline
-On reçois le message $r=(0...0 a_1...a_t 0...0)$ \newline
+On reçoit le message $r=(0...0 a_1...a_t 0...0)$ \newline
 Nous obtenons 2 possibilités d'erreurs, soit: \newline
-- $(0...0 a_1...a_t 0...0) $ avec des erreurs sur le t-uplets de $a_1$ à $a_t$, qui correspond à l'encodage de 0. \newline
-- $(0...0 a_1...a_t a_{t+1}...a_{2t})$ avec des erreurs sur le t-uplets de $a_{t+1}$ à $a_{2t}$, qui correspond à l'encodage de $x$. \newline
+- $(0...0 a_1...a_t 0...0) $ avec des erreurs sur le t-uplet de $a_1$ à $a_t$, qui correspond à l'encodage de 0. \newline
+- $(0...0 a_1...a_t a_{t+1}...a_{2t})$ avec des erreurs sur le t-uplet de $a_{t+1}$ à $a_{2t}$, qui correspond à l'encodage de $x$. \newline
 Donc la borne est x pour ne pas laisser de doute au moment de la correction. \newline
 \newline
 Pour illustrer cette détermination de borne, voici un petit exemple: \newline
@@ -267,32 +269,30 @@ On trouve $x=2\times 3\times 5=30$. Donc pour 2 erreurs, la borne de N est 30.
 
 
 Dans les algorithmes que vous verrez dans la suite de notre travail, vous pourrez trouver nos calculs de borne. Cependant, ces calculs sont propres à chaque algorithme,
-c'est à dire que la borne pour un même nombre et un même nombre d'erreurs peut varier en fonction des algorithmes utilisés. \newline
-Mais, on peut calculer mathématiquement la borne maximale. \newline
-Soit t le nombre d'erreurs et 
-Cela signifie que après cette borne, la correction d'erreurs marche parfois, ce n'est donc plus une valeur sur à cent pour cent, alors que avant cette borne, oui.
+c'est-à-dire que la borne pour un même nombre et un même nombre d'erreurs peut varier en fonction des algorithmes utilisés. \newline
+Cela signifie qu'après cette borne, la correction d'erreurs marche parfois, ce n'est donc plus une valeur sûre à cent pour cent, alors qu'avant cette borne, oui.
 \newline
-La question que nous sommes à présent en droit de nous poser est, est-ce qu'il existe une borne tel que l'on ne puisse corriger aucun nombre supérieur à cette borne. Et la réponse est oui.
+La question que nous sommes à présent en droit de nous poser est, est-ce qu'il existe une borne telle que l'on ne puisse corriger aucun nombre supérieur à cette borne? Et la réponse est oui.
 Partons d'un n-uplet de départ $x=(x_1, x_2, ..., x_n)$. On pose également, dans le n-uplet reçu, $y$ le résultat possible avec t erreurs. Avec bien sûr, le cardinal des n-uplets reçu qui est infèrieur à la sommes des $p_i$. Dans les n-uplets reçus, il y a un nombre $D$ de résultats possibles. Nous cherchons donc à calculer $D$, qui vaut: \newline
 $D=\sum_{I \subset  [n]  \newline |I|=t  }  \prod _{i \in I} p_i - 1 \simeq  \binom{n}{t} p^t  $ avec $[n]$ les entiers de 1 à n et $p=p_n$\newline
 Par exemple si $x=(x_1, x_2, x_3, x_4)$ et $t=2$ alors $D=(p_1-1)(p_2-1)+(p_3-1)(p_4-1)+(p_1-1)(p_3-1)+(p_1-1)(p_4-1)+(p_2-1)(p_3-1)+(p_2-1)(p_4-1)$ \newline
 On a donc $ |recu| \simeq |B| \times D\leq \sum_{i = 1}^{n} p_i  $ \newline
 Donc la borne absolue vaut : $|B| \leq  \frac{\sum_{i= 1}^{n} p_i }{D} $.\newline
-Idem que précédement, faisons un petit exemple. \newline
+Idem que précédemment, faisons un petit exemple. \newline
 Posons $N=2\times 3\times 5\times 7\times 11\times 13$ et $t=2$, alors $D\simeq \binom{6}{2}\times 13^2=2535$
 $B \leq  \frac{2\times 3\times 5\times 7\times 11\times 13}{D}=\frac{510510}{2535} \simeq 201 $.
 
 
 \newpage
 
-\chapter{section}{Brute force}
+\chapter{Brute force}
 
-Il existe plusieurs algorithmes de brut force qui permettent de résoudre les erreurs tel que essayer tout les cas possibles. Mais cet algorithme est trop lourd à écrire. Nous avons donc fait des algorithmes moins lourd.
-Nous vous présenterons deux algorithmes dans cette section.
+Il existe plusieurs algorithmes de brute force qui permettent de résoudre les erreurs tel que essayer tous les cas possibles. Mais ces algorithmes étant trop lourd à présenter dans ce dossier, nous avons décidé de les inclure en annexes.
+Nous avons ainsi choisi, pour la suite de notre travail, d'utiliser des algorithmes compatibles avec notre support.
 
 \section{Notre premier algorithme version naïve }
-Tout d'abord, nous avons fait une fonction qui nous montre s'il y a une erreur dans nos listes, car avant de vouloir trouver les erreurs, il faut savoir s'il y en a une (voir annexe B).
-Nous avons donc fait un petit algorithme qui permet d'enlèver alternativement un élément des listes. Autrement dit, on retire le premier élément des deux listes, puis on retire que le deuxième élément, puis que le troisième et ainsi de suite. Nous appliquons alors le théorème des restes chinois à chaque itération. Puis on mets le résultat dans une liste auxiliaire. S'il n'y a pas d'erreur,
+Tout d'abord, nous avons fait une fonction qui nous montre s'il y a une erreur dans nos listes, car avant de vouloir trouver les erreurs, il faut savoir s'il y en a une (voir annexe 2).
+Nous avons donc fait un algorithme qui permet d'enlèver alternativement un élément des listes. Autrement dit, on retire le premier élément des deux listes, puis on ne retire que le deuxième élément, puis que le troisième et ainsi de suite. Nous appliquons alors le théorème des restes chinois à chaque itération. Puis on mets le résultat dans une liste auxiliaire. S'il n'y a pas d'erreur,
 lorsqu'on retourne cette liste auxiliaire, on devrait avoir la même valeur partout, en revanche si les valeurs de la liste sont différentes, nous avons une erreur. \newline
 \newline
 Soit $P=[p_1 , p_2, ... , p_k]$ et $N=[n_1, n_2, ..., n_k]$ \newline
@@ -304,21 +304,21 @@ Si
 $x_1=x_2=...=x_k$ 
 alors il n'y a pas d'erreur. \newline
 \newline
-Voici un petit exemple pour bien comprendre cette fonction.\newline
+Voici un exemple pour bien comprendre cette fonction.\newline
 On pose P=[2,3,5,7,11,13] et N=[1, 1, 1, 5, 6, 9] \newline
-Si on applique le théorème des restes chinois à ces deux listes, on trouve 510510. Pour vérifier qu'il n'y ai pas d'erreur, on applique le théorème à
-P1=[3,5,7,11,13] et N1=[1, 1, 5, 6, 9, puis à P2=[2,5,7,11,13] et N2=[1, 1, 5, 6, 9] jusqu'à P6=[2,3,5,7,11,] et N7=[1, 1, 1, 5, 6]\newline
-Comme il n'y a pas d'erreur, la fonction va retourner [61, 61, 61, 61, 61, 61] \newline
-À présent, nous mettons une erreur dans les listes, on a P=[2,3,5,7,11,13] et N=[1,1,2,5,6,9]. En appliquant la fonction, il sera retourner une liste [6067, 6067, 61, 1777, 607, 1447], où l'on remarque bien que chaque élément est différrent, donc nous avons au moins une erreur.
-Dans cette fonction, on parcours n fois la liste de n élément donc nous somme en $O(n^2)$. Mais on fait n fois l'algo des restes chinois donc on est en $O(n^2)$. Cette algorithme est donc en $O(n^4)$ avec n la taille de la liste.
-Cette fonction à éaglement une borne qui est $ \prod_{i=1}^{n-1} p_i $.
+Si on applique le théorème des restes chinois à ces deux listes, on trouve 510510. Pour vérifier qu'il n'y a pas d'erreur, on applique le théorème à
+P1=[3,5,7,11,13] et N1=[1, 1, 5, 6, 9, puis à P2=[2,5,7,11,13] et N2=[1, 1, 5, 6, 9] jusqu'à P6=[2,3,5,7,11,] et N6=[1, 1, 1, 5, 6]\newline
+Comme il n'y a pas d'erreur, la fonction va afficher [61, 61, 61, 61, 61, 61] \newline
+À présent, nous insérons une erreur dans les listes, on a P=[2,3,5,7,11,13] et N=[1,1,2,5,6,9]. En appliquant la fonction, il sera retourné une liste [6067, 6067, 61, 1777, 607, 1447], où l'on remarque clairement que chaque élément est différent. Donc nous avons au moins une erreur.
+Dans cette fonction, on parcourt n fois la liste de n éléments donc nous sommes en $O(n^2)$. De plus, on fait n fois l'algo des restes chinois donc on est en $O(n^2)$. Cette algorithme est donc en $O(n^4)$ avec n la taille de la liste.
+Cette fonction a éaglement une borne qui est $ \prod_{i=1}^{n-1} p_i $.
 \newline 
 \newline
-Pour créer notre première fonction de correction, nous nous sommes inspirées de la fonction ci dessus (voir annexe C). On sait dit que si on enlevé 2 élément des listes, nous pourrions trouver l'erreur. On s'explique;
-On a vu que si on enlevais 1 éléments des listes, le théorème des restes chinois marchait encore, et si on enlève 2 éléments, il marche encore. Donc, en enlevant le premier élément et tout les autres chacun leurs
-tours, et en appliquantle théorème à chaque fois, on retourne une liste. Puis, on réitére en enlevant le deuxième élément, et les autres chacun leurs tours, en re-appliquant les restes chinois à chaque fois, en mettant les résultats dans
-une nouvelle liste. Ainsi de suite jusqu'au dernier élément. Cette fonction retourne une liste de liste. Donc la liste où se trouve le même nombre partout, c'est que l'erreur est à la meme position.
-faisont plutôt exemple.
+Pour créer notre première fonction de correction, nous nous sommes inspirés de la fonction ci-dessus (voir annexe 3). On s'est dit que si on enlevait 2 éléments des listes, nous pourrions trouver l'erreur. 
+En effet, on a vu que si on enlevait 1 élément des listes, le théorème des restes chinois marchait encore, et si on enlève 2 éléments, il marche encore. Donc, en enlevant le premier élément et tous les autres chacun leur
+tour, et en appliquantle théorème à chaque fois, on retourne une liste. Puis, on réitére en enlevant le deuxième élément, et les autres chacun leur tour, en re-appliquant les restes chinois à chaque fois, en mettant les résultats dans
+une nouvelle liste. Ainsi de suite jusqu'au dernier élément. Cette fonction retourne une liste de liste. Donc la liste où se trouve le même nombre partout, signifie que l'erreur est à la même position.
+Faisons plutôt un exemple.
 \newline 
 Soit $P=[p_1, p_2, ... , p_k]$ et $N=[n_1 , n_2, ... ,n_k]$ \newline
 On note $P_ij =[p_1 , ... , p_i-1 , p_i+1 , ... , p_j-1 , p_j+1 , ... , p_k]$ et $N_ij=[n_1, ..., n_i-1, n_i+1, ..., n_j-1, n_j+1, ..., n_k]$ \newline
@@ -326,23 +326,23 @@ On note $x_ij$ le résultat du théorème des restes chinois appliqués à $P_ij
 Et on retourne $L=[[x_11,x_12,...x_1k],[x_21,x_22,...,x_2k],...,[x_{1k},x_{2k},...,x_{kk}]]$ \newline
 On a retourné une liste de liste. Si la k-ième sous-liste retourne toujours le même nombre alors cela signifie qu'il y a une erreur sur le k-ième élément. \newline`
 \newline
-Si on récupère l'exemple du paragraphe précédent, où l'on avait découvert une erreur. \newline
-On a: $P=[2,3,5,7,11,13]$ et $N=[1,1,2,5,6,9]$ \newline
-On applique notre algoritme et il retourne/
+Si on récupère l'exemple du paragraphe précédent, où l'on avait découvert une erreur, \newline
+on a: $P=[2,3,5,7,11,13]$ et $N=[1,1,2,5,6,9]$ \newline
+On applique notre algorithme et il retourne
 [[6067, 1062, 61, 1777, 607, 292], [1062, 6067, 61, 347, 607, 677], [61, 61, 61, 61, 61, 61], [1777, 347, 61, 1777, 217, 127], [607, 607, 61, 217, 607, 187], [292, 677, 61, 127, 187, 1447]] \newline
-La première liste retourné ne renvois pas le meme résultat donc l'erreur n'est pas sur la première équation. Elle n'es pas non plus sur la deuxième équation.
+La première liste retournée ne renvoit pas le même résultat donc l'erreur n'est pas sur la première équation. Elle n'est pas non plus sur la deuxième équation.
 Cependant, on peut voir sur la troisième liste que le résultat est toujours le même; c'est à dire qu'à chaque fois on a fait le théorème des restes chinois en enlevant la troisième équation et une autre, donc nous avons une erreur sur la toisième équation.
 \newline
-Voici un exemple d'échec de notre algorithme pour des valeurs prisent en dehors de la borne.
-si $N=[0, 2, 0, 5, 9, 11]$ la liste qui représnete 2000 modulo les $p_i$. Posons un erreur sur $N$, tel que $N=[0, 2, 0, 6, 9, 11]$ l'algorithme renvoie 
-[[12725, 2715, 713, 2000, 440, 20], [2715, 7720, 1714, 570, 440, 20], [713, 1714, 3716, 284, 440, 20], [2000, 570, 284, 2000, 50, 20], [440, 440, 440, 50, 440, 20], [20, 20, 20, 20, 20, 20]]
+Voici un exemple d'échec de notre algorithme pour des valeurs prises en dehors de la borne.
+$N=[0, 2, 0, 5, 9, 11]$ est la liste représentant 2000 modulo les $p_i$. Posons une erreur sur $N$, tel que $N=[0, 2, 0, 6, 9, 11]$ : l'algorithme renvoie 
+[[12725, 2715, 713, 2000, 440, 20], [2715, 7720, 1714, 570, 440, 20], [713, 1714, 3716, 284, 440, 20], [2000, 570, 284, 2000, 50, 20], [440, 440, 440, 50, 440, 20], [20, 20, 20, 20, 20, 20]].
 Comme on l'observe, l'algorithme trouve parfois 2 000 mais ne trouve pas l'erreur, ou du moins, il en trouve une mauvaise.
 \newline
-Cette fonction est très performante comme vous avez pu le voir sur les exemples, cependant il y a quelque défaut. Premièrement, cette fonction ne marche que avec une seule erreur,
+Cette fonction est très performante comme vous avez pu le voir sur les exemples, cependant il y a quelques défauts. Premièrement, cette fonction ne marche qu'avec une seule erreur,
 on peut facilement changer la fonction pour trouver n erreur juste en rajoutant des boucles FOR, mais cela rendrait l'algorithme encore plus lourd et une borne très faible. Deuxièmement, nous avons un problème de borne. Pour trouver la borne,
-il suffit de multiplier par les 2 derniers nombre premier de la liste. \newline
-Par exemple pour le nombre 30030, la borne est 30030/(11x13) soit 210, se qui est très peu.\newline
-Enfin, nous avons un problème de complexité soit $O(n^3)$ et a chaque fois on fait le théorème des restes chinois qui est en $O(n^2)$, se qui donne un algorithme en $O(n^5)$.
+il suffit de multiplier par les 2 derniers nombres premiers de la liste. \newline
+Par exemple pour le nombre 30030, la borne est 30030/(11x13) soit 210, ce qui est très peu.\newline
+Enfin, nous avons un problème de complexité soit $O(n^3)$ et à chaque fois on fait le théorème des restes chinois qui est en $O(n^2)$, ce qui donne un algorithme en $O(n^5)$.
 
 
 
@@ -428,7 +428,7 @@ Lors de l'écriture des fractions continues en pyhton, nous avons du faire appel
 \end{algorithm}    
 \newpage
 Dans un second temps, nous avons utilisé la fonction réduite qui prend en paramètres les 3 entiers 
-$k$ , $n$ qui sont le numérateur et le dénominateur de la fraction d'origine et $p$ l'ordre de la réduite de $\frac{k}{n}$ et renvoie $l$ la liste des $a_i$ qui compose la réduite.
+$k$ , $n$ qui sont le numérateur et le dénominateur de la fraction d'origine et $p$ l'ordre de la réduite de $\frac{k}{n}$ et renvoie $l$ la liste des $a_i$ qui compose la réduite. \newline
 \begin{algorithm}
     \caption{fraction reduite}
     \begin{algorithmic}
@@ -445,13 +445,14 @@ $k$ , $n$ qui sont le numérateur et le dénominateur de la fraction d'origine e
         \STATE $a=b$
         \STATE $b=r$
         \STATE $n=n+1$
-        \IF{r=0}
+        \IF{$r=0$}
         \RETURN{l}
         \ENDIF
         \ENDWHILE
         \RETURN{l}
     \end{algorithmic}
 \end{algorithm}
+\newline
 Et enfin, nous retrouvons la fonction liste-int-réduite qui prend en paramètre l la liste des $a_i$ qui compose la réduite, 
 retourné par la fonction d'avant et qui renvois 2 entiers le numérateur et le dénominateur de la réduite reconstitué
 \begin{algorithm}
@@ -475,6 +476,7 @@ retourné par la fonction d'avant et qui renvois 2 entiers le numérateur et le 
     \end{algorithmic}
 \end{algorithm}
 
+\newpage
 Maintenant parlons de la complexité de cette méthode. 
 On parcours la liste des derniers nombres premiers du systéme, pour calculer une borne à ne pas dépasser au denominateur de la fraction cela reduit drastiquement les itérations à faire.
 Une fois cette borne determiné on calcule les reduites de  $\frac{y}{n}$ sans que le denominateur qui sert d'indication sur la position des erreurs ne depasse la borne.
@@ -506,7 +508,7 @@ $N=[0, 2, 0, 4, 7, 1, 16, 2, 22, 25, 26, 34, 18, 19, 30, 24, 24, 22, 52, 56, 4, 
 89,\newline 58, 39, 15, 54, 11, 112, 73, 134, 126, 102, 142, 142, 92, 159, 48, 119, 33, 16, 77, 28,
  \newline 29, 67, 89, 86, 163, 150]$ le n-uplet reçu, c'est à dire avec des erreurs(7). 
 Les erreurs sont sur les positions correspondant aux nombres premiers de la liste suivante $[7, 79, 97, 107, 127, 157, 223]$. 
-L'algorithme retourne $[[5], [2, 7], [3, 11], [7, 79, 97,\newline 107, 127, 157, 223]]$. Comme nous pouvons l'observer, l'algorithme à trouvé la bonne réponse. Cependant il propose d'autres cas. Par le même biais que l'exemple précédent, nous trouver que la bonne solution est le 7-uplets.
+L'algorithme retourne $[[5], [2, 7], [3, 11], \newline [7, 79, 97, 107, 127, 157, 223]]$. Comme nous pouvons l'observer, l'algorithme à trouvé la bonne réponse. Cependant il propose d'autres cas. Par le même biais que l'exemple précédent, nous trouver que la bonne solution est le 7-uplets.
 
 
 \newpage
@@ -519,6 +521,30 @@ se révéle beaucoup plus efficace voir nécessaire pour ésperé avoir un résu
 Dans des cas concret appliqué a la vie de tout les jours on ce retrouve face a des grands cas comme dans le domaine des cartes a puces ect ..
 alors la méthode des fraction continue est à choisir .
 \newpage
+
+\chapter*{Histoire du théorème}
+
+Comme nous l'avons vu précédemment, les premières trâces connus de ce théorème remonte environ au III° siècle, où un mathématicien nommé maitre SUN exposé un problème dans son "classique". Maître Sun Zi ou Sun Tzu est un mathématicien et astronome chinois, ayant vécu entre le $III^e$ siècle et le $V^e$ siècle.
+C'est d'ailleur le besoin d'éditer des calendriers astronomique précis, qui poussa Sun Zi à 
+énnoncé le théorème des restes chinois dans son livre  Sun Tzu Suan Ching (" Classique mathématique de Sunzi ") 
+pour pouvoir calculé les points de convergence des périodes de revolution des astres
+Le problème de Sun ZIest celui énoncé précédemment où le résultat était 23. Ce problème a ensuit disparu prendant plusieurs siècles car on ne retrouve aucune trace, ni de ce problème, ni de de problème ressemblant. Il faut attendre
+le XIII° siècle pour retrouver des traces du théorème. Comme par exemple dans le shushu jiuzhang de Qin JIUSHAO, où il sera donné un algorithme général de résolution. C'est une méthode appelé
+le dayan qui généralise le procédé de maitre SUN. Le problème de Sunzi apparait également au début du XIII° en Europe, où Leonard de PISE, dans Liber abbaci, écrira pratiquement au mot près, les mêmes solutions
+que dans le Sunzi. À partir de son arrivé en Occident, le problème de résolution des congruences simultanées commence à trouver son heure de gloire, où le grand mathématicien Gauss, écrira la définition des congruences et 
+leurs constitution en aritméthie moderne.\newline
+La question que l'on se pose, est pourquoi était utilisé ce théorème? D'après les écrits et quelque hypothèse, il aurait servie en astronomie, où les chinois, qui adoraient ce domaine, souhaité calculer les correspondances des calendriers.
+Par exemple, Qin JIUSHAO cherchait dans combien de temsp, se sera le quatrième jour de l'année, le huitième jour du mois lunaire et le dernier jour du cycle sexagénère. \newline
+Aujourd'hui, le théorème est utilisé dans d'autres dommaines tel qu'en arithmétique et en algèbre, notamment sous sa forme générale dans l'arithmétique des corps, 
+que se soit au cours de démonstrations théoriques aussi bien que dans des cas pratiques.
+
+Dans le domaine de l'algorithmique, il est par exemple utilisé dans l'algorithme RSA en cryptographie,
+et il intervient aussi dans l'algorithme de Silver-Pohlig-Hellman pour le calcul du logarithme discret. 
+Il intervient dans l'algorithme de test de primalité de Agrawal et Biswas, développé en 199913.
+
+Il permet de représenter de grands nombres entiers comme n-uplets de restes de divisions euclidiennes.
+Sous cette forme, des opérations comme l'addition ou la multiplication peuvent se faire en parallèle en temps constant 
+(pas de propagation de retenue). Par contre, la comparaison ou la division ne sont pas triviales 
 
 \chapter*{Annexes}
 \begin{appendices}
@@ -664,4 +690,22 @@ alors la méthode des fraction continue est à choisir .
         \end{algorithmic}
     \end{algorithm}
 \end{appendices}
+\newpage
+
+\chapter*{bibliographie et sitographie}
+\url{https://cm2.ens.fr/content/le-problème-des-restes-chinois-questions-sur-ses-origines}
+\url{http://www.bibmath.net/dico/index.php?action=affiche&quoi=./c/chinois.html}
+\url{http://epsilon.2000.free.fr/Csup/resteschinois.pdf}
+\url{http://math.univ-lyon1.fr/irem/IMG/pdf/Th_restes_chinois.pdf}
+
+\newline
+\newline
+\newline
+Kaoru Baba et Kiyosi Yabuuti, Une histoire des mathématiques chinoises, Belin. \newline
+Jean-Claude Martzloff, Histoire des mathématiques chinoises, p. 129 \newline
+J.-C. Martzloff, Histoire des mathématiques chinoises, p. 296. \newline
+Ancienne, écrite par Arnaud Gazagnes et publiée par l’IREM de Reims en 2005 \newline
+D. M. Mandelbaum, On a class of arithmetic codes and a decoding algorithm, IEEE Trans. on Information Theory 21(1) 85􏰀88, 1976. \newline
+Une révolution de la théorie des nombres GAUSS, RBA \newline
+
 \end{document}
