@@ -117,7 +117,7 @@ Avant de répondre à ce problème, il faut tout d'abord examiner l'algorithme.
 
 \section{Notre algorithme}
 Notre fonction en Python du théorème des restes chinois étant un peu lourde,
-nous allons montrer l'algorithme ci-dessous (voir annexe A).
+nous allons montrer l'algorithme ci-dessous (voir annexe 1).
 On obtient donc :
 \newline
 Soit $p_i$ le i-ème terme de la liste des modulos, on note \newline
@@ -331,7 +331,7 @@ on a: $P=[2,3,5,7,11,13]$ et $N=[1,1,2,5,6,9]$ \newline
 On applique notre algorithme et il retourne
 [[6067, 1062, 61, 1777, 607, 292], [1062, 6067, 61, 347, 607, 677], [61, 61, 61, 61, 61, 61], [1777, 347, 61, 1777, 217, 127], [607, 607, 61, 217, 607, 187], [292, 677, 61, 127, 187, 1447]] \newline
 La première liste retournée ne renvoit pas le même résultat donc l'erreur n'est pas sur la première équation. Elle n'est pas non plus sur la deuxième équation.
-Cependant, on peut voir sur la troisième liste que le résultat est toujours le même; c'est à dire qu'à chaque fois on a fait le théorème des restes chinois en enlevant la troisième équation et une autre, donc nous avons une erreur sur la toisième équation.
+Cependant, on peut voir sur la troisième liste que le résultat est toujours le même ; c'est à dire qu'à chaque fois, on a fait le théorème des restes chinois en enlevant la troisième équation et une autre, et on a trouvé le même résultat. Donc nous avons une erreur sur la toisième équation.
 \newline
 Voici un exemple d'échec de notre algorithme pour des valeurs prises en dehors de la borne.
 $N=[0, 2, 0, 5, 9, 11]$ est la liste représentant 2000 modulo les $p_i$. Posons une erreur sur $N$, tel que $N=[0, 2, 0, 6, 9, 11]$ : l'algorithme renvoie 
@@ -339,7 +339,7 @@ $N=[0, 2, 0, 5, 9, 11]$ est la liste représentant 2000 modulo les $p_i$. Posons
 Comme on l'observe, l'algorithme trouve parfois 2 000 mais ne trouve pas l'erreur, ou du moins, il en trouve une mauvaise.
 \newline
 Cette fonction est très performante comme vous avez pu le voir sur les exemples, cependant il y a quelques défauts. Premièrement, cette fonction ne marche qu'avec une seule erreur,
-on peut facilement changer la fonction pour trouver n erreur juste en rajoutant des boucles FOR, mais cela rendrait l'algorithme encore plus lourd et une borne très faible. Deuxièmement, nous avons un problème de borne. Pour trouver la borne,
+on peut facilement changer la fonction pour trouver n erreur juste en rajoutant des boucles FOR, mais cela rendrait l'algorithme encore plus lourd et aurait une borne très faible. Deuxièmement, nous avons un problème de borne. Pour trouver la borne,
 il suffit de multiplier par les 2 derniers nombres premiers de la liste. \newline
 Par exemple pour le nombre 30030, la borne est 30030/(11x13) soit 210, ce qui est très peu.\newline
 Enfin, nous avons un problème de complexité soit $O(n^3)$ et à chaque fois on fait le théorème des restes chinois qui est en $O(n^2)$, ce qui donne un algorithme en $O(n^5)$.
@@ -350,13 +350,13 @@ Enfin, nous avons un problème de complexité soit $O(n^3)$ et à chaque fois on
 \newpage
 \section{brute force de hamming}
 
-Notre deuxième algorithme brut force consiste à utilisé la distance de hamming. Soit $x=x_1x_2 ... x_n$ et $y=y_1y_2 ... y_n$, la distance de Hamming c'est
+Notre deuxième algorithme brut force consiste à utiliser la distance de Hamming. Soit $x=x_1x_2 ... x_n$ et $y=y_1y_2 ... y_n$, la distance de Hamming est
 $d_H(x,y)=Card\{  i\vert x_i \neq y_i \}$. Par exemple la distance de Hamming de $x={1,2,3,4}$ et $y={1,2,5,6}$ est 2\newline
-Avant de voir cette algorithme, nous devons expliquer la distance minimale. Soit G un groupe n-uplet appartenant à $A^n$. La distance minimale de G est la plus petite distance de hamming sur tout les éléments de G, soit $d(G)=min{\left\{d_h(x,y)\right\} | x\neq y, x,y\in G}$.
+Avant de voir cette algorithme, nous devons expliquer la distance minimale. Soit G un groupe de n-uplet appartenant à $A^n$. La distance minimale de G est la plus petite distance de Hamming sur tout les éléments de G, soit $d(G)=min{\left\{d_h(x,y)\right\} | x\neq y, x,y\in G}$.
 D'après Hamming, si la distance minimale est égal à d, alors on peut détecter d-1 erreurs et corriger $\frac{d-1}{2}$ erreurs. \newline
 
 
-Dans cette algoritme nous utilisons la distance de haming qui prend en entré 2 listes de nombres nommés $A1$ et $A2$, et retoune le distance de Hamming. Du coup, il nous a fallu le coder. \newline
+Dans cette algoritme nous utilisons la distance de haming qui prend en entré 2 listes de nombres nommés $A1$ et $A2$, et retoune la distance de Hamming. Du coup, il nous a fallu le coder. \newline
 \begin{algorithm}
     \caption{distance de hamming}
     \begin{algorithmic}
@@ -372,13 +372,13 @@ Dans cette algoritme nous utilisons la distance de haming qui prend en entré 2 
     \end{algorithmic}
 \end{algorithm}
 
-Pour ce nouvel algoritme (voir annexe D), nous allons calculer la distance de Hamming entre le uplet à corriger et tout les élements de 0 à la borne. Nous selectionnons tout les éléments de distance de Hamming strictement inférieur à 3 pour pouvoir détecter une erreur. \newline
+Pour ce nouvel algoritme (voir annexe 4), nous allons calculer la distance de Hamming entre le uplet à corriger et tout les élements de 0 à la borne. Nous selectionnons tout les éléments de distance de Hamming strictement inférieur à 3 pour pouvoir détecter une erreur. \newline
 Pour choisir la borne de cette algorithme pour 1 erreur, on retire les 3 plus grandes équations, c'est à dire si $P=[p_1, ..., p_k]$ alors la borne est $\prod_{i=1} ^{k-3} p_i$. Pour e erreurs, on retire les $3e$ dernières équations. \newline
 Faisons un exemple pour illustrer cette algoritme: \newline
 Prenons les listes $P=[2,3,5,7,11,13,17]$ et $N=[1,0,0,5,9,10,7]$ pour nos exemples. \newline
 Détaillons, pour mieux le comprendre, notre algorithme sur $N=[1,0,0,5,7,10,7]$ c'est à dire que nous mettons une erreur sur le cinquième thermes.
 Dans un premier temps, l'algorithme va faire la distance de Hamming entre la liste N et le nombre 0 qui s'écrit $L_O=[0,0,0,0,0,0,0]$ car le reste dans division euclidienne des $p_i$ par 0 est toujours 0.
-La distance de hamming de ces 2 listes est 5, car 2 éléments sur les 7 sont identiques entre les 2 listes, donc on ne prete pas attention à ce cas. \newline
+La distance de Hamming de ces 2 listes est 5, car 2 éléments sur les 7 sont identiques entre les 2 listes, donc on ne prete pas attention à ce cas. \newline
 On fait la distance de hamming entre le liste N et 1 qui s'écrit $L_1=[1,1,1,1,1,1,1]$ car le reste dans la division euclidienne des $p_i$ par 1 est toujours 1.
 La distance de Hamming de ces 2 listes est 6 donc on ne prete pas attention.
 On fais la distance de Hamming entre la liste N et 2 qui s'écrit $L_2=[0,2,2,2,2,2,2]$. La distance de Hamming de ces 2 listes est 7 donc on ne prete pas attention. \newline
@@ -389,7 +389,7 @@ De même que pour l'algorithme précédent, voici le même exemple. \newline
 Rapelons les faits, $N=[0, 2, 0, 5, 9, 11]$, et on implémente une erreur qui est: $N=[0, 2, 0, 6, 9, 11]$.
 L'algorithme retourne [20], c'est une nouvelle fois une erreur.
 \newline
-La complexité de cette algorithme se calcul assez rapidement. Nous avons une boucle while, on fait donc $b$ fois la distance de Hamming. LA distance de Hamming est donc $O(r)$ où r est la taille du système. On a donc cette algorithme 
+La complexité de cette algorithme se calcul assez rapidement. Nous avons une boucle while, on fait donc $b$ fois la distance de Hamming. La distance de Hamming est donc $O(r)$ où r est la taille du système. On a donc cette algorithme 
 qui est en $O(b\times r)$.
 
 
@@ -399,14 +399,14 @@ qui est en $O(b\times r)$.
 \chapter{Les fractions continues} 
 \section{Définition}
 Comme vu précédement la méthode brute force est efficace sur des petits cas de 
-correction mais sur de cas plus grand la complexité explose et il est très difficile d'obtenir des résultats en un temps raisonnable.\newline
-Il faut donc trouver un moyen plus rapide et optimal. Donc comprenons comment intervient l'erreur sur le n-uplet du systéme d'équation.\newline
-Soit m le message envoyé et y le message et l'erreur dans le même message. si l'on fait la différrence de m-y on obtient e l'erreur.
-Maintenant cette erreur ce représente par un uplet en supposant par soucis de représentation que les erreurs se trouve au début de l'uplet associé
-$e = [e1,e2,e3,...,e_k,0,...,0]$ cette erreur est donc un multiple de tout les $p_i$ nombres premiers pour i>k et k  reste non nul sur les positions erronés.\newline
-Donc $y = m + e$ donc si l'on divise y par N notre entier on a $\frac{y}{N}=\frac{m}{N}+\frac{e}{N}$\newline
-mais $\frac{e}{N}$ peut se simplifier car hormis les positions érronés 2 dans notre cas e est un multiple de tout les autres $p_i$ qui composent N\newline
-Ainsi on a  $\frac{y}{N}=\frac{m}{N}+\frac{e}{N}=\frac{m}{N}+ \frac{e_1 * e_2}{p_1 * p_2 } <\frac{B}{N} $    B étant la borne choisis.\newline
+correction mais sur de cas plus grand la complexité augmente considérablement et il est très difficile d'obtenir des résultats en un temps raisonnable.\newline
+Il faut donc trouver un moyen plus rapide et optimal. Donc, comprenons comment intervient l'erreur sur le n-uplet du systéme d'équation.\newline
+Soit m le message envoyé et y le message reçu avec l'erreur. Si l'on fait la différrence de m-y on obtient e l'erreur.
+Maintenant cette erreur se représente par un uplet en supposant, par soucis de représentation, que les erreurs se trouve au début de l'uplet associé
+$e = [e1,e2,e3,...,e_k,0,...,0]$. Cette erreur est donc un multiple de tout les $p_i$ nombres premiers pour i>k et k  reste non nul sur les positions erronés.\newline
+Donc $y = m + e$. Si l'on divise y par N notre entier on a $\frac{y}{N}=\frac{m}{N}+\frac{e}{N}$.\newline
+Mais $\frac{e}{N}$ peut se simplifier car hormis les positions érronés, e est un multiple de tout les autres $p_i$ qui composent N\newline
+Ainsi on a  $\frac{y}{N}=\frac{m}{N}+\frac{e}{N}=\frac{m}{N}+ \frac{e_1 * e_2}{p_1 * p_2 } <\frac{B}{N} $ B étant la borne choisis.\newline
 Finalement $\frac{m}{N}=\frac{y}{N} - \frac{e_1 * e_2}{p_1 * p_2 } $ \newline
 \newline
 Or souvenons-nous que si z est un réel positif et que la fraction rationnelle $\frac{p}{q}$
@@ -452,8 +452,9 @@ $k$ , $n$ qui sont le numérateur et le dénominateur de la fraction d'origine e
         \RETURN{l}
     \end{algorithmic}
 \end{algorithm}
-\newline
-Et enfin, nous retrouvons la fonction liste-int-réduite qui prend en paramètre l la liste des $a_i$ qui compose la réduite, 
+
+
+Et enfin, nous retrouvons la fonction liste-int-réduite qui prend en paramètre l la liste des $a_i$ la suite de polynôme qui compose la réduite, 
 retourné par la fonction d'avant et qui renvois 2 entiers le numérateur et le dénominateur de la réduite reconstitué
 \begin{algorithm}
     \caption{liste entier réduite}
@@ -698,9 +699,8 @@ Sous cette forme, des opérations comme l'addition ou la multiplication peuvent 
 \url{http://epsilon.2000.free.fr/Csup/resteschinois.pdf}
 \url{http://math.univ-lyon1.fr/irem/IMG/pdf/Th_restes_chinois.pdf}
 
-\newline
-\newline
-\newline
+\vspace{5cm}
+
 Kaoru Baba et Kiyosi Yabuuti, Une histoire des mathématiques chinoises, Belin. \newline
 Jean-Claude Martzloff, Histoire des mathématiques chinoises, p. 129 \newline
 J.-C. Martzloff, Histoire des mathématiques chinoises, p. 296. \newline
