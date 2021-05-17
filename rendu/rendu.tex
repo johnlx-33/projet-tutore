@@ -256,11 +256,11 @@ la deuxième est de choisir B l'ensemble des entiers que l'ont veut encoder et r
 Maintenant comment déterminer B de façon calculatoire ? \newline
 Soit $N=p_1\times ...\times p_n$
 On pose $x=p_1 \times p_2 \times ... \times p_{n-2t}$ où t est le nombre d'erreurs. \newline
-On note la représentation de x par le théorème des restes chinois $m=(0...0 a_1 a_2 ... a_t ... a_{2t})$ \newline
-On reçoit le message $r=(0...0 a_1...a_t 0...0)$ \newline
+On note la représentation de x par le théorème des restes chinois $m=(0...0 \: a_1 \: a_2 ... a_t ... a_{2t})$ \newline
+On reçoit le message $r=(0...0\: a_1...a_t \: 0...0)$ \newline
 Nous obtenons 2 possibilités d'erreurs, soit: \newline
-- $(0...0 a_1...a_t 0...0) $ avec des erreurs sur le t-uplet de $a_1$ à $a_t$, qui correspond à l'encodage de 0. \newline
-- $(0...0 a_1...a_t a_{t+1}...a_{2t})$ avec des erreurs sur le t-uplet de $a_{t+1}$ à $a_{2t}$, qui correspond à l'encodage de $x$. \newline
+- $(0...0 \: a_1...a_t\: 0...0) $ avec des erreurs sur le t-uplet de $a_1$ à $a_t$, qui correspond à l'encodage de 0. \newline
+- $(0...0 \: a_1...a_t \: a_{t+1}...a_{2t})$ avec des erreurs sur le t-uplet de $a_{t+1}$ à $a_{2t}$, qui correspond à l'encodage de $x$. \newline
 Donc la borne est x pour ne pas laisser de doute au moment de la correction. \newline
 \newline
 Pour illustrer cette détermination de borne, voici un petit exemple: \newline
@@ -736,5 +736,7 @@ M= \begin{pmatrix}
     0 &  0 & 15
 \end{pmatrix}
 
+\newline
+$(0...0 \: 0...0 \: 0...0)$
 
 \end{document}
