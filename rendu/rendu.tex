@@ -140,7 +140,7 @@ $ x\equiv 3 \: (mod \: 5)$
 $ x \equiv 2 \:(mod\: 7)$
 \newline
 On obtient $P_1=5\times 7=35$, $P_2=3\times 7=21 $, et $P_3=3\times 5=15$ \newline
-On fait l'algorithme d'Euclide étendu sur $P_1$ et $p_1$ qui donne $-3\times 23 +2\times 35\times 1= 1 $, par conséquent on trouve $e_1=2\times 35$ \newline
+On fait l'algorithme d'Euclide étendu sur $P_1$ et $p_1$ qui donne $-3\times 23 +2\times 35\times 1= 1 $, par conséquent on trouve $e_1= 35$ \newline
 Idem sur $P_2$ et $p_2$ qui donne $21\times 1 - 5\times 4=1$, donc $e_2=21$ \newline
 Enfin, on a $15\times 1- 7\times 2 = 1 $ avec $e_3=15$ \newline
 Le résultat est $x=2\times 35 + 3\times 21 + 2\times 15 =233$.
@@ -713,7 +713,8 @@ V=\begin{pmatrix}
     n_1 & n_2 & \cdots & n_k
 \end{pmatrix}
 
-
+\newline 
+\newline
 M= \begin{pmatrix}
     e_1 & 0 & \cdots & 0 \\
     0 & e_2 &\cdots & 0 \\
@@ -721,6 +722,19 @@ M= \begin{pmatrix}
     0 &\cdots  & 0 & e_k 
 \end{pmatrix}
 
+\newline 
+
+V=\begin{pmatrix}
+    2 & 3 & 2
+\end{pmatrix}
+
+\newline 
+\newline
+M= \begin{pmatrix}
+    35 & 0  & 0 \\
+    0 & 21  & 0 \\
+    0 & & 0 & 15
+\end{pmatrix}
 
 
 \end{document}
