@@ -307,7 +307,7 @@ alors il n'y a pas d'erreur. \newline
 Voici un exemple pour bien comprendre cette fonction.\newline
 On pose P=[2,3,5,7,11,13] et N=[1, 1, 1, 5, 6, 9] \newline
 Si on applique le théorème des restes chinois à ces deux listes, on trouve 510510. Pour vérifier qu'il n'y a pas d'erreur, on applique le théorème à
-P1=[3,5,7,11,13] et N1=[1, 1, 5, 6, 9, puis à P2=[2,5,7,11,13] et N2=[1, 1, 5, 6, 9] jusqu'à P6=[2,3,5,7,11,] et N6=[1, 1, 1, 5, 6]\newline
+P1=[3,5,7,11,13] et N1=[1, 1, 5, 6, 9] puis à P2=[2,5,7,11,13] et N2=[1, 1, 5, 6, 9] jusqu'à P6=[2,3,5,7,11] et N6=[1, 1, 1, 5, 6]\newline
 Comme il n'y a pas d'erreur, la fonction va afficher [61, 61, 61, 61, 61, 61] \newline
 À présent, nous insérons une erreur dans les listes, on a P=[2,3,5,7,11,13] et N=[1,1,2,5,6,9]. En appliquant la fonction, il sera retourné une liste [6067, 6067, 61, 1777, 607, 1447], où l'on remarque clairement que chaque élément est différent. Donc nous avons au moins une erreur.
 Dans cette fonction, on parcourt n fois la liste de n éléments donc nous sommes en $O(n^2)$. De plus, on fait n fois l'algo des restes chinois donc on est en $O(n^2)$. Cette algorithme est donc en $O(n^4)$ avec n la taille de la liste.
@@ -495,11 +495,11 @@ Coût que l'on a constater grâce  nos experiences et test. \newline
 Au début de nos tests nous avons pratiqué avec des petits cas de 6 à 7 nombre premier et cette méthode ne se révéla pas très efficace. Du aufait que le système étudié est trop petit, la méthode des fractions continues échoue par manque d'équation.
 Mais pour tester des cas avec plus d'erreurs nous avons eu besoin de systéme plus grand, nous avons donc directement étendu notre systéme à 51 nombres premiers.
 Nous avons pris la borne B = $10^{29}$ ordre de grandeur de la borne théorique pour corriger 15 erreurs.
-Dans ce cas et grâce à la méthode des fractions continue nous avons étè en capacité de corriger jusqu'à 7 erreur. \newline
+Dans ce cas et grâce à la méthode des fractions continue nous avons été en capacité de corriger jusqu'à 7 erreur. \newline
 Voici quelque exemple: \newline 
 Pour le premier exemple, nous avons choisi de travailler avec les 20 premiers nombre premier, et $[1, 2, 1, 1, 0, 8, 1, 18, 4, 23, 10, 12, 6, 0, 9, 51, 50, 26, 61, 61]$ le n-uplet avec 2 erreurs.
 L'algorithme retoune $[[2], [3, 43]]$. On reconstitue le thèorème en enlevant, dans un premier temps l'équation du modulo 3. Et dans un autre temps, nous avons fait le théorème en retirant 
-les équations modulo 3 et 43. Nous avons deux valeurs retourné, suite à la reconstitution du thèorème, qui sont 2162561357080315373769686 pour la première et 86842888231 pour le segond. Le bon résultat étant le plus petit, cela 
+les équations modulo 3 et 43. Nous avons deux valeurs retourné, suite à la reconstitution du thèorème, qui sont 2162561357080315373769686 pour la première et 86842888231 pour le second. Le bon résultat étant le plus petit, cela 
 signifie que l'erreur est sur l'équation modulo 3 et modulo 43. \newline
 \newline
 
@@ -518,8 +518,8 @@ L'algorithme retourne $[[5], [2, 7], [3, 11], \newline [7, 79, 97, 107, 127, 157
 Finalement on peut distingué 2 cas. Premiérement si l'on doit corriger quelques erreurs sur un petit système 
 les méthodes brute force évoquées précédement sont a préconiser malgrés leur coût trés élevé
 et dans un second cas sur des systéme plus grand de taille 20 ou plus avec plus d'erreur alors la méthode des fractions continue
-se révéle beaucoup plus efficace voir nécessaire pour ésperé avoir un résultat comparé au méthode brut force.
-Dans des cas concret appliqué a la vie de tout les jours on ce retrouve face a des grands cas comme dans le domaine des cartes a puces ect ..
+se révéle beaucoup plus efficace voir nécessaire pour ésperer avoir un résultat comparé au méthode brut force.
+Dans des cas concret appliqué a la vie de tout les jours on ce retrouve face a des grands cas comme dans le domaine des cartes à puces ect ..
 alors la méthode des fraction continue est à choisir .
 \newpage
 
@@ -707,5 +707,20 @@ J.-C. Martzloff, Histoire des mathématiques chinoises, p. 296. \newline
 Ancienne, écrite par Arnaud Gazagnes et publiée par l’IREM de Reims en 2005 \newline
 D. M. Mandelbaum, On a class of arithmetic codes and a decoding algorithm, IEEE Trans. on Information Theory 21(1) 85􏰀88, 1976. \newline
 Une révolution de la théorie des nombres GAUSS, RBA \newline
+\newline 
+
+V=\begin{pmatrix}
+    n_1 & n_2 & \cdots & n_k
+\end{pmatrix}
+
+
+M= \begin{pmatrix}
+    e_1 & 0 & \cdots & 0 \\
+    0 & e_2 &\cdots & 0 \\
+    \vdots & & \ddots &\vdots \\
+    0 &\cdots  & 0 & e_k 
+\end{pmatrix}
+
+
 
 \end{document}
