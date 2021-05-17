@@ -128,7 +128,7 @@ $1= P_i u_i + p_i v_i$
 où 
 $u_i, v_i \in  \mathbb{Z}  $
 \newline
-On pose donc $e_i = u_i P_i$ avec $ e_i \equiv 1 \; (mod \; p_i)$ et $ e_i\equiv 0 \; (mod \; e_j)$ avec $ i\neq j$ \newline
+On pose donc $e_i = u_i P_i$ avec $ e_i \equiv 1 \; (mod \; p_i)$ et $ e_i\equiv 0 \; (mod \; p_j)$ avec $ i\neq j$ \newline
 On trouve alors une solution qui est $x=\sum_{i = 1}^{k}{p_i e_i} $.\newline
 \newline
 \newline
@@ -143,7 +143,7 @@ On obtient $P_1=5\times 7=35$, $P_2=3\times 7=21 $, et $P_3=3\times 5=15$ \newli
 On fait l'algorithme d'Euclide étendu sur $P_1$ et $p_1$ qui donne $-3\times 23 +2\times 35\times 1= 1 $, par conséquent on trouve $e_1= 35$ \newline
 Idem sur $P_2$ et $p_2$ qui donne $21\times 1 - 5\times 4=1$, donc $e_2=21$ \newline
 Enfin, on a $15\times 1- 7\times 2 = 1 $ avec $e_3=15$ \newline
-Le résultat est $x=2\times 35 + 3\times 21 + 2\times 15 =233$.
+Le résultat est $x=2 \times 2\times 35 + 3\times 21 + 2\times 15 =233$.
 Nous avons, comme dit précédement, plusieurs résultats qui sont les entiers congrus à 233 modulo 105. \newline
 $233\equiv 23 (mod \: 105)$ \newline
 Le résultat final est donc $23+105k$, $k \in \mathbb{Z} $.
