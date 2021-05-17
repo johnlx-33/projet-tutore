@@ -307,7 +307,7 @@ alors il n'y a pas d'erreur. \newline
 Voici un exemple pour bien comprendre cette fonction.\newline
 On pose P=[2,3,5,7,11,13] et N=[1, 1, 1, 5, 6, 9] \newline
 Si on applique le théorème des restes chinois à ces deux listes, on trouve 510510. Pour vérifier qu'il n'y a pas d'erreur, on applique le théorème à
-P1=[3,5,7,11,13] et N1=[1, 1, 5, 6, 9] puis à P2=[2,5,7,11,13] et N2=[1, 1, 5, 6, 9] jusqu'à P6=[2,3,5,7,11] et N6=[1, 1, 1, 5, 6]\newline
+P1=[3,5,7,11,13] et N1=[1, 1, 5, 6, 9] puis à \newline P2=[2,5,7,11,13] et N2=[1, 1, 5, 6, 9] jusqu'à P6=[2,3,5,7,11] et N6=[1, 1, 1, 5, 6]\newline
 Comme il n'y a pas d'erreur, la fonction va afficher [61, 61, 61, 61, 61, 61] \newline
 À présent, nous insérons une erreur dans les listes, on a P=[2,3,5,7,11,13] et N=[1,1,2,5,6,9]. En appliquant la fonction, il sera retourné une liste [6067, 6067, 61, 1777, 607, 1447], où l'on remarque clairement que chaque élément est différent. Donc nous avons au moins une erreur.
 Dans cette fonction, on parcourt n fois la liste de n éléments donc nous sommes en $O(n^2)$. De plus, on fait n fois l'algo des restes chinois donc on est en $O(n^2)$. Cette algorithme est donc en $O(n^4)$ avec n la taille de la liste.
