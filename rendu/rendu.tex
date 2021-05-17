@@ -276,7 +276,7 @@ La question que nous sommes à présent en droit de nous poser est, est-ce qu'il
 Partons d'un n-uplet de départ $x=(x_1, x_2, ..., x_n)$. On pose également, dans le n-uplet reçu, $y$ le résultat possible avec t erreurs. Avec bien sûr, le cardinal des n-uplets reçu qui est infèrieur à la sommes des $p_i$. Dans les n-uplets reçus, il y a un nombre $D$ de résultats possibles. Nous cherchons donc à calculer $D$, qui vaut: \newline
 $D=\sum_{I \subset  [n]  \newline |I|=t  }  \prod _{i \in I} p_i - 1 \simeq  \binom{n}{t} p^t  $ avec $[n]$ les entiers de 1 à n et $p=p_n$\newline
 Par exemple si $x=(x_1, x_2, x_3, x_4)$ et $t=2$ alors $D=(p_1-1)(p_2-1)+(p_3-1)(p_4-1)+(p_1-1)(p_3-1)+(p_1-1)(p_4-1)+(p_2-1)(p_3-1)+(p_2-1)(p_4-1)$ \newline
-On a donc $ |recu| \simeq |B| \times D\leq \sum_{i = 1}^{n} p_i  $ \newline
+On a donc $ |recu| \simeq |B| \times D\leq \prod_{i = 1}^{n} p_i  $ \newline
 Donc la borne absolue vaut : $|B| \leq  \frac{\prod_{i= 1}^{n} p_i }{D} $.\newline
 Idem que précédemment, faisons un petit exemple. \newline
 Posons $N=2\times 3\times 5\times 7\times 11\times 13$ et $t=2$, alors $D\simeq \binom{6}{2}\times 13^2=2535$
